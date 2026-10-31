@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="theme-color" content="#080d1c">
+  <meta name="description" content="About Mini Game Arcade — original browser games built with no frameworks, no ads, and no nonsense.">
+  <title>About — Mini Game Arcade</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="arcade.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header" role="banner">
+  <div class="shell">
+    <nav class="nav-inner" aria-label="Primary navigation">
+      <a class="nav-logo" href="index.html" aria-label="Mini Game Arcade home">
+        <span class="logo-mark" aria-hidden="true">M</span>
+        <span class="logo-text">MINI GAME <span class="accent">ARCADE</span></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation menu">☰</button>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="index.html#games">Games</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="shell">
+
+    <header class="page-hero" aria-labelledby="aboutPageHeading">
+      <p class="section-eyebrow">The Story</p>
+      <h1 id="aboutPageHeading">About <em>This</em><br>Arcade</h1>
+      <p>Where the games come from, how they are built, and what makes this project different from the usual browser-game churn.</p>
+    </header>
+
+    <div class="prose">
+
+      <h2>What Is Mini Game Arcade?</h2>
+      <p>
+        Mini Game Arcade is an independent collection of original browser-based arcade games.
+        Every game here is purpose-built — coded from scratch, playable immediately in any
+        modern browser, and free to use with no account required.
+      </p>
+      <p>
+        There are no third-party game engines, no asset stores, and no borrowed artwork.
+        Each game — from the canvas rendering to the sound design — is written by hand
+        using standard web technologies: HTML, CSS, and vanilla JavaScript.
+      </p>
+
+      <h2>Why Build This?</h2>
+      <p>
+        Most free browser-game sites are aggregators: they host games made elsewhere, wrap
+        them in cookie banners, and monetise the experience with overlapping ad layers.
+        This project takes the opposite approach. Fewer games, made carefully, with gameplay
+        as the only priority.
+      </p>
+      <p>
+        The goal is to demonstrate that a tight, satisfying arcade experience does not require
+        a 50 MB game engine, a CDN-hosted asset pack, or a third-party ad network. A
+        <strong>well-written canvas loop</strong> and a coherent design system are enough.
+      </p>
+
+      <h2>Technology</h2>
+      <p>
+        Every page on this site is a static HTML file. There is no server-side rendering,
+        no build pipeline, and no JavaScript framework. The only external dependency is
+        Google Fonts for typography.
+      </p>
+      <p>
+        Each game is a self-contained folder: one HTML file, one CSS file, and one JS file.
+        Audio uses the Web Audio API — synthesised entirely in code, no audio files to download.
+        Graphics use the Canvas 2D API.
+      </p>
+      <div class="note">
+        <strong>Deployable anywhere:</strong> Because everything is static, the entire site
+        can be deployed on Vercel, Netlify, GitHub Pages, or any basic web host by dragging
+        a folder.
+      </div>
+
+      <h2>What Games Are Available?</h2>
+      <p>
+        Currently one game is live: <strong>Skyline Shift</strong> — a neon lane-runner
+        where you race a hoverboard through a cyberpunk city grid, dodging security gates
+        and collecting energy orbs. More games are in development and will appear on the
+        homepage as soon as they are ready. No placeholder cards, no "coming soon" fakes.
+      </p>
+
+      <h2>Honesty Policy</h2>
+      <p>
+        This site does not display fake player counts, inflated review scores, or invented
+        testimonials. The stats shown on the homepage (1 game, 0 ads, always free) are
+        accurate and will be updated as the project grows.
+      </p>
+
+      <h2>Contributing or Suggesting a Game</h2>
+      <p>
+        If you have an idea for a game that would fit the arcade style, use the
+        <a href="contact.html">contact page</a> to get in touch. Developers interested
+        in contributing should read the <strong>README.md</strong> in the project root,
+        which explains exactly how to add a new game to the arcade.
+      </p>
+
+      <h2>Credits</h2>
+      <p>
+        Fonts: <strong>Barlow Condensed</strong>, <strong>DM Mono</strong>, and
+        <strong>Manrope</strong> via Google Fonts (SIL Open Font License 1.1).
+        All game artwork and code are original. The thumbnail image on the
+        Skyline Shift card was generated using an AI image tool and is not
+        derived from any copyrighted game asset.
+      </p>
+
+    </div><!-- /prose -->
+  </div><!-- /shell -->
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="shell">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-brand-name">
+          <span class="footer-brand-mark" aria-hidden="true">M</span>
+          MINI GAME <span style="color:var(--cyan);margin-left:3px">ARCADE</span>
+        </div>
+        <p>A growing collection of free, original browser arcade games.</p>
+      </div>
+      <nav class="footer-col" aria-label="Site pages">
+        <h4>Pages</h4>
+        <ul role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#games">Games</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-label="Legal pages">
+        <h4>Legal</h4>
+        <ul role="list">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Mini Game Arcade. All games are original works.</span>
+      <nav aria-label="Legal links footer">
+        <a href="privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="terms.html">Terms</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  const t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+  if(!t||!l)return;
+  t.addEventListener('click',function(){const o=l.classList.toggle('open');t.setAttribute('aria-expanded',o);t.textContent=o?'✕':'☰';});
+  document.addEventListener('click',function(e){if(!t.contains(e.target)&&!l.contains(e.target)){l.classList.remove('open');t.setAttribute('aria-expanded','false');t.textContent='☰';}});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.classList.contains('open')){l.classList.remove('open');t.setAttribute('aria-expanded','false');t.textContent='☰';t.focus();}});
+}());
+</script>
+</body>
+</html>

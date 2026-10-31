@@ -1,0 +1,251 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="theme-color" content="#080d1c">
+  <meta name="description" content="Mini Game Arcade — a growing collection of free browser-based arcade games. No downloads, no accounts, just play.">
+  <title>Mini Game Arcade — Free Browser Games</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="arcade.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
+<header class="site-header" role="banner">
+  <div class="shell">
+    <nav class="nav-inner" aria-label="Primary navigation">
+      <a class="nav-logo" href="index.html" aria-label="Mini Game Arcade home">
+        <span class="logo-mark" aria-hidden="true">M</span>
+        <span class="logo-text">MINI GAME <span class="accent">ARCADE</span></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation menu">
+        ☰
+      </button>
+
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="#games" class="active">Games</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- ═══════════════════════════ MAIN ════════════════════════════ -->
+<main id="main">
+
+  <!-- ── Hero ─────────────────────────────────────────────── -->
+  <section class="hero" aria-labelledby="heroHeading">
+    <div class="shell">
+      <p class="hero-eyebrow">Free · No Account · Play Instantly</p>
+      <h1 id="heroHeading">MINI GAME<br><em>ARCADE.</em></h1>
+      <p class="hero-sub">
+        A hand-crafted collection of original browser games. No downloads,
+        no ads blocking your screen, no paywalls — just tight gameplay and
+        neon pixels.
+      </p>
+      <div class="hero-actions">
+        <a class="btn-primary" href="#games">Browse Games <b aria-hidden="true">↓</b></a>
+        <a class="btn-secondary" href="about.html">About This Project</a>
+      </div>
+      <div class="hero-meta" role="list" aria-label="Site facts">
+        <div class="hero-stat" role="listitem">
+          <b>1</b><span>GAME LIVE</span>
+        </div>
+        <div class="hero-stat" role="listitem">
+          <b>0</b><span>ADS</span>
+        </div>
+        <div class="hero-stat" role="listitem">
+          <b>FREE</b><span>ALWAYS</span>
+        </div>
+        <div class="hero-stat" role="listitem">
+          <b>∞</b><span>REPLAYS</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Games ─────────────────────────────────────────────── -->
+  <section class="games-section" id="games" aria-labelledby="gamesHeading">
+    <div class="shell">
+      <header class="section-head">
+        <p class="section-eyebrow">Now Playing</p>
+        <h2 class="section-title" id="gamesHeading">Available Games</h2>
+        <p class="section-sub">All games below are fully complete and playable right now.</p>
+      </header>
+
+      <div class="games-grid" role="list">
+
+        <!-- ── CARD: Skyline Shift ── -->
+        <article class="game-card" role="listitem" aria-labelledby="card-ss-title">
+          <div class="card-thumb">
+            <img
+              src="skyline-shift/thumb.jpg"
+              alt="Skyline Shift game preview: a neon-lit hoverboard courier racing through three glowing city lanes"
+              loading="eager"
+              width="640" height="360"
+            >
+            <span class="card-badge" aria-label="New game">NEW</span>
+          </div>
+          <div class="card-body">
+            <span class="card-tag">Lane Runner</span>
+            <h3 class="card-title" id="card-ss-title">Skyline Shift</h3>
+            <p class="card-desc">
+              Race your hoverboard through a neon city grid. Switch between three
+              lanes to dodge red security gates and collect cyan energy orbs. Speed
+              increases as the city fights back. How far can you run?
+            </p>
+            <div class="card-controls" aria-label="Game controls">
+              <kbd>←</kbd><kbd>→</kbd>
+              <span class="sep">/</span>
+              <kbd>A</kbd><kbd>D</kbd>
+              <span>Move lanes</span>
+              <span class="sep">·</span>
+              <kbd>Space</kbd>
+              <span>Pause</span>
+              <span class="sep">·</span>
+              <span>Swipe</span>
+              <span>on mobile</span>
+            </div>
+            <a class="card-play" href="skyline-shift/" aria-label="Play Skyline Shift">
+              PLAY NOW <b aria-hidden="true">↗</b>
+            </a>
+          </div>
+        </article>
+        <!-- End card -->
+
+        <!--
+          ╔══════════════════════════════════════════════════╗
+          ║  ADD NEW GAME CARDS BELOW THIS COMMENT          ║
+          ║  Copy the <article class="game-card"> block     ║
+          ║  above, update the content, and link to your    ║
+          ║  new game folder. See README.md for details.    ║
+          ╚══════════════════════════════════════════════════╝
+        -->
+
+      </div><!-- /games-grid -->
+    </div>
+  </section>
+
+  <!-- ── About Strip ────────────────────────────────────────── -->
+  <section class="about-strip" aria-labelledby="aboutStripHeading">
+    <div class="shell">
+      <div class="about-strip-inner">
+        <div class="about-copy">
+          <p class="section-eyebrow">The Project</p>
+          <h2 id="aboutStripHeading">Built for <em>fun</em>,<br>not profit.</h2>
+          <p>
+            Mini Game Arcade is an independent project — a place where original
+            browser games live. Every game here is designed from scratch with a
+            focus on tight controls, clean visuals, and genuine replayability.
+          </p>
+          <p>
+            No trackers, no paywalls, no fake leaderboards stuffed with bots.
+            Just honest games that load in seconds on any device.
+          </p>
+          <a class="link-arrow" href="about.html">Read the full story <span aria-hidden="true">→</span></a>
+        </div>
+        <div class="about-stats" aria-label="Project stats">
+          <div class="stat-card">
+            <b>100%</b>
+            <span>ORIGINAL CODE</span>
+          </div>
+          <div class="stat-card">
+            <b>0KB</b>
+            <span>FRAMEWORKS</span>
+          </div>
+          <div class="stat-card">
+            <b>OPEN</b>
+            <span>SOURCE FRIENDLY</span>
+          </div>
+          <div class="stat-card">
+            <b>PWA</b>
+            <span>READY SOON</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="shell">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-brand-name">
+          <span class="footer-brand-mark" aria-hidden="true">M</span>
+          MINI GAME <span style="color:var(--cyan);margin-left:3px">ARCADE</span>
+        </div>
+        <p>
+          A growing collection of free, original browser arcade games.
+          No accounts, no ads, no nonsense.
+        </p>
+      </div>
+
+      <nav class="footer-col" aria-label="Site pages">
+        <h4>Pages</h4>
+        <ul role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#games">Games</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer-col" aria-label="Legal pages">
+        <h4>Legal</h4>
+        <ul role="list">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2024 Mini Game Arcade. All games are original works.</span>
+      <nav aria-label="Legal links footer">
+        <a href="privacy.html">Privacy</a> &nbsp;·&nbsp;
+        <a href="terms.html">Terms</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+  const toggle = document.getElementById('navToggle');
+  const links  = document.getElementById('navLinks');
+  if (!toggle || !links) return;
+  toggle.addEventListener('click', function () {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+    toggle.textContent = open ? '✕' : '☰';
+  });
+  // Close on outside click
+  document.addEventListener('click', function (e) {
+    if (!toggle.contains(e.target) && !links.contains(e.target)) {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = '☰';
+    }
+  });
+  // Close on Escape
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && links.classList.contains('open')) {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.textContent = '☰';
+      toggle.focus();
+    }
+  });
+}());
+</script>
+</body>
+</html>

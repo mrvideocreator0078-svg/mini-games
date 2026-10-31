@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+  <meta name="theme-color" content="#080d1c">
+  <meta name="description" content="Privacy Policy for Mini Game Arcade — we collect no personal data and run no analytics.">
+  <title>Privacy Policy — Mini Game Arcade</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="arcade.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header" role="banner">
+  <div class="shell">
+    <nav class="nav-inner" aria-label="Primary navigation">
+      <a class="nav-logo" href="index.html" aria-label="Mini Game Arcade home">
+        <span class="logo-mark" aria-hidden="true">M</span>
+        <span class="logo-text">MINI GAME <span class="accent">ARCADE</span></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation menu">☰</button>
+      <ul class="nav-links" id="navLinks" role="list">
+        <li><a href="index.html#games">Games</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="shell">
+    <header class="page-hero" aria-labelledby="privacyHeading">
+      <p class="section-eyebrow">Legal</p>
+      <h1 id="privacyHeading">Privacy <em>Policy</em></h1>
+      <p>Last updated: November 2024. Short version: we collect nothing and share nothing.</p>
+    </header>
+
+    <div class="prose">
+
+      <h2>Overview</h2>
+      <p>
+        Mini Game Arcade is committed to your privacy. This policy explains what information
+        (if any) we collect when you visit this site, and how it is used. The short answer
+        is: we collect <strong>no personal data</strong>, run <strong>no analytics</strong>,
+        and use <strong>no advertising trackers</strong>.
+      </p>
+
+      <h2>Data We Collect</h2>
+      <p>
+        <strong>None.</strong> This site does not use cookies, does not embed third-party
+        tracking scripts, and does not log your IP address or browsing behaviour. There is
+        no user account system and no database.
+      </p>
+      <p>
+        The only browser storage used is <strong>localStorage</strong>, which stores your
+        best game scores locally on your own device. This data never leaves your browser
+        and is not accessible to us.
+      </p>
+
+      <h2>Third-Party Services</h2>
+      <p>
+        This site loads fonts from <strong>Google Fonts</strong> over HTTPS. When your
+        browser requests a font file, Google may log the request as part of its standard
+        server operations. See the
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a>
+        for details. No other third-party services are used.
+      </p>
+
+      <h2>Contact Form</h2>
+      <p>
+        The contact form on this site composes a message and opens your default email client
+        via a <code>mailto:</code> link. No data is transmitted to our servers — the message
+        is sent directly from your email client. We retain no copy of your message unless
+        you choose to send it.
+      </p>
+
+      <h2>Children's Privacy</h2>
+      <p>
+        This site does not knowingly collect information from children under the age of 13.
+        Because we collect no data from any visitor, this site is suitable for all ages.
+      </p>
+
+      <h2>Changes to This Policy</h2>
+      <p>
+        We may update this privacy policy from time to time. Changes will be reflected by
+        updating the "Last updated" date at the top of this page. Continued use of the site
+        after changes constitutes acceptance of the updated policy.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        If you have questions about this privacy policy, please use the
+        <a href="contact.html">contact page</a>.
+      </p>
+
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+  <div class="shell">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-brand-name">
+          <span class="footer-brand-mark" aria-hidden="true">M</span>
+          MINI GAME <span style="color:var(--cyan);margin-left:3px">ARCADE</span>
+        </div>
+        <p>A growing collection of free, original browser arcade games.</p>
+      </div>
+      <nav class="footer-col" aria-label="Site pages">
+        <h4>Pages</h4>
+        <ul role="list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html#games">Games</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+      <nav class="footer-col" aria-label="Legal pages">
+        <h4>Legal</h4>
+        <ul role="list">
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Use</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 Mini Game Arcade. All games are original works.</span>
+      <nav aria-label="Legal links footer">
+        <a href="privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="terms.html">Terms</a>
+      </nav>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  'use strict';
+  const t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
+  if(!t||!l)return;
+  t.addEventListener('click',function(){const o=l.classList.toggle('open');t.setAttribute('aria-expanded',o);t.textContent=o?'✕':'☰';});
+  document.addEventListener('click',function(e){if(!t.contains(e.target)&&!l.contains(e.target)){l.classList.remove('open');t.setAttribute('aria-expanded','false');t.textContent='☰';}});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.classList.contains('open')){l.classList.remove('open');t.setAttribute('aria-expanded','false');t.textContent='☰';t.focus();}});
+}());
+</script>
+</body>
+</html>
