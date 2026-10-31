@@ -110,8 +110,8 @@
       <!-- Verified Platform Highlights -->
       <div class="hero-stats-grid" role="list" aria-label="Platform Highlights">
         <div class="hero-stat-card" role="listitem">
-          <div class="stat-val">01</div>
-          <div class="stat-label">Playable Game Live</div>
+          <div class="stat-val">02</div>
+          <div class="stat-label">Playable Games Live</div>
         </div>
         <div class="hero-stat-card" role="listitem">
           <div class="stat-val">60 FPS</div>
@@ -144,7 +144,7 @@
           <p class="section-sub">Tested, fully playable, and optimized for both keyboard and touch controls.</p>
         </div>
         <div class="active-filter-pill">
-          All Games (1)
+          All Games (2)
         </div>
       </div>
 
@@ -217,6 +217,74 @@
           </div>
         </article>
 
+        <!-- ── GAME CARD: Prism Quest: The Lost Light ── -->
+        <article class="game-card" role="listitem" aria-labelledby="card-pq-title">
+          
+          <div class="card-thumb-wrap">
+            <img
+              src="prism-quest/thumb.jpg"
+              alt="Prism Quest gameplay preview: cosmic laser puzzle chamber with rotatable mirrors, beam splitters, and golden resonance crystals"
+              loading="eager"
+              width="640"
+              height="360"
+            >
+            <div class="card-vignette" aria-hidden="true"></div>
+            
+            <div class="card-badges-row">
+              <span class="badge-featured" style="background:linear-gradient(135deg, #8b5cf6, #06b6d4)">✨ 30 Levels</span>
+              <div class="badge-stats">
+                <span class="badge-pill">⭐ 5.0</span>
+                <span class="badge-pill">Puzzle</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="card-content-body">
+            
+            <div class="card-header-meta">
+              <span class="card-category-tag" style="background:rgba(139,92,246,0.15);color:#a78bfa;border-color:rgba(139,92,246,0.3)">Ray-Tracing Puzzle</span>
+              <span class="card-best-score" id="pqProgress">
+                ✨ Stars: <b id="pqStarVal">0/90</b>
+              </span>
+            </div>
+
+            <h3 class="card-title" id="card-pq-title">Prism Quest: The Lost Light</h3>
+            
+            <p class="card-description">
+              Harness the ancient physics of light in 30 cosmic puzzle chambers.
+              Rotate precision mirrors, split beams across prisms, warp through wormholes,
+              and awaken golden resonance crystals within par move targets.
+            </p>
+
+            <!-- 3D Keycap Controls -->
+            <div class="card-controls-panel" aria-label="Controls guide">
+              <div class="controls-label">
+                <span>Input Controls</span>
+                <span>Click, Touch & Hotkeys</span>
+              </div>
+              <div class="controls-keys-row">
+                <kbd>Click</kbd>
+                <span class="control-text">Rotate Mirror</span>
+                <span class="control-sep">·</span>
+                <kbd>Z</kbd>
+                <span class="control-text">Undo</span>
+                <span class="control-sep">·</span>
+                <kbd>R</kbd>
+                <span class="control-text">Reset</span>
+                <span class="control-sep">·</span>
+                <span class="control-text">📱 Touch</span>
+              </div>
+            </div>
+
+            <!-- Launch Button -->
+            <a class="btn-launch-game" href="prism-quest/" aria-label="Launch Prism Quest">
+              <span>Launch Game</span>
+              <span class="arrow-icon" aria-hidden="true">↗</span>
+            </a>
+
+          </div>
+        </article>
+
       </div><!-- /games-grid -->
 
     </div>
@@ -252,6 +320,32 @@
             Scores are recorded instantly to your browser's persistent <code>localStorage</code> cache.
             No personal data or gameplay telemetry is ever transmitted to remote analytics servers,
             ensuring your records stay local, private, and tamper-free.
+          </p>
+
+          <hr style="border:none;border-top:1px solid var(--border);margin:36px 0">
+
+          <p class="section-eyebrow" style="color:#a78bfa">OPTICAL LOGIC & PUZZLE STRATEGY</p>
+          <h2 style="margin-top:4px">Prism Quest: Harnessing Reflection & Wave Mechanics</h2>
+          <p>
+            Prism Quest invites players to step into the role of a celestial light engineer.
+            Across 30 handcrafted puzzle chambers spanning three cosmic chapters,
+            the game challenges spatial reasoning through classical optical reflection,
+            beam splitters, and wormhole teleportation:
+          </p>
+
+          <div class="guide-tips-box" style="border-left-color:#8b5cf6">
+            <h4>Tactical Solving Methodology</h4>
+            <ul>
+              <li><strong>Work Backward from Target Crystals:</strong> Instead of guessing forward from the laser emitter, trace a mental line backward from the dormant golden crystal. Which empty grid tile has an unobstructed line of sight?</li>
+              <li><strong>Understand Splitter Symmetry:</strong> Splitter prisms divide a single beam into two orthogonal vectors. Placing a splitter early in the chamber illuminates multiple sectors simultaneously.</li>
+              <li><strong>Wormhole Gate Conservation:</strong> Light entering any portal exits immediately at its linked twin while strictly preserving its original vector direction.</li>
+              <li><strong>Target Par Efficiency:</strong> Every level specifies a Par move target. Earning 3 cosmic stars requires minimizing unnecessary mirror rotations. Use the Undo key (<kbd>Z</kbd>) to backtrack without resetting your entire chain.</li>
+            </ul>
+          </div>
+
+          <p>
+            Star unlocks and gem rewards are safely stored locally via <code>prism_quest_save_v1</code>,
+            giving you instantaneous resumption across all 30 cosmic chambers.
           </p>
         </article>
 
@@ -307,25 +401,36 @@
 
         <div class="lab-grid">
           
-          <div class="lab-item">
+          <div class="lab-item" style="border-color:rgba(139,92,246,0.3);background:rgba(139,92,246,0.04)">
             <div class="lab-item-head">
-              <span class="lab-item-title">Game 02: Cyber Slicer</span>
-              <span class="lab-status-badge status-active">In Development</span>
+              <span class="lab-item-title">Game 02: Prism Quest: The Lost Light</span>
+              <span class="lab-status-badge" style="background:rgba(16,185,129,0.15);color:#10b981;border:1px solid rgba(16,185,129,0.3)">✓ Live & Playable</span>
             </div>
-            <p>High-precision touch and cursor slicing physics. Slice incoming neon data cores while parrying hostile firewall orbs in an accelerating time-trial.</p>
-            <div class="lab-progress-bar" title="Progress: 75%">
-              <div class="lab-progress-fill" style="width: 75%"></div>
+            <p>Handcrafted 30-level laser optics puzzle adventure featuring rotatable mirrors, beam splitters, and wormholes with procedural cosmic audio.</p>
+            <div class="lab-progress-bar" title="Progress: 100%">
+              <div class="lab-progress-fill" style="width: 100%; background: linear-gradient(90deg, #8b5cf6, #00f0d0)"></div>
             </div>
           </div>
 
           <div class="lab-item">
             <div class="lab-item-head">
-              <span class="lab-item-title">Game 03: Neon Breaker</span>
+              <span class="lab-item-title">Game 03: Cyber Slicer</span>
+              <span class="lab-status-badge status-active">In Development</span>
+            </div>
+            <p>High-precision touch and cursor slicing physics. Slice incoming neon data cores while parrying hostile firewall orbs in an accelerating time-trial.</p>
+            <div class="lab-progress-bar" title="Progress: 70%">
+              <div class="lab-progress-fill" style="width: 70%"></div>
+            </div>
+          </div>
+
+          <div class="lab-item">
+            <div class="lab-item-head">
+              <span class="lab-item-title">Game 04: Neon Breaker</span>
               <span class="lab-status-badge status-planned">Design Phase</span>
             </div>
             <p>Synthwave paddle physics and multi-ball plasma destruction powered by custom procedural audio frequencies and particle collisions.</p>
-            <div class="lab-progress-bar" title="Progress: 20%">
-              <div class="lab-progress-fill" style="width: 20%"></div>
+            <div class="lab-progress-bar" title="Progress: 25%">
+              <div class="lab-progress-fill" style="width: 25%"></div>
             </div>
           </div>
 
@@ -434,12 +539,21 @@
 (function () {
   'use strict';
 
-  /* ── 1. Read High Score from LocalStorage ── */
+  /* ── 1. Read High Score & Stars from LocalStorage ── */
   try {
     const best = localStorage.getItem('arcade_skylineshift_best');
     const display = document.getElementById('ssHighScoreVal');
     if (best && display) {
       display.textContent = Number(best).toLocaleString() + 'm';
+    }
+
+    const pqData = localStorage.getItem('prism_quest_save_v1');
+    const pqDisplay = document.getElementById('pqStarVal');
+    if (pqData && pqDisplay) {
+      const parsed = JSON.parse(pqData);
+      let totalStars = 0;
+      Object.values(parsed.stars || {}).forEach(s => totalStars += Number(s) || 0);
+      pqDisplay.textContent = totalStars + '/90';
     }
   } catch (e) {}
 

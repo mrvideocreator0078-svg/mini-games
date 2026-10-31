@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=no">
+  <meta name="theme-color" content="#060614">
+  <meta name="description" content="Prism Quest: The Lost Light — A cosmic mirror-and-light redirection puzzle game. Rotate mirrors, bend laser beams, and awaken ancient celestial crystals across 30 hand-crafted levels.">
+  <title>Prism Quest: The Lost Light — Mirror & Laser Puzzle</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Ambient Cosmic Starfield Canvas -->
+<canvas id="starCanvas" aria-hidden="true"></canvas>
+
+<!-- Top Return Bar -->
+<nav class="back-bar" aria-label="Portal Navigation">
+  <div class="shell-g">
+    <a class="back-link" href="../">
+      <span aria-hidden="true">←</span>
+      <span>Return to Mini Game Arcade</span>
+    </a>
+    <div class="quick-stats">
+      <span class="gems-pill" title="Celestial Gems">💎 <b id="gemsCount">25</b></span>
+      <span class="stars-pill" title="Total Stars Earned">⭐ <b id="starsCount">0</b> / 90</span>
+    </div>
+  </div>
+</nav>
+
+<div class="game-shell">
+  
+  <!-- Game Header Bar -->
+  <header class="game-top-bar">
+    <div class="game-brand">
+      <div class="game-logo-icon" aria-hidden="true">✦</div>
+      <div>
+        <h1 class="game-brand-title">PRISM QUEST</h1>
+        <p class="game-brand-sub">The Lost Light // Cosmic Ray Puzzle</p>
+      </div>
+    </div>
+
+    <!-- HUD Control Actions -->
+    <div class="hud-actions">
+      <button class="btn-icon" id="hintBtn" title="Reveal Mirror Alignment Hint (H)">
+        <span>💡</span>
+        <span>Hint</span>
+      </button>
+      <button class="btn-icon" id="undoBtn" title="Undo Last Move (Z)">
+        <span>↩</span>
+        <span>Undo</span>
+      </button>
+      <button class="btn-icon" id="resetBtn" title="Reset Puzzle (R)">
+        <span>↻</span>
+        <span>Reset</span>
+      </button>
+      <button class="btn-icon" id="levelsBtn" title="Select Level">
+        <span>📜</span>
+        <span>Levels</span>
+      </button>
+      <button class="btn-icon active" id="sfxBtn" title="Toggle Sound Effects">
+        <span>🔊</span>
+        <span>SFX</span>
+      </button>
+      <button class="btn-icon active" id="musicBtn" title="Toggle Ambient Music">
+        <span>🎵</span>
+        <span>MUSIC</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Puzzle Area -->
+  <main class="puzzle-chamber">
+
+    <!-- Center Board Container -->
+    <div class="board-container">
+      
+      <div class="board-status-strip">
+        <div class="current-level-tag">
+          <span class="level-chapter-name" id="chapterName">Chapter 1</span>
+          <span id="currentLevelName">Level 1: First Refraction</span>
+        </div>
+        <div class="moves-pill">
+          MOVES: <b id="currentMoves">0</b> / PAR <b id="parMoves">1</b>
+        </div>
+      </div>
+
+      <!-- Canvas Frame -->
+      <div class="canvas-board-wrapper">
+        <canvas id="puzzleCanvas" width="620" height="620" aria-label="Prism Quest puzzle chamber"></canvas>
+        <div class="board-alert-toast" id="boardToast" role="status" aria-live="polite"></div>
+      </div>
+
+    </div>
+
+    <!-- Right Sidebar: Legend & Strategy -->
+    <aside class="puzzle-sidebar">
+      
+      <div class="side-panel">
+        <h3><span>✦</span> Celestial Mechanics</h3>
+        <p>Rotate obsidian mirrors and redirect the luminous cyan beam through the void to awaken the sleeping golden crystal.</p>
+
+        <div class="mechanics-list">
+          <div class="mech-item">
+            <span class="mech-icon">🪞</span>
+            <div>
+              <span class="mech-name">Celestial Mirror</span>
+              <span class="mech-desc">Tap/Click to rotate 90°. Reflects light beams at right angles.</span>
+            </div>
+          </div>
+
+          <div class="mech-item">
+            <span class="mech-icon">✛</span>
+            <div>
+              <span class="mech-name">Prismatic Splitter</span>
+              <span class="mech-desc">Splits a single beam into two perpendicular laser streams.</span>
+            </div>
+          </div>
+
+          <div class="mech-item">
+            <span class="mech-icon">🌀</span>
+            <div>
+              <span class="mech-name">Wormhole Portal</span>
+              <span class="mech-desc">Transports incoming light instantaneously across the chamber.</span>
+            </div>
+          </div>
+
+          <div class="mech-item">
+            <span class="mech-icon">💎</span>
+            <div>
+              <span class="mech-name">Awakened Crystal</span>
+              <span class="mech-desc">The sacred target. Illuminate all crystals to solve the chamber.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="side-panel">
+        <h3><span>⭐</span> Star Rating System</h3>
+        <p style="margin-bottom:8px">Solve the chamber in or under the Par target for maximum stars:</p>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:6px;font-size:12.5px;color:var(--text-muted)">
+          <li><b style="color:var(--gold-bright)">★★★</b> &nbsp;Solved in ≤ Par moves</li>
+          <li><b style="color:var(--gold-bright)">★★☆</b> &nbsp;Solved in Par + 2 moves</li>
+          <li><b style="color:var(--gold-bright)">★☆☆</b> &nbsp;Chamber solved</li>
+        </ul>
+      </div>
+
+    </aside>
+
+  </main>
+
+</div>
+
+<!-- ═══════════════════════════ VICTORY MODAL ═══════════════════════════ -->
+<div class="modal-backdrop" id="victoryModal" role="dialog" aria-modal="true" aria-labelledby="vTitle">
+  <div class="modal-dialog">
+    <div class="victory-crystal-glow" aria-hidden="true">💎</div>
+    <h2 class="victory-title" id="vTitle">CHAMBER SOLVED</h2>
+    <p style="color:var(--text-muted);font-size:14px">The celestial light has restored the ancient crystal.</p>
+
+    <!-- 3 Stars Row -->
+    <div class="stars-earned-row" aria-label="Stars Earned">
+      <span class="star-icon" id="starEarned1">★</span>
+      <span class="star-icon" id="starEarned2">★</span>
+      <span class="star-icon" id="starEarned3">★</span>
+    </div>
+
+    <div class="victory-stats-box">
+      <div class="v-stat">
+        <b id="vMoves">0</b>
+        <span>Your Moves</span>
+      </div>
+      <div class="v-stat">
+        <b id="vPar">0</b>
+        <span>Par Moves</span>
+      </div>
+      <div class="v-stat">
+        <b id="vGems">+15 💎</b>
+        <span>Gems Earned</span>
+      </div>
+    </div>
+
+    <div class="victory-buttons-row">
+      <button class="btn-primary-action" id="nextLevelBtn">
+        <span>Proceed to Next Chamber</span>
+        <span aria-hidden="true">→</span>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════ LEVEL SELECT MODAL (30 Handcrafted Levels) ═══════════════════════════ -->
+<div class="modal-backdrop" id="levelsModal" role="dialog" aria-modal="true" aria-labelledby="lvlSelectTitle">
+  <div class="modal-dialog" style="max-width:680px">
+    <button class="modal-close-btn" id="closeLevelsBtn" aria-label="Close level selection">✕</button>
+    <h2 class="victory-title" id="lvlSelectTitle" style="font-size:24px">CHAMBER SELECTION</h2>
+    <p style="color:var(--text-muted);font-size:13px;margin-bottom:18px">30 Handcrafted Cosmic Levels Across 3 Astral Chapters</p>
+
+    <div class="level-grid" id="levelSelectGrid" role="list">
+      <!-- 30 Levels injected dynamically by game.js -->
+    </div>
+  </div>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>
