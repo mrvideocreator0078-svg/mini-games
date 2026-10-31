@@ -29,6 +29,7 @@
     </div>
 
     <div class="nav-actions">
+      <button class="btn-pill" id="pauseBtn">⏸️ PAUSE</button>
       <button class="btn-pill active" id="sfxBtn">🔊 SFX</button>
     </div>
   </header>
@@ -120,6 +121,19 @@
         <h2 class="modal-title">HULL BREACH</h2>
         <p class="modal-desc">High-velocity impact with the cavern wall. Mind your descent speed and thruster angle.</p>
         <button class="btn-miner-primary" id="retryBtn">DEPLOY REPLACEMENT VESSEL ↗</button>
+      </div>
+    </div>
+
+    <!-- Pause Modal -->
+    <div class="modal-overlay" id="pauseModal">
+      <div class="modal-dialog">
+        <div class="modal-tag">THRUSTERS FROZEN</div>
+        <h2 class="modal-title">MISSION PAUSED</h2>
+        <p class="modal-desc">Inertia and gravitational fields suspended. Resume flight when ready.</p>
+        <div style="display:flex;gap:12px">
+          <button class="btn-miner-primary" id="resumeBtn" style="flex:1">RESUME FLIGHT ↗</button>
+          <button class="btn-pill" id="pauseRestartBtn" style="padding:14px 20px;border-radius:12px;font-size:13px">ABORT & RETRY</button>
+        </div>
       </div>
     </div>
 

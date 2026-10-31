@@ -29,6 +29,7 @@
     </div>
 
     <div class="nav-actions">
+      <button class="btn-pill" id="pauseBtn">⏸️ PAUSE</button>
       <button class="btn-pill active" id="sfxBtn">🔊 SFX</button>
     </div>
   </header>
@@ -93,6 +94,19 @@
         <p class="modal-desc">Total distance covered on the neon highway:</p>
         <div style="font-family:var(--font-display);font-size:36px;color:var(--cyan);margin-bottom:20px" id="finalDist">0 km</div>
         <button class="btn-drift-primary" id="retryBtn">RACE AGAIN ↗</button>
+      </div>
+    </div>
+
+    <!-- Pause Modal -->
+    <div class="modal-overlay" id="pauseModal">
+      <div class="modal-dialog">
+        <div class="modal-tag">ENGINE IDLE</div>
+        <h2 class="modal-title">RACE PAUSED</h2>
+        <p class="modal-desc">Highway simulation frozen. Ready to hit the throttle?</p>
+        <div style="display:flex;gap:12px">
+          <button class="btn-drift-primary" id="resumeBtn" style="flex:1">RESUME RACE ↗</button>
+          <button class="btn-pill" id="pauseRestartBtn" style="padding:14px 20px;border-radius:12px;font-size:13px">RESTART</button>
+        </div>
       </div>
     </div>
 

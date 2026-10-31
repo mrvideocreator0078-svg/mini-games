@@ -29,6 +29,7 @@
     </div>
 
     <div class="nav-actions">
+      <button class="btn-pill" id="pauseBtn">⏸️ PAUSE</button>
       <button class="btn-pill active" id="sfxBtn">🔊 SFX</button>
     </div>
   </header>
@@ -114,6 +115,19 @@
         <p class="modal-desc">Defense perimeter overwhelmed. Final defense record:</p>
         <div style="font-family:var(--font-display);font-size:36px;color:var(--yellow);margin-bottom:20px" id="goWave">Wave 1</div>
         <button class="btn-aegis-primary" id="retryBtn">REBUILD PERIMETER ↗</button>
+      </div>
+    </div>
+
+    <!-- Pause Modal -->
+    <div class="modal-overlay" id="pauseModal">
+      <div class="modal-dialog">
+        <div class="modal-tag">DEFENSE TACTICS SUSPENDED</div>
+        <h2 class="modal-title">PROTOCOL PAUSED</h2>
+        <p class="modal-desc">Perimeter clock frozen. Review your turret positions and resume when ready.</p>
+        <div style="display:flex;gap:12px">
+          <button class="btn-aegis-primary" id="resumeBtn" style="flex:1">RESUME DEFENSE ↗</button>
+          <button class="btn-pill" id="pauseRestartBtn" style="padding:14px 20px;border-radius:12px;font-size:13px">RESTART</button>
+        </div>
       </div>
     </div>
 

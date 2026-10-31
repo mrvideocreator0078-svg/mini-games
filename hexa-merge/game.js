@@ -105,6 +105,7 @@
 
   let width = 0, height = 0;
   let gameState = 'menu'; // 'menu', 'playing', 'gameover'
+  let isPaused = false;
 
   const COLS = 5;
   const ROWS = 7;
@@ -166,7 +167,7 @@
   }
 
   function dropTile(col) {
-    if (isDropping || gameState !== 'playing') return;
+    if (isDropping || gameState !== 'playing' || isPaused) return;
 
     // Find lowest empty row in this column
     let targetRow = -1;
@@ -422,24 +423,38 @@
     dropTile(activeDropCol);
   });
 
-  /* ══════════════════════════════════════════════════════════════
-     ENGINE LOOP & INIT
-     ══════════════════════════════════════════════════════════════ */
+  function togglePause() {
+    if (gameState !== 'playing') return;
+    isPaused = !isPaused;
+    const pauseModal = document.getElementById('pauseModal');
+    const pauseBtn = document.getElementById('pauseBtn');
+    if (isPaused) {
+      if (pauseModal) pauseModal.classList.add('open');
+      if (pauseBtn) pauseBtn.textContent = '▶ RESUME';
+    } else {
+      if (pauseModal) pauseModal.classList.remove('open');
+      if (pauseBtn) pauseBtn.textContent = '⏸️ PAUSE';
+      lastTimestamp = performance.now();
+    }
+  }
+
   function loop(timestamp) {
     if (!lastTimestamp) lastTimestamp = timestamp;
     const dt = Math.min(0.04, (timestamp - lastTimestamp) / 1000);
     lastTimestamp = timestamp;
 
-    // Particles decay
-    for (let i = particles.length - 1; i >= 0; i--) {
-      const pt = particles[i];
-      pt.x += pt.vx * dt;
-      pt.y += pt.vy * dt;
-      pt.life -= dt;
-      if (pt.life <= 0) particles.splice(i, 1);
-    }
+    if (!isPaused) {
+      // Particles decay
+      for (let i = particles.length - 1; i >= 0; i--) {
+        const pt = particles[i];
+        pt.x += pt.vx * dt;
+        pt.y += pt.vy * dt;
+        pt.life -= dt;
+        if (pt.life <= 0) particles.splice(i, 1);
+      }
 
-    if (screenShake > 0) screenShake *= 0.88;
+      if (screenShake > 0) screenShake *= 0.88;
+    }
 
     render();
     requestAnimationFrame(loop);
@@ -465,6 +480,33 @@
       sfxBtn.textContent = sfxEnabled ? '🔊 SFX' : '🔇 SFX';
     });
   }
+
+  // Pause & Reset Controls
+  const pauseBtn = document.getElementById('pauseBtn');
+  if (pauseBtn) pauseBtn.addEventListener('click', togglePause);
+
+  const resumeBtn = document.getElementById('resumeBtn');
+  if (resumeBtn) resumeBtn.addEventListener('click', togglePause);
+
+  const resetGridBtn = document.getElementById('resetGridBtn');
+  if (resetGridBtn) resetGridBtn.addEventListener('click', () => initBoard());
+
+  const pauseRestartBtn = document.getElementById('pauseRestartBtn');
+  if (pauseRestartBtn) {
+    pauseRestartBtn.addEventListener('click', () => {
+      togglePause();
+      initBoard();
+    });
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if ((e.key === 'p' || e.key === 'P' || e.key === 'Escape') && gameState === 'playing') {
+      togglePause();
+    }
+    if ((e.key === 'r' || e.key === 'R') && gameState === 'playing') {
+      initBoard();
+    }
+  });
 
   loadSave();
   resize();

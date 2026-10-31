@@ -256,6 +256,12 @@ body {
   background: rgba(0, 240, 208, 0.35);
 }
 
+@media (min-width: 900px) and (hover: hover) {
+  .mobile-controls {
+    display: none;
+  }
+}
+
 /* ── Modals & Overlays ── */
 .modal-overlay {
   position: absolute;

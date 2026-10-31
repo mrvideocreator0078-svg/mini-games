@@ -29,6 +29,8 @@
     </div>
 
     <div class="nav-actions">
+      <button class="btn-pill" id="resetProbeBtn" title="Reset Launch (R)">↻ RESET</button>
+      <button class="btn-pill" id="pauseBtn">⏸️ PAUSE</button>
       <button class="btn-pill active" id="sfxBtn">🔊 SFX</button>
     </div>
   </header>
@@ -79,6 +81,19 @@
         <h2 class="modal-title">BEACON CAPTURED!</h2>
         <p class="modal-desc">Flawless astrodynamic trajectory. The orbital beacon has established high-gain telemetry.</p>
         <button class="btn-orbit-primary" id="nextSectorBtn">PROCEED TO NEXT SECTOR ↗</button>
+      </div>
+    </div>
+
+    <!-- Pause Modal -->
+    <div class="modal-overlay" id="pauseModal">
+      <div class="modal-dialog">
+        <div class="modal-tag">TRAJECTORY SUSPENDED</div>
+        <h2 class="modal-title">ORBIT PAUSED</h2>
+        <p class="modal-desc">Gravitational simulation frozen. Resume calculation when ready.</p>
+        <div style="display:flex;gap:12px">
+          <button class="btn-orbit-primary" id="resumeBtn" style="flex:1">RESUME ↗</button>
+          <button class="btn-pill" id="pauseResetBtn" style="padding:14px 20px;border-radius:12px;font-size:13px">RESET PROBE</button>
+        </div>
       </div>
     </div>
 

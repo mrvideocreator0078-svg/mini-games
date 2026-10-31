@@ -141,6 +141,7 @@
 
   let width = 0, height = 0;
   let gameState = 'menu'; // 'menu', 'racing', 'gameover'
+  let isPaused = false;
 
   let player = {
     x: 0, // -1 (left shoulder) to +1 (right shoulder)
@@ -580,12 +581,18 @@
 
   function startRace() {
     gameState = 'racing';
+    isPaused = false;
     timeLeft = 45;
     position = 0;
     distance = 0;
     player.speed = 0;
     player.x = 0;
     nextCheckpoint = 400;
+
+    const pauseModal = document.getElementById('pauseModal');
+    if (pauseModal) pauseModal.classList.remove('open');
+    const pauseBtn = document.getElementById('pauseBtn');
+    if (pauseBtn) pauseBtn.textContent = '⏸️ PAUSE';
 
     document.getElementById('menuModal').classList.remove('open');
     document.getElementById('gameOverModal').classList.remove('open');
@@ -604,12 +611,31 @@
   /* ══════════════════════════════════════════════════════════════
      ENGINE LOOP & INIT
      ══════════════════════════════════════════════════════════════ */
+  function togglePause() {
+    if (gameState !== 'racing') return;
+    isPaused = !isPaused;
+    const pauseModal = document.getElementById('pauseModal');
+    const pauseBtn = document.getElementById('pauseBtn');
+    if (isPaused) {
+      stopEngineAudio();
+      if (pauseModal) pauseModal.classList.add('open');
+      if (pauseBtn) pauseBtn.textContent = '▶ RESUME';
+    } else {
+      startEngineAudio();
+      if (pauseModal) pauseModal.classList.remove('open');
+      if (pauseBtn) pauseBtn.textContent = '⏸️ PAUSE';
+      lastTimestamp = performance.now();
+    }
+  }
+
   function loop(timestamp) {
     if (!lastTimestamp) lastTimestamp = timestamp;
     const dt = Math.min(0.04, (timestamp - lastTimestamp) / 1000);
     lastTimestamp = timestamp;
 
-    update(dt);
+    if (gameState === 'racing' && !isPaused) {
+      update(dt);
+    }
     render();
 
     requestAnimationFrame(loop);
@@ -626,6 +652,27 @@
       sfxBtn.textContent = sfxEnabled ? '🔊 SFX' : '🔇 SFX';
     });
   }
+
+  // Pause Controls
+  const pauseBtn = document.getElementById('pauseBtn');
+  if (pauseBtn) pauseBtn.addEventListener('click', togglePause);
+
+  const resumeBtn = document.getElementById('resumeBtn');
+  if (resumeBtn) resumeBtn.addEventListener('click', togglePause);
+
+  const pauseRestartBtn = document.getElementById('pauseRestartBtn');
+  if (pauseRestartBtn) {
+    pauseRestartBtn.addEventListener('click', () => {
+      togglePause();
+      startRace();
+    });
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if ((e.key === 'p' || e.key === 'P' || e.key === 'Escape') && gameState === 'racing') {
+      togglePause();
+    }
+  });
 
   loadSave();
   resize();

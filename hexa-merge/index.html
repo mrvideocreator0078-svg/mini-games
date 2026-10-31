@@ -23,6 +23,8 @@
       <span class="highlight">2048</span>
     </div>
     <div class="nav-actions">
+      <button id="resetGridBtn" class="btn-pill" title="Reset Grid (R)">↻ RESET</button>
+      <button id="pauseBtn" class="btn-pill">⏸️ PAUSE</button>
       <button id="sfxBtn" class="btn-pill active" title="Toggle Sound">
         <span>SFX: ON</span>
       </button>
@@ -85,6 +87,19 @@
           <div id="goScore" style="font-family: var(--font-display); font-size: 38px; font-weight: 800; color: var(--cyan); margin-top: 4px;">0</div>
         </div>
         <button id="retryBtn" class="btn-hexa-primary">TRY AGAIN</button>
+      </div>
+    </div>
+
+    <!-- Pause Modal -->
+    <div id="pauseModal" class="modal-overlay">
+      <div class="modal-dialog">
+        <div class="modal-tag">MATRIX SUSPENDED</div>
+        <h2 class="modal-title">HEXA PAUSED</h2>
+        <p class="modal-desc">Quantum lattice frozen. Resume calculations when ready.</p>
+        <div style="display:flex;gap:12px">
+          <button id="resumeBtn" class="btn-hexa-primary" style="flex:1">RESUME ↗</button>
+          <button id="pauseRestartBtn" class="btn-pill" style="padding:14px 20px;border-radius:12px;font-size:13px">NEW GRID</button>
+        </div>
       </div>
     </div>
   </main>

@@ -105,6 +105,7 @@
 
   let width = 0, height = 0;
   let gameState = 'menu'; // 'menu', 'playing', 'floorclear', 'gameover'
+  let isPaused = false;
   let currentFloor = 1;
 
   const mapSize = 14;
@@ -587,6 +588,12 @@
 
   function startDungeon(flr) {
     gameState = 'playing';
+    isPaused = false;
+    const pauseModal = document.getElementById('pauseModal');
+    if (pauseModal) pauseModal.classList.remove('open');
+    const pauseBtn = document.getElementById('pauseBtn');
+    if (pauseBtn) pauseBtn.textContent = '⏸️ PAUSE';
+
     document.getElementById('menuModal').classList.remove('open');
     document.getElementById('gameOverModal').classList.remove('open');
     document.getElementById('floorClearModal').classList.remove('open');
@@ -612,12 +619,29 @@
   /* ══════════════════════════════════════════════════════════════
      ENGINE LOOP
      ══════════════════════════════════════════════════════════════ */
+  function togglePause() {
+    if (gameState !== 'playing') return;
+    isPaused = !isPaused;
+    const pauseModal = document.getElementById('pauseModal');
+    const pauseBtn = document.getElementById('pauseBtn');
+    if (isPaused) {
+      if (pauseModal) pauseModal.classList.add('open');
+      if (pauseBtn) pauseBtn.textContent = '▶ RESUME';
+    } else {
+      if (pauseModal) pauseModal.classList.remove('open');
+      if (pauseBtn) pauseBtn.textContent = '⏸️ PAUSE';
+      lastTimestamp = performance.now();
+    }
+  }
+
   function loop(timestamp) {
     if (!lastTimestamp) lastTimestamp = timestamp;
     const dt = Math.min(0.04, (timestamp - lastTimestamp) / 1000);
     lastTimestamp = timestamp;
 
-    update(dt);
+    if (gameState === 'playing' && !isPaused) {
+      update(dt);
+    }
     render();
 
     requestAnimationFrame(loop);
@@ -635,6 +659,27 @@
       sfxBtn.textContent = sfxEnabled ? '🔊 SFX' : '🔇 SFX';
     });
   }
+
+  // Pause Controls
+  const pauseBtn = document.getElementById('pauseBtn');
+  if (pauseBtn) pauseBtn.addEventListener('click', togglePause);
+
+  const resumeBtn = document.getElementById('resumeBtn');
+  if (resumeBtn) resumeBtn.addEventListener('click', togglePause);
+
+  const pauseRestartBtn = document.getElementById('pauseRestartBtn');
+  if (pauseRestartBtn) {
+    pauseRestartBtn.addEventListener('click', () => {
+      togglePause();
+      startDungeon(1);
+    });
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if ((e.key === 'p' || e.key === 'P' || e.key === 'Escape') && gameState === 'playing') {
+      togglePause();
+    }
+  });
 
   loadSave();
   resize();

@@ -215,6 +215,26 @@ body {
 .turret-name { font-family: var(--font-display); font-size: 11px; font-weight: 700; color: #fff; }
 .turret-cost { font-family: var(--font-mono); font-size: 11px; color: var(--yellow); }
 
+@media (max-width: 500px) {
+  .turret-dock {
+    padding: 6px 8px;
+    gap: 6px;
+    width: 96%;
+    justify-content: space-between;
+  }
+  .turret-card {
+    min-width: 0;
+    flex: 1;
+    padding: 6px 4px;
+  }
+  .turret-name {
+    font-size: 9.5px;
+  }
+  .turret-cost {
+    font-size: 9.5px;
+  }
+}
+
 /* ── Modals & Overlays ── */
 .modal-overlay {
   position: absolute;

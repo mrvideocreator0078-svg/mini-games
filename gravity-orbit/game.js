@@ -105,6 +105,7 @@
 
   let width = 0, height = 0;
   let gameState = 'menu'; // 'menu', 'aiming', 'flying', 'victory', 'crashed'
+  let isPaused = false;
   let currentSector = 1;
 
   // Probe
@@ -543,15 +544,29 @@
     }
   });
 
-  /* ══════════════════════════════════════════════════════════════
-     ENGINE LOOP & INIT
-     ══════════════════════════════════════════════════════════════ */
+  function togglePause() {
+    if (gameState !== 'flying' && gameState !== 'aiming') return;
+    isPaused = !isPaused;
+    const pauseModal = document.getElementById('pauseModal');
+    const pauseBtn = document.getElementById('pauseBtn');
+    if (isPaused) {
+      if (pauseModal) pauseModal.classList.add('open');
+      if (pauseBtn) pauseBtn.textContent = '▶ RESUME';
+    } else {
+      if (pauseModal) pauseModal.classList.remove('open');
+      if (pauseBtn) pauseBtn.textContent = '⏸️ PAUSE';
+      lastTimestamp = performance.now();
+    }
+  }
+
   function loop(timestamp) {
     if (!lastTimestamp) lastTimestamp = timestamp;
     const dt = Math.min(0.04, (timestamp - lastTimestamp) / 1000);
     lastTimestamp = timestamp;
 
-    update(dt);
+    if (gameState === 'flying' && !isPaused) {
+      update(dt);
+    }
     render();
 
     requestAnimationFrame(loop);
@@ -575,6 +590,33 @@
       sfxBtn.textContent = sfxEnabled ? '🔊 SFX' : '🔇 SFX';
     });
   }
+
+  // Pause & Reset Controls
+  const pauseBtn = document.getElementById('pauseBtn');
+  if (pauseBtn) pauseBtn.addEventListener('click', togglePause);
+
+  const resumeBtn = document.getElementById('resumeBtn');
+  if (resumeBtn) resumeBtn.addEventListener('click', togglePause);
+
+  const resetProbeBtn = document.getElementById('resetProbeBtn');
+  if (resetProbeBtn) resetProbeBtn.addEventListener('click', () => loadSector(currentSector));
+
+  const pauseResetBtn = document.getElementById('pauseResetBtn');
+  if (pauseResetBtn) {
+    pauseResetBtn.addEventListener('click', () => {
+      togglePause();
+      loadSector(currentSector);
+    });
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if ((e.key === 'p' || e.key === 'P' || e.key === 'Escape') && (gameState === 'flying' || gameState === 'aiming')) {
+      togglePause();
+    }
+    if ((e.key === 'r' || e.key === 'R') && gameState !== 'menu') {
+      loadSector(currentSector);
+    }
+  });
 
   loadSave();
   resize();

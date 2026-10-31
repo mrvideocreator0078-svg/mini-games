@@ -29,6 +29,7 @@
     </div>
 
     <div class="nav-actions">
+      <button class="btn-pill" id="pauseBtn">⏸️ PAUSE</button>
       <button class="btn-pill" id="arsenalBtn">⚔️ ARSENAL</button>
       <button class="btn-pill active" id="sfxBtn">🔊 SFX</button>
     </div>
@@ -138,6 +139,19 @@
         </div>
 
         <button class="btn-cyber-primary" id="closeArsenalBtn">CLOSE ARSENAL</button>
+      </div>
+    </div>
+
+    <!-- Pause Modal -->
+    <div class="modal-overlay" id="pauseModal">
+      <div class="modal-dialog">
+        <div class="modal-tag">SIMULATION FROZEN</div>
+        <h2 class="modal-title">GAME PAUSED</h2>
+        <p class="modal-desc">Take a breath, courier. The neon matrix is suspended.</p>
+        <div style="display:flex;gap:12px">
+          <button class="btn-cyber-primary" id="resumeBtn" style="flex:1">RESUME ↗</button>
+          <button class="btn-pill" id="pauseRestartBtn" style="padding:14px 20px;border-radius:12px;font-size:13px">RESTART</button>
+        </div>
       </div>
     </div>
 

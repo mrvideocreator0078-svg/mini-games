@@ -107,6 +107,7 @@
 
   let width = 0, height = 0;
   let gameState = 'menu'; // 'menu', 'playing', 'gameover'
+  let isPaused = false;
 
   const gridRows = 9;
   const gridCols = 13;
@@ -557,12 +558,29 @@
   /* ══════════════════════════════════════════════════════════════
      ENGINE LOOP & INIT
      ══════════════════════════════════════════════════════════════ */
+  function togglePause() {
+    if (gameState !== 'playing') return;
+    isPaused = !isPaused;
+    const pauseModal = document.getElementById('pauseModal');
+    const pauseBtn = document.getElementById('pauseBtn');
+    if (isPaused) {
+      if (pauseModal) pauseModal.classList.add('open');
+      if (pauseBtn) pauseBtn.textContent = '▶ RESUME';
+    } else {
+      if (pauseModal) pauseModal.classList.remove('open');
+      if (pauseBtn) pauseBtn.textContent = '⏸️ PAUSE';
+      lastTimestamp = performance.now();
+    }
+  }
+
   function loop(timestamp) {
     if (!lastTimestamp) lastTimestamp = timestamp;
     const dt = Math.min(0.04, (timestamp - lastTimestamp) / 1000);
     lastTimestamp = timestamp;
 
-    update(dt);
+    if (gameState === 'playing' && !isPaused) {
+      update(dt);
+    }
     render();
 
     requestAnimationFrame(loop);
@@ -578,6 +596,12 @@
     projectiles = [];
     waveTimer = 2.0;
     waveActive = false;
+    isPaused = false;
+
+    const pauseModal = document.getElementById('pauseModal');
+    if (pauseModal) pauseModal.classList.remove('open');
+    const pauseBtn = document.getElementById('pauseBtn');
+    if (pauseBtn) pauseBtn.textContent = '⏸️ PAUSE';
 
     updateHUD();
     document.getElementById('menuModal').classList.remove('open');
@@ -595,6 +619,27 @@
       sfxBtn.textContent = sfxEnabled ? '🔊 SFX' : '🔇 SFX';
     });
   }
+
+  // Pause Controls
+  const pauseBtn = document.getElementById('pauseBtn');
+  if (pauseBtn) pauseBtn.addEventListener('click', togglePause);
+
+  const resumeBtn = document.getElementById('resumeBtn');
+  if (resumeBtn) resumeBtn.addEventListener('click', togglePause);
+
+  const pauseRestartBtn = document.getElementById('pauseRestartBtn');
+  if (pauseRestartBtn) {
+    pauseRestartBtn.addEventListener('click', () => {
+      togglePause();
+      startDefense();
+    });
+  }
+
+  window.addEventListener('keydown', (e) => {
+    if ((e.key === 'p' || e.key === 'P' || e.key === 'Escape') && gameState === 'playing') {
+      togglePause();
+    }
+  });
 
   loadSave();
   resize();

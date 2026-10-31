@@ -212,6 +212,26 @@ body {
   color: var(--cyan);
 }
 
+@media (max-width: 480px) {
+  .hud-stat-pill {
+    padding: 6px 10px;
+  }
+  .hud-stat-pill .val {
+    font-size: 20px;
+  }
+  .next-tile-preview {
+    padding: 6px 10px;
+  }
+  .next-tile-val {
+    font-size: 20px;
+  }
+  .hint-badge {
+    font-size: 9.5px;
+    padding: 6px 10px;
+    text-align: center;
+  }
+}
+
 /* ── Modals & Overlays ── */
 .modal-overlay {
   position: absolute;
