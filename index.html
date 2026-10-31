@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-  <meta name="theme-color" content="#05070e">
-  <meta name="description" content="Mini Game Arcade — A hand-crafted, high-performance collection of original browser games. Zero frameworks, zero tracking, instant play.">
+  <meta name="theme-color" content="#050814">
+  <meta name="description" content="Mini Game Arcade — High-performance browser games engineered with pure HTML5 Canvas and Web Audio. Instant play, zero bloat.">
   <title>Mini Game Arcade — High-Performance Browser Gaming</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="arcade.css">
 </head>
 <body>
 
-<!-- Ambient Interactive Cyber Canvas -->
+<!-- Ambient Interactive Canvas -->
 <canvas id="ambientCanvas" aria-hidden="true"></canvas>
 
 <a class="skip-link" href="#main">Skip to main content</a>
@@ -27,27 +27,26 @@
           <span class="logo-glyph">M</span>
         </div>
         <div class="logo-text">
-          <span>MINI GAME</span>
-          <span class="accent">ARCADE</span>
-          <span class="nav-live-dot" title="Live Arcade Online"></span>
+          <span>Mini Game</span>
+          <span class="accent">Arcade</span>
+          <span class="nav-live-dot" title="Arcade Live Online"></span>
         </div>
       </a>
 
-      <!-- Navigation & Action Cluster -->
+      <!-- Navigation Links & Audio FX Toggle -->
       <div class="nav-right-cluster">
         <ul class="nav-links" id="navLinks" role="list">
           <li><a href="#games" class="active">Games</a></li>
+          <li><a href="#guide">Game Guide</a></li>
           <li><a href="about.html">About</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
 
-        <!-- Web Audio UI SFX Toggle -->
         <button class="sfx-btn" id="sfxToggle" aria-label="Toggle UI Sound Effects" title="Toggle UI Sound Effects">
           <span id="sfxIcon">🔊</span>
-          <span id="sfxText">SFX ON</span>
+          <span id="sfxText">SFX</span>
         </button>
 
-        <!-- Mobile Drawer Toggle -->
         <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle Navigation Menu">
           ☰
         </button>
@@ -57,22 +56,20 @@
   </div>
 </header>
 
-<!-- ═══════════════════════════ TICKER STRIP ═══════════════════════════ -->
+<!-- ═══════════════════════════ TICKER MARQUEE ═══════════════════════════ -->
 <aside class="ticker-strip" aria-label="Arcade Live Features">
   <div class="ticker-track">
-    <span class="ticker-item"><span class="t-accent">⚡ 60 FPS CANVAS</span> <span class="t-dot">•</span> ZERO FRAMEWORKS</span>
-    <span class="ticker-item"><span class="t-accent">🕹️ INSTANT PLAY</span> <span class="t-dot">•</span> NO DOWNLOADS OR PAYWALLS</span>
-    <span class="ticker-item"><span class="t-accent">🎧 PROCEDURAL AUDIO</span> <span class="t-dot">•</span> REAL-TIME SYNTHESIS</span>
-    <span class="ticker-item"><span class="t-accent">📱 MULTI-TOUCH</span> <span class="t-dot">•</span> OPTIMIZED FOR MOBILE & DESKTOP</span>
-    <span class="ticker-item"><span class="t-accent">🔒 PRIVACY FIRST</span> <span class="t-dot">•</span> NO TRACKERS, NO TELEMETRY</span>
-    <span class="ticker-item"><span class="t-accent">🔥 TRENDING</span> <span class="t-dot">•</span> SKYLINE SHIFT LIVE NOW</span>
-    <!-- Duplicate for infinite marquee loop -->
-    <span class="ticker-item"><span class="t-accent">⚡ 60 FPS CANVAS</span> <span class="t-dot">•</span> ZERO FRAMEWORKS</span>
-    <span class="ticker-item"><span class="t-accent">🕹️ INSTANT PLAY</span> <span class="t-dot">•</span> NO DOWNLOADS OR PAYWALLS</span>
-    <span class="ticker-item"><span class="t-accent">🎧 PROCEDURAL AUDIO</span> <span class="t-dot">•</span> REAL-TIME SYNTHESIS</span>
-    <span class="ticker-item"><span class="t-accent">📱 MULTI-TOUCH</span> <span class="t-dot">•</span> OPTIMIZED FOR MOBILE & DESKTOP</span>
-    <span class="ticker-item"><span class="t-accent">🔒 PRIVACY FIRST</span> <span class="t-dot">•</span> NO TRACKERS, NO TELEMETRY</span>
-    <span class="ticker-item"><span class="t-accent">🔥 TRENDING</span> <span class="t-dot">•</span> SKYLINE SHIFT LIVE NOW</span>
+    <span class="ticker-item"><span class="t-accent">⚡ 60 FPS Hardware-Accelerated</span> <span class="t-dot">•</span> Pure Canvas 2D</span>
+    <span class="ticker-item"><span class="t-accent">🕹️ Instant Play</span> <span class="t-dot">•</span> No Downloads or Accounts Required</span>
+    <span class="ticker-item"><span class="t-accent">🎧 Real-Time Web Audio</span> <span class="t-dot">•</span> Procedural Sound Synthesis</span>
+    <span class="ticker-item"><span class="t-accent">📱 Multi-Touch Enabled</span> <span class="t-dot">•</span> Tuned for Mobile & Desktop</span>
+    <span class="ticker-item"><span class="t-accent">🔒 Privacy-Focused</span> <span class="t-dot">•</span> Zero Data Telemetry</span>
+    <!-- Loop repetition -->
+    <span class="ticker-item"><span class="t-accent">⚡ 60 FPS Hardware-Accelerated</span> <span class="t-dot">•</span> Pure Canvas 2D</span>
+    <span class="ticker-item"><span class="t-accent">🕹️ Instant Play</span> <span class="t-dot">•</span> No Downloads or Accounts Required</span>
+    <span class="ticker-item"><span class="t-accent">🎧 Real-Time Web Audio</span> <span class="t-dot">•</span> Procedural Sound Synthesis</span>
+    <span class="ticker-item"><span class="t-accent">📱 Multi-Touch Enabled</span> <span class="t-dot">•</span> Tuned for Mobile & Desktop</span>
+    <span class="ticker-item"><span class="t-accent">🔒 Privacy-Focused</span> <span class="t-dot">•</span> Zero Data Telemetry</span>
   </div>
 </aside>
 
@@ -83,74 +80,71 @@
   <section class="hero" aria-labelledby="heroTitle">
     <div class="shell">
       
-      <!-- Top Badge -->
       <div class="hero-badge">
         <span class="hero-badge-tag">VERIFIED</span>
-        <span>ORIGINAL INDIE ARCADE • 100% VANILLA WEB</span>
+        <span>Independent Browser Gaming • Zero Frameworks</span>
       </div>
 
-      <!-- Main Headline -->
       <h1 id="heroTitle">
-        MINI GAME<br>
-        <span class="gradient-text">ARCADE.</span>
+        High-Performance<br>
+        <span class="gradient-text">Browser Arcade Games.</span>
       </h1>
 
       <p class="hero-sub">
-        Hand-crafted, razor-sharp arcade games engineered for speed.
-        Built with raw HTML5 Canvas and procedural Web Audio — no downloads,
-        no accounts, no intrusive popups. Just pure gameplay.
+        Carefully engineered arcade experiences built for speed, responsiveness, and genuine fun.
+        Powered by raw HTML5 Canvas and procedural Web Audio — with zero tracking,
+        zero paywalls, and instant gameplay on any device.
       </p>
 
-      <!-- CTA Buttons -->
       <div class="hero-actions">
         <a class="btn-primary" href="#games" id="heroPlayBtn">
-          <span>Explore Games</span>
+          <span>Explore Available Games</span>
           <b aria-hidden="true">↓</b>
         </a>
-        <a class="btn-secondary" href="about.html">
-          <span>The Architecture</span>
+        <a class="btn-secondary" href="#guide">
+          <span>Read Strategy Guide</span>
           <span aria-hidden="true">→</span>
         </a>
       </div>
 
-      <!-- Live Metric Cards -->
+      <!-- Verified Platform Highlights -->
       <div class="hero-stats-grid" role="list" aria-label="Platform Highlights">
         <div class="hero-stat-card" role="listitem">
           <div class="stat-val">01</div>
-          <div class="stat-label">Game Live</div>
+          <div class="stat-label">Playable Game Live</div>
         </div>
         <div class="hero-stat-card" role="listitem">
-          <div class="stat-val">60<small style="font-size:16px">FPS</small></div>
-          <div class="stat-label">Canvas Loop</div>
+          <div class="stat-val">60 FPS</div>
+          <div class="stat-label">Frame Rate Target</div>
         </div>
         <div class="hero-stat-card" role="listitem">
-          <div class="stat-val">0<small style="font-size:16px">KB</small></div>
-          <div class="stat-label">Frameworks</div>
+          <div class="stat-val">0 KB</div>
+          <div class="stat-label">Third-Party Frameworks</div>
         </div>
         <div class="hero-stat-card" role="listitem">
           <div class="stat-val">100%</div>
-          <div class="stat-label">Free Forever</div>
+          <div class="stat-label">Free & Independent</div>
         </div>
       </div>
 
     </div>
   </section>
 
-  <!-- ── GAMES CATALOG SECTION ───────────────────────────────────── -->
+  <!-- ── FEATURED GAMES CATALOG ───────────────────────────────────── -->
   <section class="games-section" id="games" aria-labelledby="gamesHeading">
     <div class="shell">
       
       <div class="section-head-bar">
         <div>
           <p class="section-eyebrow">
-            <span class="nav-live-dot" style="margin-right:2px"></span>
+            <span class="nav-live-dot"></span>
             ACTIVE ROSTER
           </p>
           <h2 class="section-title" id="gamesHeading">Featured Games</h2>
-          <p class="section-sub">Fully complete, thoroughly tested, and playable immediately in your browser.</p>
+          <p class="section-sub">Tested, fully playable, and optimized for both keyboard and touch controls.</p>
         </div>
         <div class="active-filter-pill">
-          SHOWING ALL (1)
+          All Games (1)
         </div>
       </div>
 
@@ -159,7 +153,6 @@
         <!-- ── GAME CARD: Skyline Shift ── -->
         <article class="game-card" role="listitem" aria-labelledby="card-ss-title">
           
-          <!-- Thumbnail with Floating Badges -->
           <div class="card-thumb-wrap">
             <img
               src="skyline-shift/thumb.jpg"
@@ -171,7 +164,7 @@
             <div class="card-vignette" aria-hidden="true"></div>
             
             <div class="card-badges-row">
-              <span class="badge-featured">🔥 POPULAR</span>
+              <span class="badge-featured">🔥 Featured</span>
               <div class="badge-stats">
                 <span class="badge-pill">⭐ 4.9</span>
                 <span class="badge-pill">60 FPS</span>
@@ -179,7 +172,6 @@
             </div>
           </div>
 
-          <!-- Card Content Body -->
           <div class="card-content-body">
             
             <div class="card-header-meta">
@@ -192,16 +184,16 @@
             <h3 class="card-title" id="card-ss-title">Skyline Shift</h3>
             
             <p class="card-description">
-              Race your anti-grav courier hoverboard across an electrified skyline grid.
-              Switch between 3 dynamic lanes to dodge incoming red security gates, collect cyan
-              energy orbs, and build extreme multiplier combos as the city accelerates.
+              Pilot an anti-gravity courier hoverboard through an electrified city grid.
+              Shift between three high-speed lanes to dodge incoming red security gates,
+              collect cyan energy orbs, and build dynamic multiplier chains as the tempo accelerates.
             </p>
 
             <!-- 3D Keycap Controls -->
             <div class="card-controls-panel" aria-label="Controls guide">
               <div class="controls-label">
-                <span>INPUT CONTROLS</span>
-                <span>DESKTOP & MOBILE</span>
+                <span>Input Controls</span>
+                <span>Keyboard & Touch</span>
               </div>
               <div class="controls-keys-row">
                 <kbd>←</kbd> <kbd>→</kbd>
@@ -218,7 +210,7 @@
 
             <!-- Launch Button -->
             <a class="btn-launch-game" href="skyline-shift/" aria-label="Launch Skyline Shift">
-              <span>LAUNCH GAME</span>
+              <span>Launch Game</span>
               <span class="arrow-icon" aria-hidden="true">↗</span>
             </a>
 
@@ -230,6 +222,73 @@
     </div>
   </section>
 
+  <!-- ── EDITORIAL GUIDE & STRATEGY SECTION (AdSense High-Value Content) ── -->
+  <section class="editorial-section" id="guide" aria-labelledby="guideHeading">
+    <div class="shell">
+      
+      <div class="editorial-grid">
+        
+        <article class="guide-article">
+          <p class="section-eyebrow">PLAYER GUIDE & STRATEGY</p>
+          <h2 id="guideHeading">Skyline Shift: Mastering the Neon Grid</h2>
+          <p>
+            Skyline Shift is engineered around rhythm, anticipation, and risk-versus-reward mechanics.
+            While early kilometers feel smooth and manageable, the city grid continuously scales in
+            velocity. To achieve high scores and unlock multiplier bonuses, players must master
+            three core principles:
+          </p>
+
+          <div class="guide-tips-box">
+            <h4>Key Survival Strategies</h4>
+            <ul>
+              <li><strong>Prioritize Energy Chains:</strong> Each consecutive energy orb collected increments your combo multiplier (up to 4x). Missing an orb resets the chain.</li>
+              <li><strong>Center-Lane Staging:</strong> Returning to the center lane between obstacle gates reduces lane-shift latency by 50% compared to jumping from far-left to far-right.</li>
+              <li><strong>Near-Miss Acceleration:</strong> Shifting lanes at the last possible fraction of a second triggers a near-miss bonus, awarding extra distance points.</li>
+              <li><strong>Audio Cues:</strong> Every energy pickup and gate arrival emits a unique audio pitch synthesised via the Web Audio API — listen for acoustic cues when screen density increases.</li>
+            </ul>
+          </div>
+
+          <p>
+            Scores are recorded instantly to your browser's persistent <code>localStorage</code> cache.
+            No personal data or gameplay telemetry is ever transmitted to remote analytics servers,
+            ensuring your records stay local, private, and tamper-free.
+          </p>
+        </article>
+
+        <!-- Sidebar Architecture Card -->
+        <aside class="editorial-sidebar">
+          <div class="side-card">
+            <h3>Pure Canvas 2D Engine</h3>
+            <p>
+              Unlike conventional web games wrapped in heavy 50 MB engines, Skyline Shift runs
+              directly on the browser's native Canvas 2D context. The game loop maintains steady
+              60 FPS performance without memory leaks or battery drain.
+            </p>
+          </div>
+
+          <div class="side-card">
+            <h3>Procedural Audio Synthesis</h3>
+            <p>
+              Every laser pulse, engine hum, and pickup chime is synthesized in real time using
+              frequency modulation oscillators and gain nodes. No bulky MP3 or WAV files need to be
+              downloaded over your cellular connection.
+            </p>
+          </div>
+
+          <div class="side-card">
+            <h3>Verified Multi-Device Support</h3>
+            <p>
+              Engineered with responsive touch-swipe listeners and hardware keyboard mappings.
+              Play smoothly on your smartphone, tablet, laptop, or desktop monitor.
+            </p>
+          </div>
+        </aside>
+
+      </div>
+
+    </div>
+  </section>
+
   <!-- ── STUDIO LAB / ROADMAP SECTION ────────────────────────────── -->
   <section class="studio-lab-section" aria-labelledby="labHeading">
     <div class="shell">
@@ -237,12 +296,12 @@
       <div class="lab-banner-card">
         <div class="lab-header">
           <div>
-            <div class="lab-tag">ARCADE FORGE // ROADMAP</div>
-            <h2 class="section-title" id="labHeading" style="margin-top:10px">Next in the Studio Lab</h2>
+            <div class="lab-tag">STUDIO PIPELINE // ROADMAP</div>
+            <h2 class="section-title" id="labHeading" style="margin-top:10px">Upcoming Games in Development</h2>
           </div>
-          <p style="color:var(--text-muted);font-size:13px;max-width:380px">
-            New games are engineered from scratch using zero external libraries.
-            Track what's being built next:
+          <p style="color:var(--text-muted);font-size:14px;max-width:420px">
+            New games are created from scratch without borrowed code.
+            Follow what is currently being forged in our development lab:
           </p>
         </div>
 
@@ -251,10 +310,10 @@
           <div class="lab-item">
             <div class="lab-item-head">
               <span class="lab-item-title">Game 02: Cyber Slicer</span>
-              <span class="lab-status-badge status-active">IN DEVELOPMENT</span>
+              <span class="lab-status-badge status-active">In Development</span>
             </div>
-            <p>High-precision touch and mouse blade mechanics. Slice incoming neon data cores while avoiding malicious firewall orbs.</p>
-            <div class="lab-progress-bar" title="Development Progress: 75%">
+            <p>High-precision touch and cursor slicing physics. Slice incoming neon data cores while parrying hostile firewall orbs in an accelerating time-trial.</p>
+            <div class="lab-progress-bar" title="Progress: 75%">
               <div class="lab-progress-fill" style="width: 75%"></div>
             </div>
           </div>
@@ -262,10 +321,10 @@
           <div class="lab-item">
             <div class="lab-item-head">
               <span class="lab-item-title">Game 03: Neon Breaker</span>
-              <span class="lab-status-badge status-planned">PLANNED</span>
+              <span class="lab-status-badge status-planned">Design Phase</span>
             </div>
-            <p>Synthwave paddle physics and multi-ball plasma destruction with procedurally tuned audio oscillators.</p>
-            <div class="lab-progress-bar" title="Development Progress: 20%">
+            <p>Synthwave paddle physics and multi-ball plasma destruction powered by custom procedural audio frequencies and particle collisions.</p>
+            <div class="lab-progress-bar" title="Progress: 20%">
               <div class="lab-progress-fill" style="width: 20%"></div>
             </div>
           </div>
@@ -277,45 +336,41 @@
   </section>
 
   <!-- ── ABOUT STRIP ─────────────────────────────────────────────── -->
-  <section class="about-strip" aria-labelledby="aboutStripTitle">
+  <section class="about-strip" style="border-top:1px solid var(--border);padding:80px 0" aria-labelledby="aboutStripTitle">
     <div class="shell">
-      <div class="about-strip-inner">
+      <div class="editorial-grid" style="align-items:center">
         
-        <div class="about-copy">
-          <p class="section-eyebrow">THE PHILOSOPHY</p>
-          <h2 id="aboutStripTitle">Engineered for <span class="accent">Speed</span>,<br>Built for Fun.</h2>
-          <p>
-            Mini Game Arcade is an independent studio project dedicated to clean,
-            uncompromised browser gaming. We refuse the bloat of modern game portals:
-            no megabytes of heavy framework wrappers, no forced registration forms,
-            and no ads interrupting mid-gameplay.
+        <div>
+          <p class="section-eyebrow">OUR CORE PRINCIPLES</p>
+          <h2 class="section-title" id="aboutStripTitle" style="margin-bottom:18px">Clean Code, Honest Games.</h2>
+          <p style="color:var(--text-muted);font-size:15px;line-height:1.8;margin-bottom:16px">
+            Mini Game Arcade was established to demonstrate what the open web can do when
+            unburdened by trackers, account walls, and heavy game engine bloat.
+            Every title in our catalogue is coded by hand, runs smoothly on any modern browser,
+            and is completely free to enjoy.
           </p>
-          <p>
-            Every pixel, animation, and sound wave is synthesized natively in your browser
-            using standard modern web APIs. The result is instant load times and buttery 60 FPS performance.
-          </p>
-          <a class="link-arrow-btn" href="about.html">
-            <span>READ THE FULL STORY</span>
+          <a class="btn-secondary" href="about.html" style="margin-top:8px">
+            <span>Read About the Project</span>
             <span aria-hidden="true">→</span>
           </a>
         </div>
 
-        <div class="about-stats" aria-label="Core Engineering Specs">
-          <div class="stat-card">
-            <b>100%</b>
-            <span>Original Codebase</span>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div class="side-card">
+            <b style="font-family:var(--font-display);font-size:32px;color:var(--cyan);display:block;margin-bottom:4px">100%</b>
+            <span style="font-size:13px;color:var(--text-muted)">Original Codebase</span>
           </div>
-          <div class="stat-card">
-            <b>0 KB</b>
-            <span>External Frameworks</span>
+          <div class="side-card">
+            <b style="font-family:var(--font-display);font-size:32px;color:var(--cyan);display:block;margin-bottom:4px">0 KB</b>
+            <span style="font-size:13px;color:var(--text-muted)">External Libraries</span>
           </div>
-          <div class="stat-card">
-            <b>60 FPS</b>
-            <span>Hardware Accelerated</span>
+          <div class="side-card">
+            <b style="font-family:var(--font-display);font-size:32px;color:var(--cyan);display:block;margin-bottom:4px">60 FPS</b>
+            <span style="font-size:13px;color:var(--text-muted)">Consistent Frame Rate</span>
           </div>
-          <div class="stat-card">
-            <b>0 ADS</b>
-            <span>Zero Disruptions</span>
+          <div class="side-card">
+            <b style="font-family:var(--font-display);font-size:32px;color:var(--cyan);display:block;margin-bottom:4px">Zero</b>
+            <span style="font-size:13px;color:var(--text-muted)">Tracking Cookies</span>
           </div>
         </div>
 
@@ -332,10 +387,10 @@
       
       <div class="footer-brand">
         <div class="footer-brand-name">
-          <div class="logo-icon-wrap" style="width:28px;height:28px" aria-hidden="true">
+          <div class="logo-icon-wrap" style="width:30px;height:30px" aria-hidden="true">
             <span class="logo-glyph" style="font-size:16px">M</span>
           </div>
-          <span>MINI GAME <span style="color:var(--cyan)">ARCADE</span></span>
+          <span>Mini Game <span style="color:var(--cyan)">Arcade</span></span>
         </div>
         <p>
           An independent high-performance arcade catalog.
@@ -348,8 +403,9 @@
         <ul role="list">
           <li><a href="index.html">Arcade Home</a></li>
           <li><a href="#games">All Games</a></li>
+          <li><a href="#guide">Strategy Guide</a></li>
           <li><a href="about.html">About Studio</a></li>
-          <li><a href="contact.html">Contact & Feedback</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </nav>
 
@@ -390,7 +446,7 @@
   /* ── 2. Header Scroll Elevation ── */
   const header = document.getElementById('siteHeader');
   window.addEventListener('scroll', function () {
-    if (window.scrollY > 30) {
+    if (window.scrollY > 25) {
       header.classList.add('scrolled');
     } else {
       header.classList.remove('scrolled');
@@ -406,7 +462,6 @@
       toggle.setAttribute('aria-expanded', open);
       toggle.textContent = open ? '✕' : '☰';
     });
-    // Close on link click
     links.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => {
         links.classList.remove('open');
@@ -442,7 +497,7 @@
       const gain = audioCtx.createGain();
       osc.type = type || 'sine';
       osc.frequency.setValueAtTime(freq || 520, audioCtx.currentTime);
-      gain.gain.setValueAtTime(0.06, audioCtx.currentTime);
+      gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
       gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + (duration || 0.08));
       osc.connect(gain);
       gain.connect(audioCtx.destination);
@@ -456,24 +511,23 @@
       sfxEnabled = !sfxEnabled;
       if (sfxEnabled) {
         sfxIcon.textContent = '🔊';
-        sfxText.textContent = 'SFX ON';
+        sfxText.textContent = 'SFX';
         sfxBtn.classList.add('active');
         playUiBeep(640, 'triangle', 0.1);
       } else {
         sfxIcon.textContent = '🔇';
-        sfxText.textContent = 'SFX OFF';
+        sfxText.textContent = 'MUTE';
         sfxBtn.classList.remove('active');
       }
     });
   }
 
-  // Bind subtle sounds to interactive elements
   document.querySelectorAll('.btn-primary, .btn-secondary, .btn-launch-game, .nav-links a').forEach(el => {
     el.addEventListener('mouseenter', () => playUiBeep(480, 'sine', 0.04));
-    el.addEventListener('click', () => playUiBeep(880, 'triangle', 0.09));
+    el.addEventListener('click', () => playUiBeep(840, 'triangle', 0.09));
   });
 
-  /* ── 5. Ambient Cyber Grid & Floating Particles Canvas ── */
+  /* ── 5. Ambient Cyber Dust Canvas ── */
   const canvas = document.getElementById('ambientCanvas');
   if (canvas && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const ctx = canvas.getContext('2d');
@@ -485,18 +539,17 @@
       height = canvas.height = window.innerHeight;
     }, { passive: true });
 
-    // Generate Ambient Particle Dust
     const particles = [];
-    const count = Math.min(45, Math.floor(width / 30));
+    const count = Math.min(40, Math.floor(width / 35));
     for (let i = 0; i < count; i++) {
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
         r: Math.random() * 1.5 + 0.5,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        color: Math.random() > 0.4 ? 'rgba(0, 245, 212, ' : 'rgba(138, 43, 226, ',
-        alpha: Math.random() * 0.4 + 0.1
+        vx: (Math.random() - 0.5) * 0.25,
+        vy: (Math.random() - 0.5) * 0.25,
+        color: Math.random() > 0.4 ? 'rgba(0, 240, 208, ' : 'rgba(124, 58, 237, ',
+        alpha: Math.random() * 0.35 + 0.1
       });
     }
 
@@ -505,15 +558,12 @@
       isVisible = !document.hidden;
     });
 
-    let frame = 0;
     function renderAmbient() {
       if (!isVisible) {
         requestAnimationFrame(renderAmbient);
         return;
       }
       ctx.clearRect(0, 0, width, height);
-
-      // Draw subtle drifting particles
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
         p.x += p.vx;
@@ -528,8 +578,6 @@
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fill();
       }
-
-      frame++;
       requestAnimationFrame(renderAmbient);
     }
     requestAnimationFrame(renderAmbient);

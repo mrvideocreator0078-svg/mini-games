@@ -1,17 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Syne:wght@700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap');
 
 :root {
-  --bg:          #05070e;
-  --panel:       rgba(13, 20, 38, 0.85);
-  --cyan:        #00f5d4;
-  --cyan-bright: #43f4e5;
-  --pink:        #ff2a85;
-  --violet:      #8a2be2;
-  --muted:       #8a99b5;
-  --white:       #f8faff;
-  --border:      rgba(255, 255, 255, 0.08);
-  --border-cyan: rgba(0, 245, 212, 0.35);
-  --glow-cyan:   0 0 35px rgba(0, 245, 212, 0.35);
+  --bg:          #050814;
+  --panel:       rgba(15, 23, 42, 0.85);
+  --cyan:        #00f0d0;
+  --cyan-bright: #38efd4;
+  --pink:        #ff2d7a;
+  --violet:      #7c3aed;
+  --muted:       #94a3b8;
+  --white:       #ffffff;
+  --border:      rgba(255, 255, 255, 0.09);
+  --border-cyan: rgba(0, 240, 208, 0.35);
+  --glow-cyan:   0 0 32px rgba(0, 240, 208, 0.3);
+  
+  --font-display:'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-body:   'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono:   'JetBrains Mono', monospace;
 }
 
 *, *::before, *::after {
@@ -23,24 +27,25 @@
 body {
   background: var(--bg);
   background-image: 
-    radial-gradient(ellipse at 50% 0%, rgba(0, 245, 212, 0.12) 0%, transparent 60%),
-    radial-gradient(circle at 80% 80%, rgba(138, 43, 226, 0.08) 0%, transparent 50%);
+    radial-gradient(ellipse at 50% 0%, rgba(0, 240, 208, 0.1) 0%, transparent 60%),
+    radial-gradient(circle at 80% 80%, rgba(124, 58, 237, 0.08) 0%, transparent 50%);
   color: var(--white);
-  font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+  font-family: var(--font-body);
   min-height: 100vh;
-  line-height: 1.6;
+  line-height: 1.65;
+  letter-spacing: -0.01em;
   -webkit-font-smoothing: antialiased;
 }
 
 .shell {
   max-width: 1180px;
   margin: 0 auto;
-  padding: 0 32px;
+  padding: 0 28px;
 }
 
 /* Return to Arcade Navigation Bar */
 .back-bar {
-  background: rgba(5, 7, 14, 0.88);
+  background: rgba(8, 12, 26, 0.85);
   border-bottom: 1px solid var(--border);
   padding: 10px 0;
   backdrop-filter: blur(20px);
@@ -51,13 +56,12 @@ body {
 .back-bar .shell-g {
   max-width: 1180px;
   margin: auto;
-  padding: 0 32px;
+  padding: 0 28px;
 }
 .back-bar a {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-body);
   font-weight: 600;
-  font-size: 11px;
-  letter-spacing: 1.5px;
+  font-size: 13px;
   color: var(--muted);
   display: inline-flex;
   align-items: center;
@@ -67,12 +71,11 @@ body {
 .back-bar a:hover {
   color: var(--cyan);
   transform: translateX(-3px);
-  text-shadow: 0 0 10px var(--cyan);
 }
 
 /* Topbar Header */
 .topbar {
-  height: 76px;
+  height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -85,30 +88,30 @@ body {
   gap: 12px;
   text-decoration: none;
   color: var(--white);
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 900;
-  font-size: 20px;
-  letter-spacing: 2.5px;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 19px;
+  letter-spacing: -0.01em;
 }
 
 .brand-mark {
   width: 34px;
   height: 34px;
-  border-radius: 6px;
-  background: linear-gradient(135deg, rgba(0, 245, 212, 0.25), rgba(138, 43, 226, 0.25));
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(0, 240, 208, 0.2), rgba(124, 58, 237, 0.2));
   border: 1px solid var(--border-cyan);
   color: var(--cyan);
   display: grid;
   place-items: center;
-  transform: skewX(-7deg);
-  font-size: 18px;
-  font-family: 'Syne', sans-serif;
-  box-shadow: 0 0 15px rgba(0, 245, 212, 0.2);
+  font-size: 17px;
+  font-weight: 900;
+  font-family: var(--font-display);
+  box-shadow: 0 0 15px rgba(0, 240, 208, 0.2);
 }
 
 .brand-light {
   color: var(--cyan);
-  margin-left: 3px;
+  margin-left: 2px;
 }
 
 .top-actions {
@@ -118,11 +121,10 @@ body {
 }
 
 .best-pill, .icon-btn {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 11px;
-  letter-spacing: 1px;
   border: 1px solid var(--border);
-  background: rgba(13, 20, 38, 0.8);
+  background: rgba(15, 23, 42, 0.8);
   padding: 8px 14px;
   border-radius: 6px;
   color: var(--muted);
@@ -130,7 +132,7 @@ body {
 }
 
 .best-pill b {
-  color: #ffb703;
+  color: #f59e0b;
   margin-left: 6px;
   font-weight: 700;
 }
@@ -146,7 +148,6 @@ body {
 }
 .icon-btn:hover {
   border-color: var(--border-cyan);
-  box-shadow: 0 0 15px rgba(0, 245, 212, 0.25);
   color: #fff;
 }
 
@@ -155,28 +156,28 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 44px 0 28px;
+  padding: 40px 0 24px;
   flex-wrap: wrap;
   gap: 20px;
 }
 
 .eyebrow {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 3px;
   color: var(--cyan);
   text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 h1 {
-  font-family: 'Syne', 'Barlow Condensed', sans-serif;
+  font-family: var(--font-display);
   font-weight: 900;
-  font-size: clamp(48px, 7vw, 80px);
-  line-height: 0.88;
-  letter-spacing: -0.5px;
-  margin: 12px 0;
-  text-transform: uppercase;
+  font-size: clamp(40px, 6vw, 68px);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  margin: 10px 0;
+  color: var(--text-white);
 }
 
 h1 em {
@@ -186,15 +187,15 @@ h1 em {
 
 .sub {
   color: var(--muted);
-  font-size: 14px;
-  max-width: 440px;
+  font-size: 15px;
+  max-width: 460px;
   line-height: 1.7;
 }
 
 .hero-stats {
   display: flex;
-  gap: 36px;
-  padding-bottom: 6px;
+  gap: 32px;
+  padding-bottom: 4px;
 }
 
 .hero-stats div {
@@ -204,26 +205,26 @@ h1 em {
 }
 
 .hero-stats b {
-  font-family: 'Syne', sans-serif;
+  font-family: var(--font-display);
   font-weight: 800;
   font-size: 26px;
   color: var(--white);
-  line-height: 1;
+  line-height: 1.1;
 }
 
 .hero-stats span {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 10px;
   font-weight: 600;
-  letter-spacing: 1.5px;
   color: var(--muted);
+  letter-spacing: 0.05em;
 }
 
 /* ══════════════════════════════════════════════════════════════
    GAME FRAME & HUD COCKPIT
    ══════════════════════════════════════════════════════════════ */
 .game-wrap {
-  background: rgba(13, 20, 38, 0.8);
+  background: rgba(15, 23, 42, 0.85);
   border: 1px solid var(--border);
   border-radius: 18px;
   padding: 20px;
@@ -232,24 +233,11 @@ h1 em {
   position: relative;
 }
 
-.game-wrap::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 18px;
-  padding: 1px;
-  background: linear-gradient(135deg, rgba(0, 245, 212, 0.3) 0%, transparent 60%, rgba(255, 42, 133, 0.2) 100%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  pointer-events: none;
-}
-
 .hud {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 8px 16px;
+  padding: 0 6px 14px;
 }
 
 .hud div {
@@ -259,21 +247,21 @@ h1 em {
 }
 
 .hud small {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 10px;
   font-weight: 700;
-  letter-spacing: 2px;
   color: var(--muted);
   text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .hud strong {
-  font-family: 'Syne', 'Barlow Condensed', sans-serif;
+  font-family: var(--font-display);
   font-weight: 800;
-  font-size: 28px;
-  letter-spacing: 1px;
+  font-size: 26px;
+  letter-spacing: -0.01em;
   color: var(--white);
-  line-height: 1;
+  line-height: 1.1;
 }
 
 .hud-center {
@@ -282,7 +270,6 @@ h1 em {
 
 .hud-center strong {
   color: var(--cyan);
-  text-shadow: 0 0 15px rgba(0, 245, 212, 0.5);
 }
 
 .hud-right {
@@ -308,13 +295,13 @@ canvas {
   touch-action: none;
 }
 
-/* Interactive Start / Game-Over Overlay */
+/* Overlay Card */
 .overlay {
   position: absolute;
   inset: 0;
   display: grid;
   place-items: center;
-  background: radial-gradient(circle at center, rgba(5, 8, 20, 0.88) 0%, rgba(3, 5, 14, 0.97) 100%);
+  background: radial-gradient(circle at center, rgba(8, 12, 26, 0.85) 0%, rgba(4, 7, 18, 0.96) 100%);
   backdrop-filter: blur(12px);
   padding: 20px;
   z-index: 50;
@@ -328,7 +315,7 @@ canvas {
 .overlay-card {
   width: min(460px, 92%);
   padding: 34px 36px;
-  background: rgba(15, 23, 44, 0.94);
+  background: rgba(15, 23, 42, 0.96);
   border: 1px solid var(--border-cyan);
   border-radius: 16px;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.85), var(--glow-cyan);
@@ -336,22 +323,23 @@ canvas {
 }
 
 .mini-label {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 10px;
+  font-family: var(--font-mono);
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 2.5px;
   color: var(--cyan);
   text-transform: uppercase;
   margin-bottom: 8px;
+  letter-spacing: 0.05em;
 }
 
 .overlay-card h2 {
-  font-family: 'Syne', sans-serif;
-  font-weight: 900;
-  font-size: clamp(32px, 5vw, 48px);
-  line-height: 0.92;
-  margin: 12px 0;
-  text-transform: uppercase;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(30px, 4.5vw, 42px);
+  line-height: 1.15;
+  letter-spacing: -0.025em;
+  margin: 10px 0;
+  color: var(--text-white);
 }
 
 .overlay-card h2 em {
@@ -361,17 +349,17 @@ canvas {
 
 .overlay-card p {
   color: var(--muted);
-  font-size: 13px;
-  line-height: 1.75;
-  margin: 14px auto 20px;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 12px auto 18px;
   max-width: 360px;
 }
 
 .control-hint {
-  margin: 20px auto 18px;
+  margin: 18px auto 16px;
   color: var(--white);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 12px;
+  font-family: var(--font-body);
+  font-size: 13px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -379,56 +367,54 @@ canvas {
 }
 
 .control-hint span {
-  background: linear-gradient(180deg, #1f2c47 0%, #121b2d 100%);
-  border: 1px solid #364868;
-  border-bottom: 3px solid #0a111f;
-  padding: 5px 10px;
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+  border: 1px solid #334155;
+  border-bottom: 2px solid #020617;
+  padding: 4px 9px;
   border-radius: 5px;
   color: var(--white);
   font-weight: 700;
-  font-size: 11px;
+  font-size: 12px;
+  font-family: var(--font-mono);
 }
 
 .control-hint small {
-  font-size: 9px;
-  letter-spacing: 1px;
+  font-size: 11px;
   color: var(--cyan);
-  margin-left: 6px;
+  margin-left: 4px;
+  font-weight: 600;
 }
 
 .play-btn {
   width: 100%;
   border: none;
   border-radius: 8px;
-  padding: 16px;
-  background: linear-gradient(135deg, var(--cyan) 0%, #2bd0b9 100%);
-  color: #020710;
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 900;
-  font-size: 16px;
-  letter-spacing: 2.5px;
-  text-transform: uppercase;
+  padding: 15px;
+  background: linear-gradient(135deg, var(--cyan) 0%, #29c7b1 100%);
+  color: #040914;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 15px;
+  letter-spacing: -0.01em;
   cursor: pointer;
-  box-shadow: 0 0 30px rgba(0, 245, 212, 0.4);
+  box-shadow: 0 0 25px rgba(0, 240, 208, 0.35);
   transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
 }
 
 .play-btn:hover {
-  filter: brightness(1.1);
   transform: translateY(-2px);
-  box-shadow: 0 0 45px rgba(0, 245, 212, 0.65);
+  box-shadow: 0 0 35px rgba(0, 240, 208, 0.55);
 }
 
 .tiny {
-  font-size: 10px !important;
-  color: var(--text-dim) !important;
-  margin-top: 12px !important;
+  font-size: 11px !important;
+  color: var(--text-muted) !important;
+  margin-top: 10px !important;
   margin-bottom: 0 !important;
-  font-family: 'JetBrains Mono', monospace;
 }
 
 .pause-tag {
@@ -436,26 +422,26 @@ canvas {
   top: 18px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(13, 20, 38, 0.95);
+  background: rgba(15, 23, 42, 0.95);
   border: 1px solid var(--cyan);
-  padding: 8px 22px;
+  padding: 8px 20px;
   border-radius: 6px;
   color: var(--cyan);
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 12px;
   font-weight: 700;
-  letter-spacing: 3px;
-  box-shadow: 0 0 20px rgba(0, 245, 212, 0.35);
+  letter-spacing: 0.05em;
+  box-shadow: 0 0 20px rgba(0, 240, 208, 0.3);
   z-index: 40;
 }
 
-/* Mission & Actions Bottom Bar */
+/* Bottom Bar */
 .game-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 18px 4px 4px;
-  gap: 18px;
+  padding: 18px 2px 2px;
+  gap: 16px;
   flex-wrap: wrap;
 }
 
@@ -467,38 +453,37 @@ canvas {
 
 .mission-icon {
   color: var(--cyan);
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .mission small {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px;
+  font-family: var(--font-mono);
+  font-size: 10px;
   font-weight: 700;
-  letter-spacing: 2px;
   color: var(--muted);
   text-transform: uppercase;
   display: block;
 }
 
 .mission b {
-  font-size: 13px;
+  font-size: 13.5px;
   color: var(--white);
 }
 
 .progress {
-  width: 110px;
+  width: 100px;
   height: 6px;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 999px;
   overflow: hidden;
-  margin-left: 8px;
+  margin-left: 6px;
 }
 
 .progress i {
   display: block;
   width: 0;
   height: 100%;
-  background: linear-gradient(90deg, var(--cyan), #38ef7d);
+  background: linear-gradient(90deg, var(--cyan), #38efd4);
   border-radius: 999px;
   transition: width 0.25s ease;
 }
@@ -512,19 +497,18 @@ canvas {
   border: 1px solid var(--border);
   background: rgba(255, 255, 255, 0.05);
   color: var(--white);
-  padding: 10px 18px;
+  padding: 9px 16px;
   border-radius: 6px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
+  font-family: var(--font-body);
+  font-size: 12px;
   font-weight: 600;
-  letter-spacing: 1px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
 .secondary:hover:not(:disabled) {
   border-color: var(--border-cyan);
-  background: rgba(0, 245, 212, 0.12);
+  background: rgba(0, 240, 208, 0.1);
   color: var(--cyan);
 }
 
@@ -542,10 +526,10 @@ canvas {
 }
 
 .tips > div {
-  background: rgba(13, 20, 38, 0.6);
+  background: rgba(15, 23, 42, 0.65);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 20px 22px;
+  padding: 20px;
   transition: all 0.2s ease;
 }
 
@@ -555,25 +539,24 @@ canvas {
 }
 
 .tip-icon {
-  font-size: 20px;
+  font-size: 18px;
   color: var(--white);
 }
 .tip-icon.cyan { color: var(--cyan); }
 .tip-icon.pink { color: var(--pink); }
 
 .tips b {
-  font-family: 'Barlow Condensed', sans-serif;
-  font-weight: 800;
+  font-family: var(--font-display);
+  font-weight: 700;
   font-size: 16px;
-  letter-spacing: 2px;
   margin-left: 8px;
 }
 
 .tips p {
-  font-size: 12px;
+  font-size: 13px;
   color: var(--muted);
-  line-height: 1.7;
-  margin-top: 10px;
+  line-height: 1.65;
+  margin-top: 8px;
 }
 
 footer {
@@ -583,8 +566,8 @@ footer {
   justify-content: space-between;
   align-items: center;
   color: var(--text-dim);
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 11px;
+  font-family: var(--font-body);
+  font-size: 13px;
 }
 footer i {
   color: var(--cyan);
@@ -594,8 +577,8 @@ footer i {
 
 @media (max-width: 720px) {
   .shell { padding: 0 16px; }
-  .intro { padding: 32px 0 20px; display: block; }
-  .hero-stats { margin-top: 20px; gap: 24px; }
+  .intro { padding: 28px 0 18px; display: block; }
+  .hero-stats { margin-top: 16px; gap: 24px; }
   .canvas-frame { aspect-ratio: 3 / 4; max-height: 560px; }
   .game-bottom { flex-direction: column; align-items: flex-start; }
   .game-actions { width: 100%; }
