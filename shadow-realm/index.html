@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Shadow Realm: 2.5D Isometric Roguelite — Mini Game Arcade</title>
+  <meta name="description" content="True 2.5D isometric action roguelite dungeon crawler. Slash skeleton guardians, dodge dash, open treasure chests, and ascend through 10 dungeon floors.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="top-nav">
+    <a class="back-link" href="../">
+      <span aria-hidden="true">←</span>
+      <span>Return to Mini Game Arcade</span>
+    </a>
+
+    <div class="title-badge">
+      <span>SHADOW REALM //</span>
+      <span class="highlight">2.5D ROGUELITE</span>
+    </div>
+
+    <div class="nav-actions">
+      <button class="btn-pill active" id="sfxBtn">🔊 SFX</button>
+    </div>
+  </header>
+
+  <!-- Main Game Arena -->
+  <main class="arena-wrapper">
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- In-Game HUD -->
+    <div class="hud-layer">
+      <div class="hud-top">
+        <div class="hero-stats-panel">
+          <div class="stat-bar-box">
+            <div class="stat-bar-label">VITALITY</div>
+            <div class="stat-bar-track">
+              <div class="hp-fill" id="hpBar"></div>
+            </div>
+          </div>
+
+          <div class="stat-bar-box">
+            <div class="stat-bar-label">STAMINA</div>
+            <div class="stat-bar-track">
+              <div class="stamina-fill" id="staminaBar"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="floor-badge">
+          <div class="stat-bar-label">DUNGEON DEPTH</div>
+          <div class="floor-val" id="floorVal">F1</div>
+        </div>
+      </div>
+
+      <div class="hud-bottom">
+        <div class="controls-hint">
+          <kbd>WASD / Arrows</kbd> Move · <kbd>Space</kbd> Slash Daggers · <kbd>Shift</kbd> Dash Dodge · Clear Room to Open Portal
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Touch Controls -->
+    <div class="mobile-controls">
+      <button class="touch-btn" id="touchLeft">◀</button>
+      <button class="touch-btn" id="touchRight">▶</button>
+      <button class="touch-btn" id="touchAttack" style="border-color:var(--cyan)">⚔️</button>
+      <button class="touch-btn" id="touchDash" style="border-color:var(--purple)">💨</button>
+    </div>
+
+    <!-- Start Modal -->
+    <div class="modal-overlay open" id="menuModal">
+      <div class="modal-dialog">
+        <div class="modal-tag">ANCIENT CRYPT EXPEDITION</div>
+        <h1 class="modal-title">SHADOW REALM</h1>
+        <p class="modal-desc">
+          Descend into isometric catacombs. Dual-wield energy daggers against void skeletons,
+          loot hidden chests, dodge lethal strikes, and unlock staircase portals across 10 dangerous floors!
+        </p>
+        <button class="btn-shadow-primary" id="startCrawlerBtn">ENTER DUNGEON ↗</button>
+      </div>
+    </div>
+
+    <!-- Floor Clear Modal -->
+    <div class="modal-overlay" id="floorClearModal">
+      <div class="modal-dialog">
+        <div class="modal-tag">CHAMBER PURIFIED</div>
+        <h2 class="modal-title">PORTAL ACTIVE!</h2>
+        <p class="modal-desc">All guardians vanquished. Step forward to descend deeper into the crypt.</p>
+        <button class="btn-shadow-primary" id="nextFloorBtn">DESCEND TO NEXT FLOOR ↗</button>
+      </div>
+    </div>
+
+    <!-- Game Over Modal -->
+    <div class="modal-overlay" id="gameOverModal">
+      <div class="modal-dialog">
+        <div class="modal-tag">FALLEN IN SHADOWS</div>
+        <h2 class="modal-title">DEFEATED</h2>
+        <p class="modal-desc">Your light was extinguished by the void guardians. Will you rise again?</p>
+        <button class="btn-shadow-primary" id="retryBtn">TRY AGAIN ↗</button>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>

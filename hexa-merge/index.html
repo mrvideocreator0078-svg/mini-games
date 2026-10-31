@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Hexa Merge - 2.5D Quantum 2048 Puzzle | Mini Arcade</title>
+  <meta name="description" content="Play Hexa Merge: A 2.5D quantum hexagonal drop-and-merge puzzle with 3D beveled prisms, recursive cascade combos, and reactive synth audio.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Top Bar Navigation -->
+  <header class="top-nav">
+    <a href="../" class="back-link" title="Return to Arcade">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      <span>Arcade Hub</span>
+    </a>
+    <div class="title-badge">
+      <span>HEXA MERGE</span>
+      <span class="highlight">2048</span>
+    </div>
+    <div class="nav-actions">
+      <button id="sfxBtn" class="btn-pill active" title="Toggle Sound">
+        <span>SFX: ON</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Game Arena -->
+  <main class="arena-wrapper">
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- In-Game Telemetry HUD -->
+    <div class="hud-layer">
+      <div class="hud-top">
+        <div class="score-cluster">
+          <div class="hud-stat-pill">
+            <div class="lbl">SCORE</div>
+            <div id="currentScore" class="val">0</div>
+          </div>
+          <div class="hud-stat-pill">
+            <div class="lbl">BEST</div>
+            <div id="highScore" class="val">0</div>
+          </div>
+        </div>
+
+        <div class="next-tile-preview">
+          <div class="lbl" style="font-family: var(--font-mono); font-size: 10px; color: var(--cyan); letter-spacing: 0.1em; margin-bottom: 2px;">NEXT TILE</div>
+          <div id="nextTileVal" class="next-tile-val">2</div>
+        </div>
+      </div>
+
+      <div class="hud-bottom">
+        <div class="hint-badge">
+          <span>Click / Tap any column to drop prism • Align matching numbers to fuse</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Start / Menu Modal -->
+    <div id="menuModal" class="modal-overlay open">
+      <div class="modal-dialog">
+        <div class="modal-tag">2.5D QUANTUM PUZZLE</div>
+        <h1 class="modal-title">HEXA MERGE</h1>
+        <p class="modal-desc">
+          Drop 3D hexagonal prisms into the quantum matrix. Connect 2 or more identical adjacent tiles to trigger a cascade fusion and double their value. Can you forge the elusive 2048 Hexa Prism?
+        </p>
+        <button id="startMergeBtn" class="btn-hexa-primary">INITIATE MATRIX</button>
+      </div>
+    </div>
+
+    <!-- Game Over Modal -->
+    <div id="gameOverModal" class="modal-overlay">
+      <div class="modal-dialog">
+        <div class="modal-tag" style="color: #ef4444;">MATRIX OVERFLOW</div>
+        <h2 class="modal-title">GRID LOCKED</h2>
+        <p class="modal-desc">
+          The hexagonal lattice has reached maximum density. No further quantum fusions are possible.
+        </p>
+        <div style="background: rgba(255,255,255,0.04); border: 1px solid var(--border); border-radius: 12px; padding: 14px; margin-bottom: 24px;">
+          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--text-muted);">FINAL COMBINED SCORE</div>
+          <div id="goScore" style="font-family: var(--font-display); font-size: 38px; font-weight: 800; color: var(--cyan); margin-top: 4px;">0</div>
+        </div>
+        <button id="retryBtn" class="btn-hexa-primary">TRY AGAIN</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>

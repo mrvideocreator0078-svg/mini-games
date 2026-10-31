@@ -1,0 +1,297 @@
+/* ══════════════════════════════════════════════════════════════
+   HEXA MERGE: 2.5D QUANTUM 2048 — STYLING
+   Glossy 3D Crystalline Hexagon Merge Aesthetic
+   ══════════════════════════════════════════════════════════════ */
+:root {
+  --font-display: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', Consolas, monospace;
+
+  --bg-deep: #030511;
+  --bg-surface: rgba(8, 12, 28, 0.9);
+  --bg-card: rgba(12, 18, 40, 0.75);
+
+  --cyan: #00f0d0;
+  --cyan-glow: rgba(0, 240, 208, 0.5);
+  --magenta: #ff2a85;
+  --gold: #f59e0b;
+
+  --border: rgba(255, 255, 255, 0.1);
+  --border-cyan: rgba(0, 240, 208, 0.35);
+
+  --text-white: #f8fafc;
+  --text-muted: #94a3b8;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: var(--text-white);
+  font-family: var(--font-body);
+  overflow: hidden;
+  touch-action: none;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Top Bar ── */
+.top-nav {
+  height: 52px;
+  background: rgba(3, 5, 17, 0.95);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  z-index: 50;
+  backdrop-filter: blur(16px);
+}
+
+.back-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 500;
+  transition: all 0.2s;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+}
+.back-link:hover {
+  color: var(--cyan);
+  border-color: var(--border-cyan);
+  background: rgba(0, 240, 208, 0.08);
+}
+
+.title-badge {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--text-white);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.title-badge .highlight {
+  color: var(--magenta);
+  text-shadow: 0 0 12px rgba(255, 42, 133, 0.5);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.btn-pill {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  color: var(--text-white);
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+.btn-pill:hover, .btn-pill.active {
+  border-color: var(--border-cyan);
+  background: rgba(0, 240, 208, 0.12);
+  color: var(--cyan);
+}
+
+/* ── Main Arena ── */
+.arena-wrapper {
+  position: relative;
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, #0a1128 0%, #030511 85%);
+  overflow: hidden;
+}
+
+#gameCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+/* ── In-Game HUD ── */
+.hud-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px 24px;
+  z-index: 10;
+}
+
+.hud-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.score-cluster {
+  display: flex;
+  gap: 12px;
+}
+
+.hud-stat-pill {
+  background: rgba(8, 12, 28, 0.85);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 8px 18px;
+  backdrop-filter: blur(12px);
+  text-align: center;
+}
+.hud-stat-pill .lbl { font-family: var(--font-mono); font-size: 10px; color: var(--cyan); letter-spacing: 0.1em; }
+.hud-stat-pill .val { font-family: var(--font-display); font-size: 26px; font-weight: 800; color: #fff; }
+
+.next-tile-preview {
+  background: rgba(8, 12, 28, 0.85);
+  border: 1px solid var(--border-cyan);
+  border-radius: 12px;
+  padding: 8px 18px;
+  backdrop-filter: blur(12px);
+  text-align: center;
+}
+.next-tile-val {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--magenta);
+}
+
+.hud-bottom {
+  display: flex;
+  justify-content: center;
+}
+
+.hint-badge {
+  background: rgba(8, 12, 28, 0.75);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  backdrop-filter: blur(10px);
+}
+.hint-badge kbd {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--cyan);
+}
+
+/* ── Modals & Overlays ── */
+.modal-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(3, 5, 17, 0.88);
+  backdrop-filter: blur(16px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+.modal-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-dialog {
+  background: #080e22;
+  border: 1px solid var(--border-cyan);
+  box-shadow: 0 0 50px rgba(0, 240, 208, 0.25), 0 25px 60px rgba(0, 0, 0, 0.9);
+  border-radius: 20px;
+  padding: 36px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  transform: scale(0.92);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.modal-overlay.open .modal-dialog {
+  transform: scale(1);
+}
+
+.modal-tag {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--magenta);
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.modal-title {
+  font-family: var(--font-display);
+  font-size: 34px;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.15;
+  margin-bottom: 16px;
+}
+.modal-desc {
+  font-size: 14.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.btn-hexa-primary {
+  display: block;
+  width: 100%;
+  padding: 15px 24px;
+  background: linear-gradient(135deg, var(--magenta) 0%, #d946ef 100%);
+  color: #fff;
+  font-family: var(--font-display);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  box-shadow: 0 0 24px rgba(255, 42, 133, 0.4);
+  transition: all 0.2s;
+}
+.btn-hexa-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 36px var(--magenta);
+}

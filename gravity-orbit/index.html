@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Gravity Orbit: Planetary Slingshot — Mini Game Arcade</title>
+  <meta name="description" content="2.5D space physics puzzle. Slingshot deep-space scientific probes around multi-planetary gravity wells, collect cosmic relics, and reach orbital beacons.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="top-nav">
+    <a class="back-link" href="../">
+      <span aria-hidden="true">←</span>
+      <span>Return to Mini Game Arcade</span>
+    </a>
+
+    <div class="title-badge">
+      <span>GRAVITY ORBIT //</span>
+      <span class="highlight">SLINGSHOT</span>
+    </div>
+
+    <div class="nav-actions">
+      <button class="btn-pill active" id="sfxBtn">🔊 SFX</button>
+    </div>
+  </header>
+
+  <!-- Main Game Arena -->
+  <main class="arena-wrapper">
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- In-Game HUD -->
+    <div class="hud-layer">
+      <div class="hud-top">
+        <div class="sector-card">
+          <div class="sector-label">DEEP SPACE SECTOR</div>
+          <div class="sector-title" id="sectorTitle">Sector 1: Orbital Matrix</div>
+        </div>
+
+        <div class="relics-card">
+          <div class="sector-label">COSMIC RELICS</div>
+          <div class="relics-counter" id="relicsCount">✦ 0/2</div>
+        </div>
+      </div>
+
+      <div class="hud-bottom">
+        <div class="aim-hint">
+          <kbd>Drag & Release</kbd> Aim Launch Trajectory · Use Planetary Gravity Slingshots · Reach Green Beacon
+        </div>
+      </div>
+    </div>
+
+    <!-- Start Modal -->
+    <div class="modal-overlay open" id="menuModal">
+      <div class="modal-dialog">
+        <div class="modal-tag">ASTRODYNAMICS LAB</div>
+        <h1 class="modal-title">GRAVITY ORBIT</h1>
+        <p class="modal-desc">
+          Harness the raw gravitational attraction of massive planets.
+          Drag back on the launch probe to project trajectory flight paths, collect ancient relics,
+          and slingshot into orbital target beacons across 25 handcrafted cosmic sectors!
+        </p>
+        <button class="btn-orbit-primary" id="startOrbitBtn">BEGIN TRAJECTORY ↗</button>
+      </div>
+    </div>
+
+    <!-- Victory Modal -->
+    <div class="modal-overlay" id="victoryModal">
+      <div class="modal-dialog">
+        <div class="modal-tag">ORBIT STABILIZED</div>
+        <h2 class="modal-title">BEACON CAPTURED!</h2>
+        <p class="modal-desc">Flawless astrodynamic trajectory. The orbital beacon has established high-gain telemetry.</p>
+        <button class="btn-orbit-primary" id="nextSectorBtn">PROCEED TO NEXT SECTOR ↗</button>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>

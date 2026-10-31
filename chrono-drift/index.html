@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Chrono Drift: 2.5D Cyber Rally — Mini Game Arcade</title>
+  <meta name="description" content="High-speed pseudo-3D Outrun-style cyber rally racing game. Overtake rival hovercars, trigger nitro drift boosts, and beat checkpoint timers.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="top-nav">
+    <a class="back-link" href="../">
+      <span aria-hidden="true">←</span>
+      <span>Return to Mini Game Arcade</span>
+    </a>
+
+    <div class="title-badge">
+      <span>CHRONO DRIFT //</span>
+      <span class="highlight">2.5D CYBER RALLY</span>
+    </div>
+
+    <div class="nav-actions">
+      <button class="btn-pill active" id="sfxBtn">🔊 SFX</button>
+    </div>
+  </header>
+
+  <!-- Main Game Arena -->
+  <main class="arena-wrapper">
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- In-Game HUD -->
+    <div class="hud-layer">
+      <div class="hud-top">
+        <div class="speedo-card">
+          <div class="speedo-label">VELOCITY</div>
+          <div>
+            <span class="speedo-val" id="speedoVal">0</span>
+            <span class="speedo-unit">KM/H</span>
+          </div>
+        </div>
+
+        <div class="checkpoint-card">
+          <div class="speedo-label">CHECKPOINT TIME</div>
+          <div class="time-counter" id="timeCounter">45s</div>
+        </div>
+      </div>
+
+      <div class="hud-bottom">
+        <div class="nitro-wrap">
+          <div class="nitro-label">⚡ NITRO BOOST</div>
+          <div class="nitro-bar-track">
+            <div class="nitro-bar-fill" id="nitroBar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Touch Controls -->
+    <div class="mobile-controls">
+      <button class="touch-btn" id="touchLeft">◀</button>
+      <button class="touch-btn" id="touchRight">▶</button>
+      <button class="touch-btn" id="touchGas" style="border-color:var(--cyan)">🏎️</button>
+      <button class="touch-btn" id="touchNitro" style="border-color:var(--magenta)">⚡</button>
+    </div>
+
+    <!-- Start Modal -->
+    <div class="modal-overlay open" id="menuModal">
+      <div class="modal-dialog">
+        <div class="modal-tag">HIGHWAY SPEED RALLY</div>
+        <h1 class="modal-title">CHRONO DRIFT</h1>
+        <p class="modal-desc">
+          Push your cyber sports car past 300 km/h across undulating synthwave curves.
+          Steer with Arrow Keys or A/D, hold Space for Nitro Boost, and cross checkpoint arches before time runs out!
+        </p>
+        <button class="btn-drift-primary" id="startRaceBtn">START RACE ↗</button>
+      </div>
+    </div>
+
+    <!-- Game Over Modal -->
+    <div class="modal-overlay" id="gameOverModal">
+      <div class="modal-dialog">
+        <div class="modal-tag">TIME EXPIRED</div>
+        <h2 class="modal-title">RACE FINISHED</h2>
+        <p class="modal-desc">Total distance covered on the neon highway:</p>
+        <div style="font-family:var(--font-display);font-size:36px;color:var(--cyan);margin-bottom:20px" id="finalDist">0 km</div>
+        <button class="btn-drift-primary" id="retryBtn">RACE AGAIN ↗</button>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
