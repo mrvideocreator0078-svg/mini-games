@@ -3,134 +3,162 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-  <meta name="theme-color" content="#080d1c">
+  <meta name="theme-color" content="#05070e">
   <meta name="description" content="Contact Mini Game Arcade — share feedback, bug reports, or ideas for new games.">
-  <title>Contact — Mini Game Arcade</title>
+  <title>Contact Studio — Mini Game Arcade</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="arcade.css">
 </head>
 <body>
 
+<canvas id="ambientCanvas" aria-hidden="true"></canvas>
 <a class="skip-link" href="#main">Skip to main content</a>
 
+<!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
 <header class="site-header" role="banner">
   <div class="shell">
     <nav class="nav-inner" aria-label="Primary navigation">
       <a class="nav-logo" href="index.html" aria-label="Mini Game Arcade home">
-        <span class="logo-mark" aria-hidden="true">M</span>
-        <span class="logo-text">MINI GAME <span class="accent">ARCADE</span></span>
+        <div class="logo-icon-wrap" aria-hidden="true">
+          <span class="logo-glyph">M</span>
+        </div>
+        <div class="logo-text">
+          <span>MINI GAME</span>
+          <span class="accent">ARCADE</span>
+          <span class="nav-live-dot" title="Live Arcade Online"></span>
+        </div>
       </a>
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation menu">☰</button>
-      <ul class="nav-links" id="navLinks" role="list">
-        <li><a href="index.html#games">Games</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-      </ul>
+      <div class="nav-right-cluster">
+        <ul class="nav-links" id="navLinks" role="list">
+          <li><a href="index.html#games">Games</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation menu">☰</button>
+      </div>
     </nav>
   </div>
 </header>
 
 <main id="main">
   <div class="shell">
+    
     <header class="page-hero" aria-labelledby="contactPageHeading">
-      <p class="section-eyebrow">Get In Touch</p>
-      <h1 id="contactPageHeading">Contact <em>Us</em></h1>
-      <p>Bug report, game idea, or just want to say hi — all messages are welcome and read personally.</p>
+      <p class="section-eyebrow">COMMUNICATIONS DISPATCH</p>
+      <h1 id="contactPageHeading">Get In <em>Touch</em></h1>
+      <p>Have a bug to report, feedback on gameplay feel, or a concept for our next browser arcade game? We read every submission.</p>
     </header>
 
     <div class="contact-grid">
 
-      <!-- Left: info -->
+      <!-- Left Column: Studio Information Cards -->
       <div>
         <p class="contact-info-intro">
-          This is an independent project maintained by a small team. We read every message
-          and aim to respond within a few days. There is no support ticket system — just email.
+          Mini Game Arcade is maintained by active independent web developers. We monitor this inbox
+          regularly and aim to respond within 48 hours.
         </p>
 
-        <div class="contact-detail">
-          <span class="contact-icon" aria-hidden="true">✉️</span>
+        <div class="contact-card">
+          <span class="contact-card-icon" aria-hidden="true">✉️</span>
           <div>
-            <small>Email</small>
-            <span>hello@minigamearcade.example</span>
+            <small>Direct Email Dispatch</small>
+            <span>hello@minigamearcade.dev</span>
           </div>
         </div>
 
-        <div class="contact-detail">
-          <span class="contact-icon" aria-hidden="true">🐛</span>
+        <div class="contact-card">
+          <span class="contact-card-icon" aria-hidden="true">🐛</span>
           <div>
-            <small>Bug Reports</small>
-            <span>Include the game name, browser, and what went wrong.</span>
+            <small>Bug & Glitch Reports</small>
+            <span>Please include your device, browser, and what happened.</span>
           </div>
         </div>
 
-        <div class="contact-detail">
-          <span class="contact-icon" aria-hidden="true">💡</span>
+        <div class="contact-card">
+          <span class="contact-card-icon" aria-hidden="true">💡</span>
           <div>
-            <small>Game Ideas</small>
-            <span>Describe the core mechanic — a one-liner is fine.</span>
+            <small>Game Pitch & Mechanics</small>
+            <span>Describe your idea's core mechanic and loop in 2 sentences.</span>
           </div>
         </div>
 
-        <div class="contact-detail">
-          <span class="contact-icon" aria-hidden="true">🔒</span>
+        <div class="contact-card">
+          <span class="contact-card-icon" aria-hidden="true">🛡️</span>
           <div>
-            <small>Privacy</small>
-            <span>We do not sell or share your contact details. See <a href="privacy.html" style="color:var(--cyan)">Privacy Policy</a>.</span>
+            <small>Privacy Guarantee</small>
+            <span>Your email address is never shared, sold, or added to marketing lists.</span>
           </div>
         </div>
       </div>
 
-      <!-- Right: form -->
-      <div>
-        <form id="contactForm" novalidate aria-label="Contact form">
+      <!-- Right Column: Interactive Contact Form -->
+      <div class="form-box">
+        <form id="contactForm" novalidate aria-label="Arcade Contact Form">
+          
           <div class="form-group">
             <label for="cf-name">Your Name</label>
-            <input type="text" id="cf-name" name="name" autocomplete="name"
-                   placeholder="Ada Lovelace" required>
+            <input type="text" id="cf-name" name="name" autocomplete="name" placeholder="Courier Pilot" required>
           </div>
+
           <div class="form-group">
-            <label for="cf-email">Email Address</label>
-            <input type="email" id="cf-email" name="email" autocomplete="email"
-                   placeholder="ada@example.com" required>
+            <label for="cf-email">Your Email Address</label>
+            <input type="email" id="cf-email" name="email" autocomplete="email" placeholder="pilot@domain.com" required>
           </div>
+
           <div class="form-group">
-            <label for="cf-subject">Subject</label>
-            <input type="text" id="cf-subject" name="subject"
-                   placeholder="Bug in Skyline Shift / Game idea / Other">
+            <label for="cf-subject">Topic Category</label>
+            <select id="cf-subject" name="subject">
+              <option value="Bug Report">🐛 Bug Report / Glitch</option>
+              <option value="Gameplay Feedback">🎮 Gameplay Feedback & Tuning</option>
+              <option value="New Game Idea">💡 New Game Idea Pitch</option>
+              <option value="General Inquiry">💬 General Inquiry / Studio Hello</option>
+            </select>
           </div>
+
           <div class="form-group">
-            <label for="cf-message">Message</label>
-            <textarea id="cf-message" name="message" placeholder="Tell us what's on your mind…" required></textarea>
+            <label for="cf-msg">Message Content</label>
+            <textarea id="cf-msg" name="message" placeholder="Type your message here..." required></textarea>
           </div>
-          <button type="submit" class="form-submit">Send Message ↗</button>
-          <p class="form-note">This form opens your email client with the details pre-filled. No data is sent to any server.</p>
-          <div class="form-success" id="formSuccess" role="status" aria-live="polite">
-            ✓ Your email client should have opened with your message pre-filled. Send it from there!
+
+          <button type="submit" class="form-submit" id="submitBtn">
+            <span>TRANSMIT DISPATCH ↗</span>
+          </button>
+
+          <p class="form-note" style="color:var(--text-dim);font-size:12px;margin-top:14px;font-family:var(--font-mono)">
+            🔒 Click opens your default email client via a secure mailto transmission.
+          </p>
+
+          <div id="formFeedback" style="display:none;margin-top:16px;padding:14px 18px;border-radius:8px;background:rgba(0,245,212,0.12);border:1px solid var(--border-cyan);color:var(--cyan);font-family:var(--font-mono);font-size:12px">
+            ✓ Dispatch generated! Opening your mail client now...
           </div>
+
         </form>
       </div>
 
-    </div><!-- /contact-grid -->
-  </div><!-- /shell -->
+    </div>
+  </div>
 </main>
 
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
 <footer class="site-footer" role="contentinfo">
   <div class="shell">
     <div class="footer-inner">
       <div class="footer-brand">
         <div class="footer-brand-name">
-          <span class="footer-brand-mark" aria-hidden="true">M</span>
-          MINI GAME <span style="color:var(--cyan);margin-left:3px">ARCADE</span>
+          <div class="logo-icon-wrap" style="width:28px;height:28px" aria-hidden="true">
+            <span class="logo-glyph" style="font-size:16px">M</span>
+          </div>
+          <span>MINI GAME <span style="color:var(--cyan)">ARCADE</span></span>
         </div>
         <p>A growing collection of free, original browser arcade games.</p>
       </div>
       <nav class="footer-col" aria-label="Site pages">
-        <h4>Pages</h4>
+        <h4>Navigation</h4>
         <ul role="list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#games">Games</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html">Arcade Home</a></li>
+          <li><a href="index.html#games">All Games</a></li>
+          <li><a href="about.html">About Studio</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </nav>
       <nav class="footer-col" aria-label="Legal pages">
@@ -142,48 +170,47 @@
       </nav>
     </div>
     <div class="footer-bottom">
-      <span>© 2024 Mini Game Arcade. All games are original works.</span>
-      <nav aria-label="Legal links footer">
-        <a href="privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="terms.html">Terms</a>
+      <span>© 2024-2026 Mini Game Arcade. All games are original works.</span>
+      <nav aria-label="Footer Legal">
+        <a href="privacy.html">Privacy</a> &nbsp;·&nbsp;
+        <a href="terms.html">Terms</a>
       </nav>
     </div>
   </div>
 </footer>
 
 <script>
-(function(){
-  'use strict';
-  /* ── mobile nav ── */
-  const t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
-  if(t&&l){
-    t.addEventListener('click',function(){const o=l.classList.toggle('open');t.setAttribute('aria-expanded',o);t.textContent=o?'✕':'☰';});
-    document.addEventListener('click',function(e){if(!t.contains(e.target)&&!l.contains(e.target)){l.classList.remove('open');t.setAttribute('aria-expanded','false');t.textContent='☰';}});
-    document.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.classList.contains('open')){l.classList.remove('open');t.setAttribute('aria-expanded','false');t.textContent='☰';t.focus();}});
+(function() {
+  const form = document.getElementById('contactForm');
+  const feedback = document.getElementById('formFeedback');
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+
+  if (toggle && links) {
+    toggle.addEventListener('click', () => links.classList.toggle('open'));
   }
 
-  /* ── contact form → mailto ── */
-  const form = document.getElementById('contactForm');
-  const success = document.getElementById('formSuccess');
   if (form) {
-    form.addEventListener('submit', function (e) {
+    form.addEventListener('submit', function(e) {
       e.preventDefault();
-      const name    = document.getElementById('cf-name').value.trim();
-      const email   = document.getElementById('cf-email').value.trim();
-      const subject = document.getElementById('cf-subject').value.trim() || 'Message from Mini Game Arcade site';
-      const message = document.getElementById('cf-message').value.trim();
-      if (!name || !email || !message) {
-        alert('Please fill in your name, email, and message.');
+      const name = document.getElementById('cf-name').value.trim();
+      const email = document.getElementById('cf-email').value.trim();
+      const subject = document.getElementById('cf-subject').value;
+      const msg = document.getElementById('cf-msg').value.trim();
+
+      if (!name || !msg) {
+        alert('Please provide your name and a brief message.');
         return;
       }
-      const body = 'Name: ' + name + '\nEmail: ' + email + '\n\n' + message;
-      const mailto = 'mailto:hello@minigamearcade.example'
-        + '?subject=' + encodeURIComponent(subject)
-        + '&body=' + encodeURIComponent(body);
-      window.location.href = mailto;
-      if (success) success.style.display = 'block';
+
+      const body = encodeURIComponent(`From: ${name} (${email})\nTopic: ${subject}\n\nMessage:\n${msg}`);
+      const mailtoUrl = `mailto:hello@minigamearcade.dev?subject=${encodeURIComponent('[Arcade Contact] ' + subject)}&body=${body}`;
+      
+      if (feedback) feedback.style.display = 'block';
+      window.location.href = mailtoUrl;
     });
   }
-}());
+})();
 </script>
 </body>
 </html>

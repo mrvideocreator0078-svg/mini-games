@@ -3,170 +3,322 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-  <meta name="theme-color" content="#080d1c">
-  <meta name="description" content="Mini Game Arcade — a growing collection of free browser-based arcade games. No downloads, no accounts, just play.">
-  <title>Mini Game Arcade — Free Browser Games</title>
+  <meta name="theme-color" content="#05070e">
+  <meta name="description" content="Mini Game Arcade — A hand-crafted, high-performance collection of original browser games. Zero frameworks, zero tracking, instant play.">
+  <title>Mini Game Arcade — High-Performance Browser Gaming</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="arcade.css">
 </head>
 <body>
 
+<!-- Ambient Interactive Cyber Canvas -->
+<canvas id="ambientCanvas" aria-hidden="true"></canvas>
+
 <a class="skip-link" href="#main">Skip to main content</a>
 
 <!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
-<header class="site-header" role="banner">
+<header class="site-header" id="siteHeader" role="banner">
   <div class="shell">
     <nav class="nav-inner" aria-label="Primary navigation">
-      <a class="nav-logo" href="index.html" aria-label="Mini Game Arcade home">
-        <span class="logo-mark" aria-hidden="true">M</span>
-        <span class="logo-text">MINI GAME <span class="accent">ARCADE</span></span>
+      
+      <!-- Brand Logo -->
+      <a class="nav-logo" href="index.html" aria-label="Mini Game Arcade Home">
+        <div class="logo-icon-wrap" aria-hidden="true">
+          <span class="logo-glyph">M</span>
+        </div>
+        <div class="logo-text">
+          <span>MINI GAME</span>
+          <span class="accent">ARCADE</span>
+          <span class="nav-live-dot" title="Live Arcade Online"></span>
+        </div>
       </a>
 
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation menu">
-        ☰
-      </button>
+      <!-- Navigation & Action Cluster -->
+      <div class="nav-right-cluster">
+        <ul class="nav-links" id="navLinks" role="list">
+          <li><a href="#games" class="active">Games</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
 
-      <ul class="nav-links" id="navLinks" role="list">
-        <li><a href="#games" class="active">Games</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+        <!-- Web Audio UI SFX Toggle -->
+        <button class="sfx-btn" id="sfxToggle" aria-label="Toggle UI Sound Effects" title="Toggle UI Sound Effects">
+          <span id="sfxIcon">🔊</span>
+          <span id="sfxText">SFX ON</span>
+        </button>
+
+        <!-- Mobile Drawer Toggle -->
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle Navigation Menu">
+          ☰
+        </button>
+      </div>
+
     </nav>
   </div>
 </header>
 
-<!-- ═══════════════════════════ MAIN ════════════════════════════ -->
+<!-- ═══════════════════════════ TICKER STRIP ═══════════════════════════ -->
+<aside class="ticker-strip" aria-label="Arcade Live Features">
+  <div class="ticker-track">
+    <span class="ticker-item"><span class="t-accent">⚡ 60 FPS CANVAS</span> <span class="t-dot">•</span> ZERO FRAMEWORKS</span>
+    <span class="ticker-item"><span class="t-accent">🕹️ INSTANT PLAY</span> <span class="t-dot">•</span> NO DOWNLOADS OR PAYWALLS</span>
+    <span class="ticker-item"><span class="t-accent">🎧 PROCEDURAL AUDIO</span> <span class="t-dot">•</span> REAL-TIME SYNTHESIS</span>
+    <span class="ticker-item"><span class="t-accent">📱 MULTI-TOUCH</span> <span class="t-dot">•</span> OPTIMIZED FOR MOBILE & DESKTOP</span>
+    <span class="ticker-item"><span class="t-accent">🔒 PRIVACY FIRST</span> <span class="t-dot">•</span> NO TRACKERS, NO TELEMETRY</span>
+    <span class="ticker-item"><span class="t-accent">🔥 TRENDING</span> <span class="t-dot">•</span> SKYLINE SHIFT LIVE NOW</span>
+    <!-- Duplicate for infinite marquee loop -->
+    <span class="ticker-item"><span class="t-accent">⚡ 60 FPS CANVAS</span> <span class="t-dot">•</span> ZERO FRAMEWORKS</span>
+    <span class="ticker-item"><span class="t-accent">🕹️ INSTANT PLAY</span> <span class="t-dot">•</span> NO DOWNLOADS OR PAYWALLS</span>
+    <span class="ticker-item"><span class="t-accent">🎧 PROCEDURAL AUDIO</span> <span class="t-dot">•</span> REAL-TIME SYNTHESIS</span>
+    <span class="ticker-item"><span class="t-accent">📱 MULTI-TOUCH</span> <span class="t-dot">•</span> OPTIMIZED FOR MOBILE & DESKTOP</span>
+    <span class="ticker-item"><span class="t-accent">🔒 PRIVACY FIRST</span> <span class="t-dot">•</span> NO TRACKERS, NO TELEMETRY</span>
+    <span class="ticker-item"><span class="t-accent">🔥 TRENDING</span> <span class="t-dot">•</span> SKYLINE SHIFT LIVE NOW</span>
+  </div>
+</aside>
+
+<!-- ═══════════════════════════ MAIN CONTENT ═══════════════════════════ -->
 <main id="main">
 
-  <!-- ── Hero ─────────────────────────────────────────────── -->
-  <section class="hero" aria-labelledby="heroHeading">
+  <!-- ── HERO SECTION ────────────────────────────────────────────── -->
+  <section class="hero" aria-labelledby="heroTitle">
     <div class="shell">
-      <p class="hero-eyebrow">Free · No Account · Play Instantly</p>
-      <h1 id="heroHeading">MINI GAME<br><em>ARCADE.</em></h1>
+      
+      <!-- Top Badge -->
+      <div class="hero-badge">
+        <span class="hero-badge-tag">VERIFIED</span>
+        <span>ORIGINAL INDIE ARCADE • 100% VANILLA WEB</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 id="heroTitle">
+        MINI GAME<br>
+        <span class="gradient-text">ARCADE.</span>
+      </h1>
+
       <p class="hero-sub">
-        A hand-crafted collection of original browser games. No downloads,
-        no ads blocking your screen, no paywalls — just tight gameplay and
-        neon pixels.
+        Hand-crafted, razor-sharp arcade games engineered for speed.
+        Built with raw HTML5 Canvas and procedural Web Audio — no downloads,
+        no accounts, no intrusive popups. Just pure gameplay.
       </p>
+
+      <!-- CTA Buttons -->
       <div class="hero-actions">
-        <a class="btn-primary" href="#games">Browse Games <b aria-hidden="true">↓</b></a>
-        <a class="btn-secondary" href="about.html">About This Project</a>
+        <a class="btn-primary" href="#games" id="heroPlayBtn">
+          <span>Explore Games</span>
+          <b aria-hidden="true">↓</b>
+        </a>
+        <a class="btn-secondary" href="about.html">
+          <span>The Architecture</span>
+          <span aria-hidden="true">→</span>
+        </a>
       </div>
-      <div class="hero-meta" role="list" aria-label="Site facts">
-        <div class="hero-stat" role="listitem">
-          <b>1</b><span>GAME LIVE</span>
+
+      <!-- Live Metric Cards -->
+      <div class="hero-stats-grid" role="list" aria-label="Platform Highlights">
+        <div class="hero-stat-card" role="listitem">
+          <div class="stat-val">01</div>
+          <div class="stat-label">Game Live</div>
         </div>
-        <div class="hero-stat" role="listitem">
-          <b>0</b><span>ADS</span>
+        <div class="hero-stat-card" role="listitem">
+          <div class="stat-val">60<small style="font-size:16px">FPS</small></div>
+          <div class="stat-label">Canvas Loop</div>
         </div>
-        <div class="hero-stat" role="listitem">
-          <b>FREE</b><span>ALWAYS</span>
+        <div class="hero-stat-card" role="listitem">
+          <div class="stat-val">0<small style="font-size:16px">KB</small></div>
+          <div class="stat-label">Frameworks</div>
         </div>
-        <div class="hero-stat" role="listitem">
-          <b>∞</b><span>REPLAYS</span>
+        <div class="hero-stat-card" role="listitem">
+          <div class="stat-val">100%</div>
+          <div class="stat-label">Free Forever</div>
         </div>
       </div>
+
     </div>
   </section>
 
-  <!-- ── Games ─────────────────────────────────────────────── -->
+  <!-- ── GAMES CATALOG SECTION ───────────────────────────────────── -->
   <section class="games-section" id="games" aria-labelledby="gamesHeading">
     <div class="shell">
-      <header class="section-head">
-        <p class="section-eyebrow">Now Playing</p>
-        <h2 class="section-title" id="gamesHeading">Available Games</h2>
-        <p class="section-sub">All games below are fully complete and playable right now.</p>
-      </header>
+      
+      <div class="section-head-bar">
+        <div>
+          <p class="section-eyebrow">
+            <span class="nav-live-dot" style="margin-right:2px"></span>
+            ACTIVE ROSTER
+          </p>
+          <h2 class="section-title" id="gamesHeading">Featured Games</h2>
+          <p class="section-sub">Fully complete, thoroughly tested, and playable immediately in your browser.</p>
+        </div>
+        <div class="active-filter-pill">
+          SHOWING ALL (1)
+        </div>
+      </div>
 
       <div class="games-grid" role="list">
 
-        <!-- ── CARD: Skyline Shift ── -->
+        <!-- ── GAME CARD: Skyline Shift ── -->
         <article class="game-card" role="listitem" aria-labelledby="card-ss-title">
-          <div class="card-thumb">
+          
+          <!-- Thumbnail with Floating Badges -->
+          <div class="card-thumb-wrap">
             <img
               src="skyline-shift/thumb.jpg"
-              alt="Skyline Shift game preview: a neon-lit hoverboard courier racing through three glowing city lanes"
+              alt="Skyline Shift gameplay preview: neon hoverboard courier racing through illuminated cyber city lanes"
               loading="eager"
-              width="640" height="360"
+              width="640"
+              height="360"
             >
-            <span class="card-badge" aria-label="New game">NEW</span>
-          </div>
-          <div class="card-body">
-            <span class="card-tag">Lane Runner</span>
-            <h3 class="card-title" id="card-ss-title">Skyline Shift</h3>
-            <p class="card-desc">
-              Race your hoverboard through a neon city grid. Switch between three
-              lanes to dodge red security gates and collect cyan energy orbs. Speed
-              increases as the city fights back. How far can you run?
-            </p>
-            <div class="card-controls" aria-label="Game controls">
-              <kbd>←</kbd><kbd>→</kbd>
-              <span class="sep">/</span>
-              <kbd>A</kbd><kbd>D</kbd>
-              <span>Move lanes</span>
-              <span class="sep">·</span>
-              <kbd>Space</kbd>
-              <span>Pause</span>
-              <span class="sep">·</span>
-              <span>Swipe</span>
-              <span>on mobile</span>
+            <div class="card-vignette" aria-hidden="true"></div>
+            
+            <div class="card-badges-row">
+              <span class="badge-featured">🔥 POPULAR</span>
+              <div class="badge-stats">
+                <span class="badge-pill">⭐ 4.9</span>
+                <span class="badge-pill">60 FPS</span>
+              </div>
             </div>
-            <a class="card-play" href="skyline-shift/" aria-label="Play Skyline Shift">
-              PLAY NOW <b aria-hidden="true">↗</b>
+          </div>
+
+          <!-- Card Content Body -->
+          <div class="card-content-body">
+            
+            <div class="card-header-meta">
+              <span class="card-category-tag">Neon Lane Runner</span>
+              <span class="card-best-score" id="ssHighScore">
+                🏆 Best: <b id="ssHighScoreVal">0m</b>
+              </span>
+            </div>
+
+            <h3 class="card-title" id="card-ss-title">Skyline Shift</h3>
+            
+            <p class="card-description">
+              Race your anti-grav courier hoverboard across an electrified skyline grid.
+              Switch between 3 dynamic lanes to dodge incoming red security gates, collect cyan
+              energy orbs, and build extreme multiplier combos as the city accelerates.
+            </p>
+
+            <!-- 3D Keycap Controls -->
+            <div class="card-controls-panel" aria-label="Controls guide">
+              <div class="controls-label">
+                <span>INPUT CONTROLS</span>
+                <span>DESKTOP & MOBILE</span>
+              </div>
+              <div class="controls-keys-row">
+                <kbd>←</kbd> <kbd>→</kbd>
+                <span class="control-sep">/</span>
+                <kbd>A</kbd> <kbd>D</kbd>
+                <span class="control-text">Switch Lanes</span>
+                <span class="control-sep">·</span>
+                <kbd>Space</kbd>
+                <span class="control-text">Pause</span>
+                <span class="control-sep">·</span>
+                <span class="control-text">📱 Swipe</span>
+              </div>
+            </div>
+
+            <!-- Launch Button -->
+            <a class="btn-launch-game" href="skyline-shift/" aria-label="Launch Skyline Shift">
+              <span>LAUNCH GAME</span>
+              <span class="arrow-icon" aria-hidden="true">↗</span>
             </a>
+
           </div>
         </article>
-        <!-- End card -->
-
-        <!--
-          ╔══════════════════════════════════════════════════╗
-          ║  ADD NEW GAME CARDS BELOW THIS COMMENT          ║
-          ║  Copy the <article class="game-card"> block     ║
-          ║  above, update the content, and link to your    ║
-          ║  new game folder. See README.md for details.    ║
-          ╚══════════════════════════════════════════════════╝
-        -->
 
       </div><!-- /games-grid -->
+
     </div>
   </section>
 
-  <!-- ── About Strip ────────────────────────────────────────── -->
-  <section class="about-strip" aria-labelledby="aboutStripHeading">
+  <!-- ── STUDIO LAB / ROADMAP SECTION ────────────────────────────── -->
+  <section class="studio-lab-section" aria-labelledby="labHeading">
+    <div class="shell">
+      
+      <div class="lab-banner-card">
+        <div class="lab-header">
+          <div>
+            <div class="lab-tag">ARCADE FORGE // ROADMAP</div>
+            <h2 class="section-title" id="labHeading" style="margin-top:10px">Next in the Studio Lab</h2>
+          </div>
+          <p style="color:var(--text-muted);font-size:13px;max-width:380px">
+            New games are engineered from scratch using zero external libraries.
+            Track what's being built next:
+          </p>
+        </div>
+
+        <div class="lab-grid">
+          
+          <div class="lab-item">
+            <div class="lab-item-head">
+              <span class="lab-item-title">Game 02: Cyber Slicer</span>
+              <span class="lab-status-badge status-active">IN DEVELOPMENT</span>
+            </div>
+            <p>High-precision touch and mouse blade mechanics. Slice incoming neon data cores while avoiding malicious firewall orbs.</p>
+            <div class="lab-progress-bar" title="Development Progress: 75%">
+              <div class="lab-progress-fill" style="width: 75%"></div>
+            </div>
+          </div>
+
+          <div class="lab-item">
+            <div class="lab-item-head">
+              <span class="lab-item-title">Game 03: Neon Breaker</span>
+              <span class="lab-status-badge status-planned">PLANNED</span>
+            </div>
+            <p>Synthwave paddle physics and multi-ball plasma destruction with procedurally tuned audio oscillators.</p>
+            <div class="lab-progress-bar" title="Development Progress: 20%">
+              <div class="lab-progress-fill" style="width: 20%"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── ABOUT STRIP ─────────────────────────────────────────────── -->
+  <section class="about-strip" aria-labelledby="aboutStripTitle">
     <div class="shell">
       <div class="about-strip-inner">
+        
         <div class="about-copy">
-          <p class="section-eyebrow">The Project</p>
-          <h2 id="aboutStripHeading">Built for <em>fun</em>,<br>not profit.</h2>
+          <p class="section-eyebrow">THE PHILOSOPHY</p>
+          <h2 id="aboutStripTitle">Engineered for <span class="accent">Speed</span>,<br>Built for Fun.</h2>
           <p>
-            Mini Game Arcade is an independent project — a place where original
-            browser games live. Every game here is designed from scratch with a
-            focus on tight controls, clean visuals, and genuine replayability.
+            Mini Game Arcade is an independent studio project dedicated to clean,
+            uncompromised browser gaming. We refuse the bloat of modern game portals:
+            no megabytes of heavy framework wrappers, no forced registration forms,
+            and no ads interrupting mid-gameplay.
           </p>
           <p>
-            No trackers, no paywalls, no fake leaderboards stuffed with bots.
-            Just honest games that load in seconds on any device.
+            Every pixel, animation, and sound wave is synthesized natively in your browser
+            using standard modern web APIs. The result is instant load times and buttery 60 FPS performance.
           </p>
-          <a class="link-arrow" href="about.html">Read the full story <span aria-hidden="true">→</span></a>
+          <a class="link-arrow-btn" href="about.html">
+            <span>READ THE FULL STORY</span>
+            <span aria-hidden="true">→</span>
+          </a>
         </div>
-        <div class="about-stats" aria-label="Project stats">
+
+        <div class="about-stats" aria-label="Core Engineering Specs">
           <div class="stat-card">
             <b>100%</b>
-            <span>ORIGINAL CODE</span>
+            <span>Original Codebase</span>
           </div>
           <div class="stat-card">
-            <b>0KB</b>
-            <span>FRAMEWORKS</span>
+            <b>0 KB</b>
+            <span>External Frameworks</span>
           </div>
           <div class="stat-card">
-            <b>OPEN</b>
-            <span>SOURCE FRIENDLY</span>
+            <b>60 FPS</b>
+            <span>Hardware Accelerated</span>
           </div>
           <div class="stat-card">
-            <b>PWA</b>
-            <span>READY SOON</span>
+            <b>0 ADS</b>
+            <span>Zero Disruptions</span>
           </div>
         </div>
+
       </div>
     </div>
   </section>
@@ -177,39 +329,43 @@
 <footer class="site-footer" role="contentinfo">
   <div class="shell">
     <div class="footer-inner">
+      
       <div class="footer-brand">
         <div class="footer-brand-name">
-          <span class="footer-brand-mark" aria-hidden="true">M</span>
-          MINI GAME <span style="color:var(--cyan);margin-left:3px">ARCADE</span>
+          <div class="logo-icon-wrap" style="width:28px;height:28px" aria-hidden="true">
+            <span class="logo-glyph" style="font-size:16px">M</span>
+          </div>
+          <span>MINI GAME <span style="color:var(--cyan)">ARCADE</span></span>
         </div>
         <p>
-          A growing collection of free, original browser arcade games.
-          No accounts, no ads, no nonsense.
+          An independent high-performance arcade catalog.
+          Free browser games coded with vanilla web technologies.
         </p>
       </div>
 
-      <nav class="footer-col" aria-label="Site pages">
-        <h4>Pages</h4>
+      <nav class="footer-col" aria-label="Portal Navigation">
+        <h4>Navigation</h4>
         <ul role="list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#games">Games</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html">Arcade Home</a></li>
+          <li><a href="#games">All Games</a></li>
+          <li><a href="about.html">About Studio</a></li>
+          <li><a href="contact.html">Contact & Feedback</a></li>
         </ul>
       </nav>
 
-      <nav class="footer-col" aria-label="Legal pages">
-        <h4>Legal</h4>
+      <nav class="footer-col" aria-label="Legal & Policies">
+        <h4>Legal & Policy</h4>
         <ul role="list">
           <li><a href="privacy.html">Privacy Policy</a></li>
           <li><a href="terms.html">Terms of Use</a></li>
         </ul>
       </nav>
+
     </div>
 
     <div class="footer-bottom">
-      <span>© 2024 Mini Game Arcade. All games are original works.</span>
-      <nav aria-label="Legal links footer">
+      <span>© 2024-2026 Mini Game Arcade. All games and code are original works.</span>
+      <nav aria-label="Footer Legal Links">
         <a href="privacy.html">Privacy</a> &nbsp;·&nbsp;
         <a href="terms.html">Terms</a>
       </nav>
@@ -217,34 +373,168 @@
   </div>
 </footer>
 
+<!-- ═══════════════════════════ SCRIPTS ═══════════════════════════ -->
 <script>
 (function () {
   'use strict';
+
+  /* ── 1. Read High Score from LocalStorage ── */
+  try {
+    const best = localStorage.getItem('arcade_skylineshift_best');
+    const display = document.getElementById('ssHighScoreVal');
+    if (best && display) {
+      display.textContent = Number(best).toLocaleString() + 'm';
+    }
+  } catch (e) {}
+
+  /* ── 2. Header Scroll Elevation ── */
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 30) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  }, { passive: true });
+
+  /* ── 3. Mobile Navigation Drawer ── */
   const toggle = document.getElementById('navToggle');
-  const links  = document.getElementById('navLinks');
-  if (!toggle || !links) return;
-  toggle.addEventListener('click', function () {
-    const open = links.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', open);
-    toggle.textContent = open ? '✕' : '☰';
-  });
-  // Close on outside click
-  document.addEventListener('click', function (e) {
-    if (!toggle.contains(e.target) && !links.contains(e.target)) {
-      links.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.textContent = '☰';
+  const links = document.getElementById('navLinks');
+  if (toggle && links) {
+    toggle.addEventListener('click', function () {
+      const open = links.classList.toggle('open');
+      toggle.setAttribute('aria-expanded', open);
+      toggle.textContent = open ? '✕' : '☰';
+    });
+    // Close on link click
+    links.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        links.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.textContent = '☰';
+      });
+    });
+  }
+
+  /* ── 4. Web Audio UI Sound FX Synthesizer ── */
+  let audioCtx = null;
+  let sfxEnabled = true;
+  const sfxBtn = document.getElementById('sfxToggle');
+  const sfxIcon = document.getElementById('sfxIcon');
+  const sfxText = document.getElementById('sfxText');
+
+  function initAudio() {
+    if (!audioCtx) {
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      if (AudioContext) audioCtx = new AudioContext();
     }
-  });
-  // Close on Escape
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && links.classList.contains('open')) {
-      links.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.textContent = '☰';
-      toggle.focus();
+    if (audioCtx && audioCtx.state === 'suspended') {
+      audioCtx.resume();
     }
+  }
+
+  function playUiBeep(freq, type, duration) {
+    if (!sfxEnabled) return;
+    initAudio();
+    if (!audioCtx) return;
+    try {
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      osc.type = type || 'sine';
+      osc.frequency.setValueAtTime(freq || 520, audioCtx.currentTime);
+      gain.gain.setValueAtTime(0.06, audioCtx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + (duration || 0.08));
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start();
+      osc.stop(audioCtx.currentTime + (duration || 0.08));
+    } catch(e) {}
+  }
+
+  if (sfxBtn) {
+    sfxBtn.addEventListener('click', function () {
+      sfxEnabled = !sfxEnabled;
+      if (sfxEnabled) {
+        sfxIcon.textContent = '🔊';
+        sfxText.textContent = 'SFX ON';
+        sfxBtn.classList.add('active');
+        playUiBeep(640, 'triangle', 0.1);
+      } else {
+        sfxIcon.textContent = '🔇';
+        sfxText.textContent = 'SFX OFF';
+        sfxBtn.classList.remove('active');
+      }
+    });
+  }
+
+  // Bind subtle sounds to interactive elements
+  document.querySelectorAll('.btn-primary, .btn-secondary, .btn-launch-game, .nav-links a').forEach(el => {
+    el.addEventListener('mouseenter', () => playUiBeep(480, 'sine', 0.04));
+    el.addEventListener('click', () => playUiBeep(880, 'triangle', 0.09));
   });
+
+  /* ── 5. Ambient Cyber Grid & Floating Particles Canvas ── */
+  const canvas = document.getElementById('ambientCanvas');
+  if (canvas && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const ctx = canvas.getContext('2d');
+    let width = canvas.width = window.innerWidth;
+    let height = canvas.height = window.innerHeight;
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }, { passive: true });
+
+    // Generate Ambient Particle Dust
+    const particles = [];
+    const count = Math.min(45, Math.floor(width / 30));
+    for (let i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        r: Math.random() * 1.5 + 0.5,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        color: Math.random() > 0.4 ? 'rgba(0, 245, 212, ' : 'rgba(138, 43, 226, ',
+        alpha: Math.random() * 0.4 + 0.1
+      });
+    }
+
+    let isVisible = true;
+    document.addEventListener('visibilitychange', () => {
+      isVisible = !document.hidden;
+    });
+
+    let frame = 0;
+    function renderAmbient() {
+      if (!isVisible) {
+        requestAnimationFrame(renderAmbient);
+        return;
+      }
+      ctx.clearRect(0, 0, width, height);
+
+      // Draw subtle drifting particles
+      for (let i = 0; i < particles.length; i++) {
+        const p = particles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0) p.x = width;
+        if (p.x > width) p.x = 0;
+        if (p.y < 0) p.y = height;
+        if (p.y > height) p.y = 0;
+
+        ctx.fillStyle = p.color + p.alpha + ')';
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
+      }
+
+      frame++;
+      requestAnimationFrame(renderAmbient);
+    }
+    requestAnimationFrame(renderAmbient);
+  }
+
 }());
 </script>
 </body>

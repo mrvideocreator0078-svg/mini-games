@@ -1,26 +1,125 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<meta name="theme-color" content="#080d1c"><meta name="description" content="Skyline Shift — a fast neon courier arcade game.">
-<title>SKYLINE SHIFT — Neon Courier · Mini Game Arcade</title><link rel="icon" href="favicon.ico" type="image/x-icon"><link rel="stylesheet" href="style.css"><style>.back-bar{background:#080d1ccc;border-bottom:1px solid #ffffff12;padding:7px 0;backdrop-filter:blur(12px);position:sticky;top:0;z-index:300}.back-bar .shell-g{max-width:1180px;margin:auto;padding:0 30px}.back-bar a{font:500 9px 'DM Mono',monospace;letter-spacing:1.5px;color:#8290aa;display:inline-flex;align-items:center;gap:6px;transition:color .2s}.back-bar a:hover,.back-bar a:focus-visible{color:#43f4e5}.back-bar a:focus-visible{outline:2px solid #43f4e5;border-radius:2px;outline-offset:2px}</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#05070e">
+  <meta name="description" content="Skyline Shift — a fast neon courier arcade game.">
+  <title>SKYLINE SHIFT — Neon Courier · Mini Game Arcade</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav class="back-bar" aria-label="Return to arcade"><div class="shell-g"><a href="../">← Mini Game Arcade</a></div></nav>
+
+<nav class="back-bar" aria-label="Return to arcade">
+  <div class="shell-g">
+    <a href="../">← Return to Mini Game Arcade</a>
+  </div>
+</nav>
+
 <div class="shell">
-  <header class="topbar"><a class="brand" href="#" aria-label="Skyline Shift home"><span class="brand-mark">S</span><span>SKYLINE<span class="brand-light">SHIFT</span></span></a><div class="top-actions"><span class="best-pill">BEST <b id="bestTop">0</b></span><button id="soundBtn" class="icon-btn" aria-label="Toggle sound">♫ <span>ON</span></button></div></header>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Skyline Shift home">
+      <span class="brand-mark">S</span>
+      <span>SKYLINE<span class="brand-light">SHIFT</span></span>
+    </a>
+    <div class="top-actions">
+      <span class="best-pill">BEST <b id="bestTop">0</b></span>
+      <button id="soundBtn" class="icon-btn" aria-label="Toggle sound">♫ <span>ON</span></button>
+    </div>
+  </header>
+
   <main>
-    <section class="intro"><div><p class="eyebrow">NEON CITY // COURIER RUN 01</p><h1>OWN THE<br><em>NIGHT.</em></h1><p class="sub">The city never slows down. Switch lanes, grab energy, and outrun the grid.</p></div><div class="hero-stats"><div><b>03</b><span>LANES</span></div><div><b>∞</b><span>ROUTES</span></div><div><b>01</b><span>MISSION</span></div></div></section>
+    <section class="intro">
+      <div>
+        <p class="eyebrow">NEON CITY // COURIER RUN 01</p>
+        <h1>OWN THE<br><em>NIGHT.</em></h1>
+        <p class="sub">The city never slows down. Switch lanes, grab energy, and outrun the grid.</p>
+      </div>
+      <div class="hero-stats">
+        <div><b>03</b><span>LANES</span></div>
+        <div><b>∞</b><span>ROUTES</span></div>
+        <div><b>01</b><span>MISSION</span></div>
+      </div>
+    </section>
+
     <section class="game-wrap">
-      <div class="hud"><div><small>DISTANCE</small><strong id="score">00000</strong></div><div class="hud-center"><small>ENERGY CHAIN</small><strong id="combo">x1</strong></div><div class="hud-right"><small>TIME</small><strong id="time">0:00</strong></div></div>
-      <div class="canvas-frame"><canvas id="game" width="900" height="600" aria-label="Skyline Shift game area"></canvas>
-        <div id="overlay" class="overlay"><div class="overlay-card"><div class="mini-label" id="overTag">READY, COURIER?</div><h2 id="overTitle">THE GRID<br><em>IS YOURS.</em></h2><p id="overText">Switch between three lanes. Collect cyan energy orbs, dodge red security gates, and stay alive as the city gets faster.</p><div class="control-hint"><span>← →</span> or <span>A D</span> <small>MOVE LANES</small></div><button id="mainBtn" class="play-btn">START RUN <b>↗</b></button><p class="tiny">Swipe left / right on mobile</p></div></div>
+      <div class="hud">
+        <div>
+          <small>DISTANCE</small>
+          <strong id="score">00000</strong>
+        </div>
+        <div class="hud-center">
+          <small>ENERGY CHAIN</small>
+          <strong id="combo">x1</strong>
+        </div>
+        <div class="hud-right">
+          <small>SURVIVAL TIME</small>
+          <strong id="time">0:00</strong>
+        </div>
+      </div>
+
+      <div class="canvas-frame">
+        <canvas id="game" width="900" height="600" aria-label="Skyline Shift game area"></canvas>
+        <div id="overlay" class="overlay">
+          <div class="overlay-card">
+            <div class="mini-label" id="overTag">READY, COURIER?</div>
+            <h2 id="overTitle">THE GRID<br><em>IS YOURS.</em></h2>
+            <p id="overText">Switch between three lanes. Collect cyan energy orbs, dodge red security gates, and stay alive as the city gets faster.</p>
+            <div class="control-hint">
+              <span>← →</span> or <span>A D</span>
+              <small>MOVE LANES</small>
+            </div>
+            <button id="mainBtn" class="play-btn">START RUN <b>↗</b></button>
+            <p class="tiny">Swipe left / right on mobile touchscreens</p>
+          </div>
+        </div>
         <div id="pauseTag" class="pause-tag" hidden>PAUSED</div>
       </div>
-      <div class="game-bottom"><div class="mission"><span class="mission-icon">✦</span><div><small>RUN OBJECTIVE</small><b id="missionText">Collect 15 energy orbs</b></div><div class="progress"><i id="missionProgress"></i></div></div><div class="game-actions"><button id="pauseBtn" class="secondary" disabled>Ⅱ PAUSE</button><button id="restartBtn" class="secondary">↻ RESET</button></div></div>
+
+      <div class="game-bottom">
+        <div class="mission">
+          <span class="mission-icon">✦</span>
+          <div>
+            <small>RUN OBJECTIVE</small>
+            <b id="missionText">Collect 15 energy orbs</b>
+          </div>
+          <div class="progress">
+            <i id="missionProgress"></i>
+          </div>
+        </div>
+        <div class="game-actions">
+          <button id="pauseBtn" class="secondary" disabled>Ⅱ PAUSE</button>
+          <button id="restartBtn" class="secondary">↻ RESET</button>
+        </div>
+      </div>
     </section>
-    <section class="tips"><div><span class="tip-icon">↔</span><b>SHIFT</b><p>Move between lanes to avoid incoming gates.</p></div><div><span class="tip-icon cyan">◇</span><b>COLLECT</b><p>Grab energy orbs to build your chain multiplier.</p></div><div><span class="tip-icon pink">⚡</span><b>SURVIVE</b><p>Near misses earn bonus points. How far can you go?</p></div></section>
+
+    <section class="tips">
+      <div>
+        <span class="tip-icon">↔</span>
+        <b>SHIFT</b>
+        <p>Quickly move between the 3 lanes to avoid incoming red security gates.</p>
+      </div>
+      <div>
+        <span class="tip-icon cyan">◇</span>
+        <b>COLLECT</b>
+        <p>Grab glowing cyan energy orbs to build up your combo multiplier chain.</p>
+      </div>
+      <div>
+        <span class="tip-icon pink">⚡</span>
+        <b>SURVIVE</b>
+        <p>Near misses earn extra bonus speed points. How far into the night can you run?</p>
+      </div>
+    </section>
   </main>
-  <footer><span>SKYLINE SHIFT <i>•</i> AN ORIGINAL ARCADE RUNNER</span><span>BUILT FOR THE QUICK & FEARLESS</span></footer>
-</div><script src="game.js"></script>
-</body></html>
+
+  <footer>
+    <span>SKYLINE SHIFT <i>•</i> AN ORIGINAL ARCADE RUNNER</span>
+    <span>BUILT FOR THE QUICK & FEARLESS</span>
+  </footer>
+</div>
+
+<script src="game.js"></script>
+</body>
+</html>

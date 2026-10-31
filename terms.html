@@ -3,29 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
-  <meta name="theme-color" content="#080d1c">
-  <meta name="description" content="Terms of Use for Mini Game Arcade — the rules for using this free browser game site.">
+  <meta name="theme-color" content="#05070e">
+  <meta name="description" content="Terms of Use for Mini Game Arcade — the rules and license for using this free browser game site.">
   <title>Terms of Use — Mini Game Arcade</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="arcade.css">
 </head>
 <body>
 
+<canvas id="ambientCanvas" aria-hidden="true"></canvas>
 <a class="skip-link" href="#main">Skip to main content</a>
 
+<!-- ═══════════════════════════ HEADER ═══════════════════════════ -->
 <header class="site-header" role="banner">
   <div class="shell">
     <nav class="nav-inner" aria-label="Primary navigation">
       <a class="nav-logo" href="index.html" aria-label="Mini Game Arcade home">
-        <span class="logo-mark" aria-hidden="true">M</span>
-        <span class="logo-text">MINI GAME <span class="accent">ARCADE</span></span>
+        <div class="logo-icon-wrap" aria-hidden="true">
+          <span class="logo-glyph">M</span>
+        </div>
+        <div class="logo-text">
+          <span>MINI GAME</span>
+          <span class="accent">ARCADE</span>
+          <span class="nav-live-dot" title="Live Arcade Online"></span>
+        </div>
       </a>
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation menu">☰</button>
-      <ul class="nav-links" id="navLinks" role="list">
-        <li><a href="index.html#games">Games</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+      <div class="nav-right-cluster">
+        <ul class="nav-links" id="navLinks" role="list">
+          <li><a href="index.html#games">Games</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Toggle navigation menu">☰</button>
+      </div>
     </nav>
   </div>
 </header>
@@ -33,103 +43,76 @@
 <main id="main">
   <div class="shell">
     <header class="page-hero" aria-labelledby="termsHeading">
-      <p class="section-eyebrow">Legal</p>
+      <p class="section-eyebrow">TERMS & CODE LICENSE</p>
       <h1 id="termsHeading">Terms of <em>Use</em></h1>
-      <p>Last updated: November 2024. By using this site you agree to these terms.</p>
+      <p>Last updated: October 2026. Fair-use guidelines, intellectual property terms, and service agreements.</p>
     </header>
 
     <div class="prose">
 
       <h2>Acceptance of Terms</h2>
       <p>
-        By accessing or using Mini Game Arcade ("the site"), you agree to be bound by these
-        Terms of Use. If you do not agree with any part of these terms, please do not use
-        the site.
+        By accessing or playing games on Mini Game Arcade ("the site"), you agree to be bound
+        by these Terms of Use. If you do not agree with these provisions, please discontinue use.
       </p>
 
-      <h2>Use of the Site</h2>
+      <h2>Permitted Use</h2>
       <p>
-        You may use this site for personal, non-commercial entertainment purposes. You may not:
+        You are warmly invited to play and enjoy all games on this site for personal, non-commercial
+        entertainment. You may not:
       </p>
       <ul>
-        <li>Scrape, copy, or redistribute game code or artwork without permission.</li>
-        <li>Attempt to reverse-engineer, decompile, or create derivative works for commercial use.</li>
-        <li>Use automated tools to generate artificial traffic to the site.</li>
-        <li>Attempt to access, modify, or disrupt any part of the site's infrastructure.</li>
+        <li>Deploy automated scripts, bots, or scrapers to generate artificial traffic or manipulate score tracking.</li>
+        <li>Attempt to inject malicious scripts or disrupt the arcade's edge delivery network.</li>
+        <li>Extract, republish, or commercialize the game codebase or artwork without express permission.</li>
       </ul>
 
-      <h2>Intellectual Property</h2>
+      <h2>Intellectual Property & Licensing</h2>
       <p>
-        All game code, graphics, and design elements on this site are original works. They
-        are the intellectual property of their respective creators. The fonts used (Barlow
-        Condensed, DM Mono, Manrope) are licensed under the SIL Open Font License 1.1.
+        All original game mechanics, JavaScript engines, canvas rendering loops, and graphics on this
+        site are original creations protected under copyright law.
       </p>
       <p>
-        You may link to this site freely. You may share screenshots of gameplay for personal
-        or non-commercial purposes. Embedding games via iframe on other sites without
-        permission is not permitted.
+        External fonts (Syne, Barlow Condensed, JetBrains Mono, Plus Jakarta Sans) are licensed under the
+        permissive SIL Open Font License.
       </p>
 
       <h2>Disclaimer of Warranties</h2>
       <p>
-        The site is provided "as is" without warranties of any kind, express or implied.
-        We do not guarantee that the site will be available at all times, error-free, or
-        suitable for any particular purpose. Use the site at your own risk.
+        The games and web platform are provided "as is" and "as available". While we maintain 99.9%
+        uptime on our global edge network, we make no warranties regarding uninterrupted availability.
       </p>
 
       <h2>Limitation of Liability</h2>
       <p>
-        To the maximum extent permitted by applicable law, Mini Game Arcade and its creators
-        shall not be liable for any indirect, incidental, or consequential damages arising
-        from use of the site, including but not limited to loss of data or interruption of
-        gameplay.
-      </p>
-
-      <h2>Third-Party Links</h2>
-      <p>
-        This site may contain links to external websites (for example, Google Fonts). We
-        are not responsible for the content or privacy practices of those sites.
-      </p>
-
-      <h2>Changes to These Terms</h2>
-      <p>
-        We reserve the right to update these terms at any time. Changes will be indicated
-        by an updated date at the top of this page. Continued use of the site after changes
-        constitutes acceptance of the revised terms.
-      </p>
-
-      <h2>Governing Law</h2>
-      <p>
-        These terms are governed by the laws of the jurisdiction in which the site operator
-        is based. Any disputes will be handled in the courts of that jurisdiction.
-      </p>
-
-      <h2>Contact</h2>
-      <p>
-        Questions about these terms? Use the <a href="contact.html">contact page</a>.
+        Under no circumstances shall the creators of Mini Game Arcade be held liable for any indirect,
+        incidental, or consequential damages resulting from gameplay or device incompatibilities.
       </p>
 
     </div>
   </div>
 </main>
 
+<!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
 <footer class="site-footer" role="contentinfo">
   <div class="shell">
     <div class="footer-inner">
       <div class="footer-brand">
         <div class="footer-brand-name">
-          <span class="footer-brand-mark" aria-hidden="true">M</span>
-          MINI GAME <span style="color:var(--cyan);margin-left:3px">ARCADE</span>
+          <div class="logo-icon-wrap" style="width:28px;height:28px" aria-hidden="true">
+            <span class="logo-glyph" style="font-size:16px">M</span>
+          </div>
+          <span>MINI GAME <span style="color:var(--cyan)">ARCADE</span></span>
         </div>
         <p>A growing collection of free, original browser arcade games.</p>
       </div>
       <nav class="footer-col" aria-label="Site pages">
-        <h4>Pages</h4>
+        <h4>Navigation</h4>
         <ul role="list">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="index.html#games">Games</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html">Arcade Home</a></li>
+          <li><a href="index.html#games">All Games</a></li>
+          <li><a href="about.html">About Studio</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
         </ul>
       </nav>
       <nav class="footer-col" aria-label="Legal pages">
@@ -141,23 +124,23 @@
       </nav>
     </div>
     <div class="footer-bottom">
-      <span>© 2024 Mini Game Arcade. All games are original works.</span>
-      <nav aria-label="Legal links footer">
-        <a href="privacy.html">Privacy</a> &nbsp;·&nbsp; <a href="terms.html">Terms</a>
+      <span>© 2024-2026 Mini Game Arcade. All games are original works.</span>
+      <nav aria-label="Footer Legal">
+        <a href="privacy.html">Privacy</a> &nbsp;·&nbsp;
+        <a href="terms.html">Terms</a>
       </nav>
     </div>
   </div>
 </footer>
 
 <script>
-(function(){
-  'use strict';
-  const t=document.getElementById('navToggle'),l=document.getElementById('navLinks');
-  if(!t||!l)return;
-  t.addEventListener('click',function(){const o=l.classList.toggle('open');t.setAttribute('aria-expanded',o);t.textContent=o?'✕':'☰';});
-  document.addEventListener('click',function(e){if(!t.contains(e.target)&&!l.contains(e.target)){l.classList.remove('open');t.setAttribute('aria-expanded','false');t.textContent='☰';}});
-  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&l.classList.contains('open')){l.classList.remove('open');t.setAttribute('aria-expanded','false');t.textContent='☰';t.focus();}});
-}());
+(function() {
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  if (toggle && links) {
+    toggle.addEventListener('click', () => links.classList.toggle('open'));
+  }
+})();
 </script>
 </body>
 </html>
