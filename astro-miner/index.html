@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Astro Miner: Gravity Odyssey — Mini Game Arcade</title>
+  <meta name="description" content="Realistic space lunar lander physics and subterranean asteroid crystal mining adventure. Manage fuel, land safely, and upgrade your vessel.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="top-nav">
+    <a class="back-link" href="../">
+      <span aria-hidden="true">←</span>
+      <span>Return to Mini Game Arcade</span>
+    </a>
+
+    <div class="title-badge">
+      <span>ASTRO MINER //</span>
+      <span class="highlight">GRAVITY ODYSSEY</span>
+    </div>
+
+    <div class="nav-actions">
+      <button class="btn-pill active" id="sfxBtn">🔊 SFX</button>
+    </div>
+  </header>
+
+  <!-- Main Game Arena -->
+  <main class="arena-wrapper">
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- In-Game HUD Telemetry -->
+    <div class="hud-layer">
+      <div class="hud-top">
+        <div class="telemetry-cluster">
+          <div class="telemetry-card">
+            <div class="telemetry-label">ION FUEL</div>
+            <div class="telemetry-bar-wrap">
+              <div class="telemetry-bar-fill fuel-fill" id="fuelBar"></div>
+            </div>
+          </div>
+
+          <div class="telemetry-card">
+            <div class="telemetry-label">HULL INTEGRITY</div>
+            <div class="telemetry-bar-wrap">
+              <div class="telemetry-bar-fill hull-fill" id="hullBar"></div>
+            </div>
+          </div>
+
+          <div class="telemetry-card">
+            <div class="telemetry-label">CARGO HOLD</div>
+            <div class="telemetry-bar-wrap">
+              <div class="telemetry-bar-fill cargo-fill" id="cargoBar"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cargo-status-box">
+          <div class="telemetry-label">MINING CREDITS</div>
+          <div class="credits-counter" id="creditsCount">0 💰</div>
+        </div>
+      </div>
+
+      <div class="hud-bottom">
+        <div class="controls-hint-card">
+          <kbd>W / ↑</kbd> Thrust · <kbd>A / D</kbd> Rotate · <kbd>Space / E</kbd> Mine Crystal · Land on Green Pad to Refuel & Upgrade
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Touch Controls -->
+    <div class="mobile-controls">
+      <button class="touch-btn" id="touchLeft">↺</button>
+      <button class="touch-btn" id="touchRight">↻</button>
+      <button class="touch-btn" id="touchThrust" style="border-color:var(--gold)">🚀</button>
+      <button class="touch-btn" id="touchMine" style="border-color:var(--cyan)">⚡</button>
+    </div>
+
+    <!-- Start / Mission Briefing Modal -->
+    <div class="modal-overlay open" id="menuModal">
+      <div class="modal-dialog">
+        <div class="modal-tag">SPACE MINING EXPEDITION</div>
+        <h1 class="modal-title">ASTRO MINER</h1>
+        <p class="modal-desc">
+          Pilot your lunar lander into subterranean asteroid caverns.
+          Mine luminous mineral veins with your tractor laser beam, manage fuel reserves,
+          and execute gentle landings on green pads to secure your fortune!
+        </p>
+        <button class="btn-miner-primary" id="launchBtn">LAUNCH EXPEDITION ↗</button>
+      </div>
+    </div>
+
+    <!-- Safe Landing & Hangar Upgrade Modal -->
+    <div class="modal-overlay" id="hangarModal">
+      <div class="modal-dialog">
+        <div class="modal-tag">BASE LANDING SECURED</div>
+        <h2 class="modal-title">MINER HANGAR</h2>
+        <p class="modal-desc">Vessel refueled and cargo converted to credits. Upgrade your systems before re-entering the trench:</p>
+
+        <div class="hangar-grid" id="hangarGrid">
+          <!-- Populated by game.js -->
+        </div>
+
+        <button class="btn-miner-primary" id="hangarResumeBtn">RESUME MINING TRENCH ↗</button>
+      </div>
+    </div>
+
+    <!-- Hull Breach Game Over Modal -->
+    <div class="modal-overlay" id="gameOverModal">
+      <div class="modal-dialog">
+        <div class="modal-tag">VESSEL DESTROYED</div>
+        <h2 class="modal-title">HULL BREACH</h2>
+        <p class="modal-desc">High-velocity impact with the cavern wall. Mind your descent speed and thruster angle.</p>
+        <button class="btn-miner-primary" id="retryBtn">DEPLOY REPLACEMENT VESSEL ↗</button>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>

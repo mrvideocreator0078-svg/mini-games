@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Cyber Slicer: Neon Blade — Mini Game Arcade</title>
+  <meta name="description" content="High-octane kinetic cyberpunk blade slicing game. Slice incoming data cores, trigger Matrix slow-motion bullet time, and avoid firewall bombs.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="top-nav">
+    <a class="back-link" href="../">
+      <span aria-hidden="true">←</span>
+      <span>Return to Mini Game Arcade</span>
+    </a>
+
+    <div class="title-badge">
+      <span>CYBER SLICER //</span>
+      <span class="highlight">NEON BLADE</span>
+    </div>
+
+    <div class="nav-actions">
+      <button class="btn-pill" id="arsenalBtn">⚔️ ARSENAL</button>
+      <button class="btn-pill active" id="sfxBtn">🔊 SFX</button>
+    </div>
+  </header>
+
+  <!-- Main Game Arena -->
+  <main class="arena-wrapper">
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- In-Game HUD -->
+    <div class="hud-layer">
+      <div class="hud-top">
+        <div class="score-cluster">
+          <div class="score-label">DATA SLICED</div>
+          <div class="score-val" id="currentScore">0</div>
+        </div>
+
+        <div class="status-cluster">
+          <div class="lives-row" id="livesRow">
+            <span class="heart-icon" id="heart1">❤️</span>
+            <span class="heart-icon" id="heart2">❤️</span>
+            <span class="heart-icon" id="heart3">❤️</span>
+          </div>
+          <div class="timer-box" id="timerBox" style="display:none">
+            ⏱ <span id="timerVal">1:00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hud-bottom">
+        <div class="combo-banner" id="comboBanner">3X CYBER SLICE!</div>
+        <div class="credits-pill">
+          <span>CREDITS:</span>
+          <b id="creditsVal">0</b>
+          <span>💎</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mode Selection / Start Modal -->
+    <div class="modal-overlay open" id="menuModal">
+      <div class="modal-dialog">
+        <div class="modal-tag">TACTICAL CYBER PROTOCOL</div>
+        <h1 class="modal-title">CYBER SLICER</h1>
+        <p class="modal-desc">
+          Drag your cursor or swipe your finger across incoming data cores.
+          Slice multiple cores in a single stroke for massive combos. Beware of red firewall bombs!
+        </p>
+
+        <div class="mode-select-grid">
+          <div class="mode-card selected" data-mode="arcade">
+            <span class="icon">⚡</span>
+            <div class="name">Arcade</div>
+            <div class="sub">3 Lives · Bombs</div>
+          </div>
+          <div class="mode-card" data-mode="zen">
+            <span class="icon">🧘</span>
+            <div class="name">Zen Flow</div>
+            <div class="sub">60s · No Bombs</div>
+          </div>
+          <div class="mode-card" data-mode="hyper">
+            <span class="icon">🔥</span>
+            <div class="name">Hyper Rush</div>
+            <div class="sub">Fast · High Stakes</div>
+          </div>
+        </div>
+
+        <button class="btn-cyber-primary" id="startPlayBtn">INITIATE BLADE ↗</button>
+      </div>
+    </div>
+
+    <!-- Game Over Modal -->
+    <div class="modal-overlay" id="gameOverModal">
+      <div class="modal-dialog">
+        <div class="modal-tag">SESSION TERMINATED</div>
+        <h2 class="modal-title">RUN RESULTS</h2>
+
+        <div class="stats-grid-row">
+          <div class="stat-pill">
+            <div class="val" id="goScore">0</div>
+            <div class="lbl">Final Score</div>
+          </div>
+          <div class="stat-pill">
+            <div class="val" id="goBest">0</div>
+            <div class="lbl">Personal Best</div>
+          </div>
+        </div>
+
+        <p class="modal-desc" id="goCredits">+0 💎 Cyber Credits Earned</p>
+
+        <div style="display:flex;gap:12px">
+          <button class="btn-cyber-primary" id="playAgainBtn" style="flex:1">RETRY ↗</button>
+          <button class="btn-pill" id="menuBtn" style="padding:14px 20px;border-radius:12px;font-size:13px">MENU</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Arsenal Blade Shop Modal -->
+    <div class="modal-overlay" id="arsenalModal">
+      <div class="modal-dialog">
+        <div class="modal-tag">BLADE RECONFIGURATION</div>
+        <h2 class="modal-title">CYBER ARSENAL</h2>
+        <p class="modal-desc">Spend your earned Cyber Credits to unlock legendary plasma blades and trails.</p>
+
+        <div class="arsenal-grid" id="arsenalGrid">
+          <!-- Populated dynamically by game.js -->
+        </div>
+
+        <button class="btn-cyber-primary" id="closeArsenalBtn">CLOSE ARSENAL</button>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>

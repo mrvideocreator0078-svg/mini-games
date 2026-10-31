@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Neon Breaker: Quantum Impact — Mini Game Arcade</title>
+  <meta name="description" content="Synthwave arcade brick breaker with multi-ball plasma, laser cannons, explosive cluster bricks, and 20 handcrafted stages.">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header class="top-nav">
+    <a class="back-link" href="../">
+      <span aria-hidden="true">←</span>
+      <span>Return to Mini Game Arcade</span>
+    </a>
+
+    <div class="title-badge">
+      <span>NEON BREAKER //</span>
+      <span class="highlight">QUANTUM IMPACT</span>
+    </div>
+
+    <div class="nav-actions">
+      <button class="btn-pill" id="stagesBtn">🗺️ STAGES (20)</button>
+      <button class="btn-pill active" id="sfxBtn">🔊 SFX</button>
+    </div>
+  </header>
+
+  <!-- Main Game Arena -->
+  <main class="arena-wrapper">
+    <canvas id="gameCanvas"></canvas>
+
+    <!-- In-Game HUD -->
+    <div class="hud-layer">
+      <div class="hud-top">
+        <div class="score-cluster">
+          <div class="score-label">ARCADE SCORE</div>
+          <div class="score-val" id="currentScore">0</div>
+        </div>
+
+        <div class="stage-cluster">
+          <div class="stage-title" id="stageTitle">Stage 1: The Gateway</div>
+          <div class="stage-bricks" id="stageBricks">24 BRICKS REMAINING</div>
+        </div>
+
+        <div class="lives-row">
+          <span class="heart-icon" id="heart1">❤️</span>
+          <span class="heart-icon" id="heart2">❤️</span>
+          <span class="heart-icon" id="heart3">❤️</span>
+        </div>
+      </div>
+
+      <div class="hud-bottom">
+        <div class="powerups-active" id="activePowerups">
+          <!-- Active powerup buffs -->
+        </div>
+        <div class="combo-badge" id="comboBadge">x4 COMBO</div>
+      </div>
+    </div>
+
+    <!-- Start / Menu Modal -->
+    <div class="modal-overlay open" id="menuModal">
+      <div class="modal-dialog">
+        <div class="modal-tag">SYNTHWAVE CYBER BREAKOUT</div>
+        <h1 class="modal-title">NEON BREAKER</h1>
+        <p class="modal-desc">
+          Control your high-tech plasma paddle with mouse, touch, or arrow keys.
+          Shatter neon bricks, trigger chain reaction TNT explosions, and collect power-ups like multi-ball, laser cannons, and fireball!
+        </p>
+        <button class="btn-neon-primary" id="startPlayBtn">START GAME ↗</button>
+      </div>
+    </div>
+
+    <!-- Stage Clear Modal -->
+    <div class="modal-overlay" id="stageClearModal">
+      <div class="modal-dialog">
+        <div class="modal-tag">QUANTUM MATRIX CLEARED</div>
+        <h2 class="modal-title">STAGE VICTORY!</h2>
+        <p class="modal-desc">All defense bricks neutralized. Outstanding aim and timing, pilot.</p>
+        <div style="font-family:var(--font-display);font-size:32px;color:var(--cyan);margin-bottom:20px" id="scScore">0</div>
+        <button class="btn-neon-primary" id="nextStageBtn">PROCEED TO NEXT STAGE ↗</button>
+      </div>
+    </div>
+
+    <!-- Game Over Modal -->
+    <div class="modal-overlay" id="gameOverModal">
+      <div class="modal-dialog">
+        <div class="modal-tag">CRITICAL HULL BREACH</div>
+        <h2 class="modal-title">GAME OVER</h2>
+        <p class="modal-desc">All plasma balls lost. Can you shatter through the matrix next run?</p>
+        <div style="font-family:var(--font-display);font-size:32px;color:var(--magenta);margin-bottom:20px" id="goScore">0</div>
+        <button class="btn-neon-primary" id="retryBtn">TRY AGAIN ↗</button>
+      </div>
+    </div>
+
+    <!-- Stage Selector Modal -->
+    <div class="modal-overlay" id="stagesModal">
+      <div class="modal-dialog" style="max-width:540px">
+        <div class="modal-tag">SECTOR DIRECTORY</div>
+        <h2 class="modal-title">SELECT STAGE</h2>
+        <p class="modal-desc">Unlock and replay any of the 20 handcrafted quantum stages.</p>
+
+        <div class="stage-grid" id="stageGrid">
+          <!-- Populated by game.js -->
+        </div>
+
+        <button class="btn-pill" id="closeStagesBtn" style="margin:0 auto;padding:10px 24px">CLOSE</button>
+      </div>
+    </div>
+
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
