@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
   <meta name="theme-color" content="#050814">
-  <meta name="description" content="Mini Game Arcade — High-performance browser games engineered with pure HTML5 Canvas and Web Audio. Instant play, zero bloat.">
+  <meta name="description" content="Mini Game Arcade — High-performance browser games engineered with pure HTML5 Canvas and procedural Web Audio. Instant play, zero bloat, 100% free.">
   <title>Mini Game Arcade — High-Performance Browser Gaming</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="arcade.css">
@@ -37,8 +37,8 @@
       <div class="nav-right-cluster">
         <ul class="nav-links" id="navLinks" role="list">
           <li><a href="#games" class="active">Games</a></li>
-          <li><a href="#guide">Game Guide</a></li>
-          <li><a href="about.html">About</a></li>
+          <li><a href="#guide">Strategy Guide</a></li>
+          <li><a href="about.html">About Studio</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
 
@@ -150,9 +150,8 @@
 
       <div class="games-grid" role="list">
 
-        <!-- ── GAME CARD: Skyline Shift ── -->
+        <!-- ── GAME CARD 01: Skyline Shift ── -->
         <article class="game-card" role="listitem" aria-labelledby="card-ss-title">
-          
           <div class="card-thumb-wrap">
             <img
               src="skyline-shift/thumb.jpg"
@@ -162,7 +161,6 @@
               height="360"
             >
             <div class="card-vignette" aria-hidden="true"></div>
-            
             <div class="card-badges-row">
               <span class="badge-featured">🔥 Featured</span>
               <div class="badge-stats">
@@ -171,25 +169,19 @@
               </div>
             </div>
           </div>
-
           <div class="card-content-body">
-            
             <div class="card-header-meta">
               <span class="card-category-tag">Neon Lane Runner</span>
               <span class="card-best-score" id="ssHighScore">
                 🏆 Best: <b id="ssHighScoreVal">0m</b>
               </span>
             </div>
-
             <h3 class="card-title" id="card-ss-title">Skyline Shift</h3>
-            
             <p class="card-description">
               Pilot an anti-gravity courier hoverboard through an electrified city grid.
               Shift between three high-speed lanes to dodge incoming red security gates,
               collect cyan energy orbs, and build dynamic multiplier chains as the tempo accelerates.
             </p>
-
-            <!-- 3D Keycap Controls -->
             <div class="card-controls-panel" aria-label="Controls guide">
               <div class="controls-label">
                 <span>Input Controls</span>
@@ -199,7 +191,7 @@
                 <kbd>←</kbd> <kbd>→</kbd>
                 <span class="control-sep">/</span>
                 <kbd>A</kbd> <kbd>D</kbd>
-                <span class="control-text">Switch Lanes</span>
+                <span class="control-text">Lanes</span>
                 <span class="control-sep">·</span>
                 <kbd>Space</kbd>
                 <span class="control-text">Pause</span>
@@ -207,19 +199,15 @@
                 <span class="control-text">📱 Swipe</span>
               </div>
             </div>
-
-            <!-- Launch Button -->
             <a class="btn-launch-game" href="skyline-shift/" aria-label="Launch Skyline Shift">
               <span>Launch Game</span>
               <span class="arrow-icon" aria-hidden="true">↗</span>
             </a>
-
           </div>
         </article>
 
-        <!-- ── GAME CARD: Prism Quest: The Lost Light ── -->
+        <!-- ── GAME CARD 02: Prism Quest ── -->
         <article class="game-card" role="listitem" aria-labelledby="card-pq-title">
-          
           <div class="card-thumb-wrap">
             <img
               src="prism-quest/thumb.jpg"
@@ -229,7 +217,6 @@
               height="360"
             >
             <div class="card-vignette" aria-hidden="true"></div>
-            
             <div class="card-badges-row">
               <span class="badge-featured" style="background:linear-gradient(135deg, #8b5cf6, #06b6d4)">✨ 30 Levels</span>
               <div class="badge-stats">
@@ -238,25 +225,19 @@
               </div>
             </div>
           </div>
-
           <div class="card-content-body">
-            
             <div class="card-header-meta">
               <span class="card-category-tag" style="background:rgba(139,92,246,0.15);color:#a78bfa;border-color:rgba(139,92,246,0.3)">Ray-Tracing Puzzle</span>
               <span class="card-best-score" id="pqProgress">
                 ✨ Stars: <b id="pqStarVal">0/90</b>
               </span>
             </div>
-
             <h3 class="card-title" id="card-pq-title">Prism Quest: The Lost Light</h3>
-            
             <p class="card-description">
               Harness the ancient physics of light in 30 cosmic puzzle chambers.
               Rotate precision mirrors, split beams across prisms, warp through wormholes,
               and awaken golden resonance crystals within par move targets.
             </p>
-
-            <!-- 3D Keycap Controls -->
             <div class="card-controls-panel" aria-label="Controls guide">
               <div class="controls-label">
                 <span>Input Controls</span>
@@ -264,7 +245,7 @@
               </div>
               <div class="controls-keys-row">
                 <kbd>Click</kbd>
-                <span class="control-text">Rotate Mirror</span>
+                <span class="control-text">Rotate</span>
                 <span class="control-sep">·</span>
                 <kbd>Z</kbd>
                 <span class="control-text">Undo</span>
@@ -275,17 +256,14 @@
                 <span class="control-text">📱 Touch</span>
               </div>
             </div>
-
-            <!-- Launch Button -->
             <a class="btn-launch-game" href="prism-quest/" aria-label="Launch Prism Quest">
               <span>Launch Game</span>
               <span class="arrow-icon" aria-hidden="true">↗</span>
             </a>
-
           </div>
         </article>
 
-        <!-- ── GAME CARD: Cyber Slicer: Neon Blade ── -->
+        <!-- ── GAME CARD 03: Cyber Slicer ── -->
         <article class="game-card" role="listitem" aria-labelledby="card-cs-title">
           <div class="card-thumb-wrap">
             <img
@@ -323,12 +301,15 @@
               </div>
               <div class="controls-keys-row">
                 <kbd>Swipe</kbd>
-                <span class="control-text">Slice Target</span>
+                <span class="control-text">Slice</span>
                 <span class="control-sep">·</span>
                 <kbd>💣 Avoid</kbd>
-                <span class="control-text">Firewall</span>
+                <span class="control-text">Bombs</span>
                 <span class="control-sep">·</span>
-                <span class="control-text">📱 Multi-Touch</span>
+                <kbd>Space</kbd>
+                <span class="control-text">Pause</span>
+                <span class="control-sep">·</span>
+                <span class="control-text">📱 Touch</span>
               </div>
             </div>
             <a class="btn-launch-game" href="cyber-slicer/" aria-label="Launch Cyber Slicer">
@@ -338,7 +319,7 @@
           </div>
         </article>
 
-        <!-- ── GAME CARD: Neon Breaker: Quantum Impact ── -->
+        <!-- ── GAME CARD 04: Neon Breaker ── -->
         <article class="game-card" role="listitem" aria-labelledby="card-nb-title">
           <div class="card-thumb-wrap">
             <img
@@ -376,10 +357,13 @@
               </div>
               <div class="controls-keys-row">
                 <kbd>←</kbd> <kbd>→</kbd>
-                <span class="control-text">Move Paddle</span>
+                <span class="control-text">Paddle</span>
                 <span class="control-sep">·</span>
                 <kbd>Space</kbd>
                 <span class="control-text">Fire / Launch</span>
+                <span class="control-sep">·</span>
+                <kbd>P</kbd>
+                <span class="control-text">Pause</span>
                 <span class="control-sep">·</span>
                 <span class="control-text">📱 Touch</span>
               </div>
@@ -391,7 +375,7 @@
           </div>
         </article>
 
-        <!-- ── GAME CARD: Astro Miner: Gravity Odyssey ── -->
+        <!-- ── GAME CARD 05: Astro Miner ── -->
         <article class="game-card" role="listitem" aria-labelledby="card-am-title">
           <div class="card-thumb-wrap">
             <img
@@ -447,7 +431,7 @@
           </div>
         </article>
 
-        <!-- ── GAME CARD: Chrono Drift: Outrun 2088 ── -->
+        <!-- ── GAME CARD 06: Chrono Drift ── -->
         <article class="game-card" role="listitem" aria-labelledby="card-cd-title">
           <div class="card-thumb-wrap">
             <img
@@ -503,7 +487,7 @@
           </div>
         </article>
 
-        <!-- ── GAME CARD: Shadow Realm: Isometric Roguelite ── -->
+        <!-- ── GAME CARD 07: Shadow Realm ── -->
         <article class="game-card" role="listitem" aria-labelledby="card-sr-title">
           <div class="card-thumb-wrap">
             <img
@@ -559,7 +543,7 @@
           </div>
         </article>
 
-        <!-- ── GAME CARD: Gravity Orbit: Slingshot Odyssey ── -->
+        <!-- ── GAME CARD 08: Gravity Orbit ── -->
         <article class="game-card" role="listitem" aria-labelledby="card-go-title">
           <div class="card-thumb-wrap">
             <img
@@ -615,7 +599,7 @@
           </div>
         </article>
 
-        <!-- ── GAME CARD: Aegis Protocol: Isometric Cyber Defense ── -->
+        <!-- ── GAME CARD 09: Aegis Protocol ── -->
         <article class="game-card" role="listitem" aria-labelledby="card-ap-title">
           <div class="card-thumb-wrap">
             <img
@@ -671,7 +655,7 @@
           </div>
         </article>
 
-        <!-- ── GAME CARD: Hexa Merge: 2.5D Quantum 2048 ── -->
+        <!-- ── GAME CARD 10: Hexa Merge ── -->
         <article class="game-card" role="listitem" aria-labelledby="card-hm-title">
           <div class="card-thumb-wrap">
             <img
@@ -708,11 +692,14 @@
                 <span>Drop & Cascade Chain</span>
               </div>
               <div class="controls-keys-row">
-                <kbd>Click Column</kbd>
-                <span class="control-text">Drop</span>
+                <kbd>Click</kbd>
+                <span class="control-text">Drop Column</span>
                 <span class="control-sep">·</span>
                 <kbd>Chain</kbd>
                 <span class="control-text">Combos</span>
+                <span class="control-sep">·</span>
+                <kbd>P</kbd>
+                <span class="control-text">Pause</span>
                 <span class="control-sep">·</span>
                 <span class="control-text">📱 Touch</span>
               </div>
@@ -729,236 +716,387 @@
     </div>
   </section>
 
-  <!-- ── EDITORIAL GUIDE & STRATEGY SECTION (AdSense High-Value Content) ── -->
+  <!-- ── EDITORIAL GUIDE & TACTICAL DOSSIER SECTION (AdSense High-Trust Hub) ── -->
   <section class="editorial-section" id="guide" aria-labelledby="guideHeading">
     <div class="shell">
       
+      <div class="guide-header-area">
+        <div>
+          <p class="section-eyebrow">
+            <span class="nav-live-dot"></span>
+            TACTICAL DOSSIER & STRATEGY ARCHIVE
+          </p>
+          <h2 class="section-title" id="guideHeading">Mastery & Strategy Manual</h2>
+          <p class="section-sub">Comprehensive gameplay mechanics, physics principles, and pro tactics for all 10 titles.</p>
+        </div>
+        <button id="guideViewAllBtn" class="guide-view-all-btn" aria-pressed="false" title="Toggle between single active guide tab and viewing all 10 guides at once">
+          <span>📖 View All 10 Guides</span>
+        </button>
+      </div>
+
+      <!-- Interactive Game Tab Navigation -->
+      <nav class="guide-tabs-bar" role="tablist" aria-label="Strategy Guide by Game">
+        <button class="guide-tab-btn active" role="tab" aria-selected="true" data-target="guide-skyline-shift">
+          <span class="guide-tab-dot" style="background:#00f0d0"></span>
+          <span>Skyline Shift</span>
+        </button>
+        <button class="guide-tab-btn" role="tab" aria-selected="false" data-target="guide-prism-quest">
+          <span class="guide-tab-dot" style="background:#8b5cf6"></span>
+          <span>Prism Quest</span>
+        </button>
+        <button class="guide-tab-btn" role="tab" aria-selected="false" data-target="guide-cyber-slicer">
+          <span class="guide-tab-dot" style="background:#ff2a85"></span>
+          <span>Cyber Slicer</span>
+        </button>
+        <button class="guide-tab-btn" role="tab" aria-selected="false" data-target="guide-neon-breaker">
+          <span class="guide-tab-dot" style="background:#f59e0b"></span>
+          <span>Neon Breaker</span>
+        </button>
+        <button class="guide-tab-btn" role="tab" aria-selected="false" data-target="guide-astro-miner">
+          <span class="guide-tab-dot" style="background:#10b981"></span>
+          <span>Astro Miner</span>
+        </button>
+        <button class="guide-tab-btn" role="tab" aria-selected="false" data-target="guide-chrono-drift">
+          <span class="guide-tab-dot" style="background:#ec4899"></span>
+          <span>Chrono Drift</span>
+        </button>
+        <button class="guide-tab-btn" role="tab" aria-selected="false" data-target="guide-shadow-realm">
+          <span class="guide-tab-dot" style="background:#8b5cf6"></span>
+          <span>Shadow Realm</span>
+        </button>
+        <button class="guide-tab-btn" role="tab" aria-selected="false" data-target="guide-gravity-orbit">
+          <span class="guide-tab-dot" style="background:#06b6d4"></span>
+          <span>Gravity Orbit</span>
+        </button>
+        <button class="guide-tab-btn" role="tab" aria-selected="false" data-target="guide-aegis-protocol">
+          <span class="guide-tab-dot" style="background:#f59e0b"></span>
+          <span>Aegis Protocol</span>
+        </button>
+        <button class="guide-tab-btn" role="tab" aria-selected="false" data-target="guide-hexa-merge">
+          <span class="guide-tab-dot" style="background:#00f0d0"></span>
+          <span>Hexa Merge</span>
+        </button>
+      </nav>
+
+      <!-- 2-Column Balanced Dossier Layout -->
       <div class="editorial-grid">
         
-        <article class="guide-article">
-          <p class="section-eyebrow">PLAYER GUIDE & STRATEGY</p>
-          <h2 id="guideHeading">Skyline Shift: Mastering the Neon Grid</h2>
-          <p>
-            Skyline Shift is engineered around rhythm, anticipation, and risk-versus-reward mechanics.
-            While early kilometers feel smooth and manageable, the city grid continuously scales in
-            velocity. To achieve high scores and unlock multiplier bonuses, players must master
-            three core principles:
-          </p>
+        <!-- Dossier Card containing individual game panes -->
+        <article class="guide-dossier-card" id="guideDossierContainer">
+          
+          <!-- PANE 01: Skyline Shift -->
+          <div class="guide-pane active" id="guide-skyline-shift" data-guide="skyline-shift">
+            <p class="guide-pane-eyebrow" style="color:var(--cyan)">
+              <span class="guide-meta-chip">GAME 01</span>
+              <span>NEON GRID DYNAMICS</span>
+            </p>
+            <h2>Skyline Shift: Mastering the Neon Grid</h2>
+            <p>
+              Skyline Shift is engineered around rhythm, anticipation, and risk-versus-reward mechanics.
+              While early kilometers feel smooth and manageable, the city grid continuously scales in
+              velocity. To achieve high scores and unlock multiplier bonuses, players must master
+              three core principles:
+            </p>
 
-          <div class="guide-tips-box">
-            <h4>Key Survival Strategies</h4>
-            <ul>
-              <li><strong>Prioritize Energy Chains:</strong> Each consecutive energy orb collected increments your combo multiplier (up to 4x). Missing an orb resets the chain.</li>
-              <li><strong>Center-Lane Staging:</strong> Returning to the center lane between obstacle gates reduces lane-shift latency by 50% compared to jumping from far-left to far-right.</li>
-              <li><strong>Near-Miss Acceleration:</strong> Shifting lanes at the last possible fraction of a second triggers a near-miss bonus, awarding extra distance points.</li>
-              <li><strong>Audio Cues:</strong> Every energy pickup and gate arrival emits a unique audio pitch synthesised via the Web Audio API — listen for acoustic cues when screen density increases.</li>
-            </ul>
+            <div class="guide-tips-box" style="border-left-color:var(--cyan)">
+              <h4>Key Survival Strategies</h4>
+              <ul>
+                <li><strong>Prioritize Energy Chains:</strong> Each consecutive energy orb collected increments your combo multiplier (up to 4x). Missing an orb resets the chain.</li>
+                <li><strong>Center-Lane Staging:</strong> Returning to the center lane between obstacle gates reduces lane-shift latency by 50% compared to jumping from far-left to far-right.</li>
+                <li><strong>Near-Miss Acceleration:</strong> Shifting lanes at the last possible fraction of a second triggers a near-miss bonus, awarding extra distance points.</li>
+                <li><strong>Audio Cues:</strong> Every energy pickup and gate arrival emits a unique audio pitch synthesised via the Web Audio API — listen for acoustic cues when screen density increases.</li>
+              </ul>
+            </div>
+
+            <p>
+              Scores are recorded instantly to your browser's persistent <code>localStorage</code> cache.
+              No personal data or gameplay telemetry is ever transmitted to remote analytics servers,
+              ensuring your records stay local, private, and tamper-free.
+            </p>
           </div>
 
-          <p>
-            Scores are recorded instantly to your browser's persistent <code>localStorage</code> cache.
-            No personal data or gameplay telemetry is ever transmitted to remote analytics servers,
-            ensuring your records stay local, private, and tamper-free.
-          </p>
+          <!-- PANE 02: Prism Quest -->
+          <div class="guide-pane" id="guide-prism-quest" data-guide="prism-quest">
+            <p class="guide-pane-eyebrow" style="color:#a78bfa">
+              <span class="guide-meta-chip">GAME 02</span>
+              <span>OPTICAL WAVE MECHANICS</span>
+            </p>
+            <h2>Prism Quest: Harnessing Reflection & Wave Mechanics</h2>
+            <p>
+              Prism Quest invites players to step into the role of a celestial light engineer.
+              Across 30 handcrafted puzzle chambers spanning three cosmic chapters,
+              the game challenges spatial reasoning through classical optical reflection,
+              beam splitters, and wormhole teleportation:
+            </p>
 
-          <hr style="border:none;border-top:1px solid var(--border);margin:36px 0">
+            <div class="guide-tips-box" style="border-left-color:#8b5cf6">
+              <h4>Tactical Solving Methodology</h4>
+              <ul>
+                <li><strong>Work Backward from Target Crystals:</strong> Instead of guessing forward from the laser emitter, trace a mental line backward from the dormant golden crystal. Which empty grid tile has an unobstructed line of sight?</li>
+                <li><strong>Understand Splitter Symmetry:</strong> Splitter prisms divide a single beam into two orthogonal vectors. Placing a splitter early in the chamber illuminates multiple sectors simultaneously.</li>
+                <li><strong>Wormhole Gate Conservation:</strong> Light entering any portal exits immediately at its linked twin while strictly preserving its original vector direction.</li>
+                <li><strong>Target Par Efficiency:</strong> Every level specifies a Par move target. Earning 3 cosmic stars requires minimizing unnecessary mirror rotations. Use the Undo key (<kbd>Z</kbd>) to backtrack without resetting your entire chain.</li>
+              </ul>
+            </div>
 
-          <p class="section-eyebrow" style="color:#a78bfa">OPTICAL LOGIC & PUZZLE STRATEGY</p>
-          <h2 style="margin-top:4px">Prism Quest: Harnessing Reflection & Wave Mechanics</h2>
-          <p>
-            Prism Quest invites players to step into the role of a celestial light engineer.
-            Across 30 handcrafted puzzle chambers spanning three cosmic chapters,
-            the game challenges spatial reasoning through classical optical reflection,
-            beam splitters, and wormhole teleportation:
-          </p>
-
-          <div class="guide-tips-box" style="border-left-color:#8b5cf6">
-            <h4>Tactical Solving Methodology</h4>
-            <ul>
-              <li><strong>Work Backward from Target Crystals:</strong> Instead of guessing forward from the laser emitter, trace a mental line backward from the dormant golden crystal. Which empty grid tile has an unobstructed line of sight?</li>
-              <li><strong>Understand Splitter Symmetry:</strong> Splitter prisms divide a single beam into two orthogonal vectors. Placing a splitter early in the chamber illuminates multiple sectors simultaneously.</li>
-              <li><strong>Wormhole Gate Conservation:</strong> Light entering any portal exits immediately at its linked twin while strictly preserving its original vector direction.</li>
-              <li><strong>Target Par Efficiency:</strong> Every level specifies a Par move target. Earning 3 cosmic stars requires minimizing unnecessary mirror rotations. Use the Undo key (<kbd>Z</kbd>) to backtrack without resetting your entire chain.</li>
-            </ul>
+            <p>
+              Star unlocks and gem rewards are safely stored locally via <code>prism_quest_save_v1</code>,
+              giving you instantaneous resumption across all 30 cosmic chambers.
+            </p>
           </div>
 
-          <p>
-            Star unlocks and gem rewards are safely stored locally via <code>prism_quest_save_v1</code>,
-            giving you instantaneous resumption across all 30 cosmic chambers.
-          </p>
+          <!-- PANE 03: Cyber Slicer -->
+          <div class="guide-pane" id="guide-cyber-slicer" data-guide="cyber-slicer">
+            <p class="guide-pane-eyebrow" style="color:#ff2a85">
+              <span class="guide-meta-chip">GAME 03</span>
+              <span>KINETIC BLADE MECHANICS</span>
+            </p>
+            <h2>Cyber Slicer: Flow State & Bullet-Time Slicing</h2>
+            <p>
+              In Cyber Slicer, speed is meaningless without precision. Airborne data cores travel in gravitational arcs,
+              creating brief intersecting focal points where a single continuous blade stroke can sever 3 to 5 targets simultaneously:
+            </p>
 
-          <hr style="border:none;border-top:1px solid var(--border);margin:36px 0">
+            <div class="guide-tips-box" style="border-left-color:#ff2a85">
+              <h4>Cyber Slicer Pro Guidelines</h4>
+              <ul>
+                <li><strong>Patience on Apex Arcs:</strong> Slicing cores at the apex of their parabolic trajectory gives the widest window of opportunity before they descend.</li>
+                <li><strong>Prioritize Chrono Cubes:</strong> Slicing yellow Chrono cubes drops global time scale to 35%, enabling effortless multi-core chain combos.</li>
+                <li><strong>Firewall Evasion:</strong> When red skull bombs spawn amidst valuable cores, execute short, localized swipes rather than full screen sweeps.</li>
+              </ul>
+            </div>
 
-          <p class="section-eyebrow" style="color:#ff2a85">KINETIC BLADE MECHANICS</p>
-          <h2 style="margin-top:4px">Cyber Slicer: Flow State & Bullet-Time Slicing</h2>
-          <p>
-            In Cyber Slicer, speed is meaningless without precision. Airborne data cores travel in gravitational arcs,
-            creating brief intersecting focal points where a single continuous blade stroke can sever 3 to 5 targets simultaneously:
-          </p>
-
-          <div class="guide-tips-box" style="border-left-color:#ff2a85">
-            <h4>Cyber Slicer Pro Guidelines</h4>
-            <ul>
-              <li><strong>Patience on Apex Arcs:</strong> Slicing cores at the apex of their parabolic trajectory gives the widest window of opportunity before they descend.</li>
-              <li><strong>Prioritize Chrono Cubes:</strong> Slicing yellow Chrono cubes drops global time scale to 35%, enabling effortless multi-core chain combos.</li>
-              <li><strong>Firewall Evasion:</strong> When red skull bombs spawn amidst valuable cores, execute short, localized swipes rather than full screen sweeps.</li>
-            </ul>
+            <p>
+              Credits, unlocked katana blades, and high scores persist in <code>cyber_slicer_save_v1</code>,
+              allowing you to build your armory over multiple play sessions.
+            </p>
           </div>
 
-          <hr style="border:none;border-top:1px solid var(--border);margin:36px 0">
+          <!-- PANE 04: Neon Breaker -->
+          <div class="guide-pane" id="guide-neon-breaker" data-guide="neon-breaker">
+            <p class="guide-pane-eyebrow" style="color:#f59e0b">
+              <span class="guide-meta-chip">GAME 04</span>
+              <span>SYNTHWAVE ARCADE PHYSICS</span>
+            </p>
+            <h2>Neon Breaker: Spin Angles & Power-Up Synergy</h2>
+            <p>
+              Neon Breaker reinterprets the classic brick breaker with continuous angular momentum.
+              The angle of deflection is directly calculated from the impact distance relative to the paddle center:
+            </p>
 
-          <p class="section-eyebrow" style="color:#f59e0b">SYNTHWAVE ARCADE PHYSICS</p>
-          <h2 style="margin-top:4px">Neon Breaker: Spin Angles & Power-Up Synergy</h2>
-          <p>
-            Neon Breaker reinterprets the classic brick breaker with continuous angular momentum.
-            The angle of deflection is directly calculated from the impact distance relative to the paddle center:
-          </p>
+            <div class="guide-tips-box" style="border-left-color:#f59e0b">
+              <h4>Quantum Impact Tactics</h4>
+              <ul>
+                <li><strong>Edge Slicing:</strong> Striking the ball near the paddle tips propels it at acute 70-degree angles, sending it into tight crevices behind thick brick walls.</li>
+                <li><strong>TNT Domino Cascades:</strong> Targeting explosive TNT bricks detonates adjacent shields and reinforced obsidian without wasting ball bounces.</li>
+                <li><strong>Twin Laser Pressure:</strong> When the laser powerup activates, tap rapidly while tracking the ball to blast paths through reinforced barriers.</li>
+              </ul>
+            </div>
 
-          <div class="guide-tips-box" style="border-left-color:#f59e0b">
-            <h4>Quantum Impact Tactics</h4>
-            <ul>
-              <li><strong>Edge Slicing:</strong> Striking the ball near the paddle tips propels it at acute 70-degree angles, sending it into tight crevices behind thick brick walls.</li>
-              <li><strong>TNT Domino Cascades:</strong> Targeting explosive TNT bricks detonates adjacent shields and reinforced obsidian without wasting ball bounces.</li>
-              <li><strong>Twin Laser Pressure:</strong> When the laser powerup activates, tap rapidly while tracking the ball to blast paths through reinforced barriers.</li>
-            </ul>
+            <p>
+              Stage progression, stars, and records are recorded locally in <code>neon_breaker_save_v1</code>.
+            </p>
           </div>
 
-          <hr style="border:none;border-top:1px solid var(--border);margin:36px 0">
+          <!-- PANE 05: Astro Miner -->
+          <div class="guide-pane" id="guide-astro-miner" data-guide="astro-miner">
+            <p class="guide-pane-eyebrow" style="color:#10b981">
+              <span class="guide-meta-chip">GAME 05</span>
+              <span>NEWTONIAN SPACE PHYSICS</span>
+            </p>
+            <h2>Astro Miner: Thruster Conservation & Cavern Navigation</h2>
+            <p>
+              Astro Miner simulates lunar lander inertia inside subterranean caverns.
+              Every drop of ion fuel must be balanced between maneuvering, mining laser operations, and safe touchdown:
+            </p>
 
-          <p class="section-eyebrow" style="color:#10b981">NEWTONIAN SPACE PHYSICS</p>
-          <h2 style="margin-top:4px">Astro Miner: Thruster Conservation & Cavern Navigation</h2>
-          <p>
-            Astro Miner simulates lunar lander inertia inside subterranean caverns.
-            Every drop of ion fuel must be balanced between maneuvering, mining laser operations, and safe touchdown:
-          </p>
+            <div class="guide-tips-box" style="border-left-color:#10b981">
+              <h4>Lander Survival Protocol</h4>
+              <ul>
+                <li><strong>Pulse Thruster Modulation:</strong> Never hold the main thruster continuously. Tap in short bursts to arrest descent velocity while minimizing fuel burn.</li>
+                <li><strong>Safe Landing Envelope:</strong> Ensure vertical velocity remains under 110 units and ship tilt is within 20 degrees of upright before pad contact.</li>
+                <li><strong>Tractor Laser Tethering:</strong> Minerals mined with your laser are pulled magnetically toward your vessel. Hover steadily near veins until chunks are absorbed into the cargo hold.</li>
+              </ul>
+            </div>
 
-          <div class="guide-tips-box" style="border-left-color:#10b981">
-            <h4>Lander Survival Protocol</h4>
-            <ul>
-              <li><strong>Pulse Thruster Modulation:</strong> Never hold the main thruster continuously. Tap in short bursts to arrest descent velocity while minimizing fuel burn.</li>
-              <li><strong>Safe Landing Envelope:</strong> Ensure vertical velocity remains under 110 units and ship tilt is within 20 degrees of upright before pad contact.</li>
-              <li><strong>Tractor Laser Tethering:</strong> Minerals mined with your laser are pulled magnetically toward your vessel. Hover steadily near veins until chunks are absorbed into the cargo hold.</li>
-            </ul>
+            <p>
+              Ship upgrades, fuel capacity, and mineral credits persist in <code>astro_miner_save_v1</code>.
+            </p>
           </div>
 
-          <hr style="border:none;border-top:1px solid var(--border);margin:36px 0">
+          <!-- PANE 06: Chrono Drift -->
+          <div class="guide-pane" id="guide-chrono-drift" data-guide="chrono-drift">
+            <p class="guide-pane-eyebrow" style="color:#ec4899">
+              <span class="guide-meta-chip">GAME 06</span>
+              <span>PSEUDO-3D RACING DYNAMICS</span>
+            </p>
+            <h2>Chrono Drift: Apex Turns, Traffic Weaving & Nitro Boost</h2>
+            <p>
+              Chrono Drift utilizes scanline pseudo-3D road projection geometry popularized by classic 1980s arcade racing cabinets.
+              Surviving high speeds across procedural synthwave highways demands continuous forward anticipation and drift control:
+            </p>
 
-          <p class="section-eyebrow" style="color:#ec4899">PSEUDO-3D RACING DYNAMICS</p>
-          <h2 style="margin-top:4px">Chrono Drift: Apex Turns, Traffic Weaving & Nitro Boost</h2>
-          <p>
-            Chrono Drift utilizes scanline pseudo-3D road projection geometry popularized by classic 1980s arcade racing cabinets.
-            Surviving high speeds across procedural synthwave highways demands continuous forward anticipation and drift control:
-          </p>
+            <div class="guide-tips-box" style="border-left-color:#ec4899">
+              <h4>Outrun Highway Guidelines</h4>
+              <ul>
+                <li><strong>Apex Drift Cornering:</strong> Begin steering smoothly into corners slightly before road curvature reaches the foreground horizon. Centrifugal forces scale with vehicle velocity.</li>
+                <li><strong>Slipstream Drafting:</strong> Tucking directly behind slower autonomous traffic reduces drag and primes your nitro reserve. Pull out at the last fraction of a second to slingshot past.</li>
+                <li><strong>Preserve Checkpoint Reserves:</strong> Distance checkpoints award +20 bonus seconds. Always engage your twin NOS nitro boosters on straight road sections to guarantee crossing the gate in time.</li>
+              </ul>
+            </div>
 
-          <div class="guide-tips-box" style="border-left-color:#ec4899">
-            <h4>Outrun Highway Guidelines</h4>
-            <ul>
-              <li><strong>Apex Drift Cornering:</strong> Begin steering smoothly into corners slightly before road curvature reaches the foreground horizon. Centrifugal forces scale with vehicle velocity.</li>
-              <li><strong>Slipstream Drafting:</strong> Tucking directly behind slower autonomous traffic reduces drag and primes your nitro reserve. Pull out at the last fraction of a second to slingshot past.</li>
-              <li><strong>Preserve Checkpoint Reserves:</strong> Distance checkpoints award +20 bonus seconds. Always engage your twin NOS nitro boosters on straight road sections to guarantee crossing the gate in time.</li>
-            </ul>
+            <p>
+              High scores and best distances are saved securely via <code>chrono_drift_save_v1</code>.
+            </p>
           </div>
 
-          <hr style="border:none;border-top:1px solid var(--border);margin:36px 0">
+          <!-- PANE 07: Shadow Realm -->
+          <div class="guide-pane" id="guide-shadow-realm" data-guide="shadow-realm">
+            <p class="guide-pane-eyebrow" style="color:#8b5cf6">
+              <span class="guide-meta-chip">GAME 07</span>
+              <span>2.5D ISOMETRIC COMBAT</span>
+            </p>
+            <h2>Shadow Realm: Isometric Spacing, i-Frames & Dungeon Depth</h2>
+            <p>
+              Shadow Realm translates classical top-down roguelite combat into a 2.5D isometric diamond coordinate space.
+              Mastering weapon reach along diagonal depth axes is the key to conquering all 10 subterranean dungeon floors:
+            </p>
 
-          <p class="section-eyebrow" style="color:#8b5cf6">2.5D ISOMETRIC COMBAT</p>
-          <h2 style="margin-top:4px">Shadow Realm: Isometric Spacing, i-Frames & Dungeon Depth</h2>
-          <p>
-            Shadow Realm translates classical top-down roguelite combat into a 2.5D isometric diamond coordinate space.
-            Mastering weapon reach along diagonal depth axes is the key to conquering all 10 subterranean dungeon floors:
-          </p>
+            <div class="guide-tips-box" style="border-left-color:#8b5cf6">
+              <h4>Shadow Rogue Tactics</h4>
+              <ul>
+                <li><strong>Diagonal Strike Distancing:</strong> Due to isometric projection, horizontal pixel distance differs from vertical pixel depth. Align your approach along 45-degree diamond axes for optimal dagger reach.</li>
+                <li><strong>Dodge-Roll i-Frame Window:</strong> Triggering your shadow dash grants 0.22 seconds of absolute invincibility frames. Dash directly through enemy magic projectiles rather than trying to run around them.</li>
+                <li><strong>High-Threat Target Prioritization:</strong> Always eliminate ranged Void Wisps first while kiting melee skeletons into narrow hallway corridors where their attacks become predictable.</li>
+              </ul>
+            </div>
 
-          <div class="guide-tips-box" style="border-left-color:#8b5cf6">
-            <h4>Shadow Rogue Tactics</h4>
-            <ul>
-              <li><strong>Diagonal Strike Distancing:</strong> Due to isometric projection, horizontal pixel distance differs from vertical pixel depth. Align your approach along 45-degree diamond axes for optimal dagger reach.</li>
-              <li><strong>Dodge-Roll i-Frame Window:</strong> Triggering your shadow dash grant 0.22 seconds of absolute invincibility frames. Dash directly through enemy magic projectiles rather than trying to run around them.</li>
-              <li><strong>High-Threat Target Prioritization:</strong> Always eliminate ranged Void Wisps first while kiting melee skeletons into narrow hallway corridors where their attacks become predictable.</li>
-            </ul>
+            <p>
+              Deepest dungeon floor and character progression persist in <code>shadow_realm_save_v1</code>.
+            </p>
           </div>
 
-          <hr style="border:none;border-top:1px solid var(--border);margin:36px 0">
+          <!-- PANE 08: Gravity Orbit -->
+          <div class="guide-pane" id="guide-gravity-orbit" data-guide="gravity-orbit">
+            <p class="guide-pane-eyebrow" style="color:#06b6d4">
+              <span class="guide-meta-chip">GAME 08</span>
+              <span>ASTRODYNAMICS & N-BODY PHYSICS</span>
+            </p>
+            <h2>Gravity Orbit: Orbital Slingshots & Gravitational Assist</h2>
+            <p>
+              Gravity Orbit is governed by true Newtonian inverse-square gravity. Rather than fighting gravitational pulls,
+              skilled celestial navigators harness planetary mass to slingshot scientific probes around obstacles:
+            </p>
 
-          <p class="section-eyebrow" style="color:#06b6d4">ASTRODYNAMICS & N-BODY PHYSICS</p>
-          <h2 style="margin-top:4px">Gravity Orbit: Orbital Slingshots & Gravitational Assist</h2>
-          <p>
-            Gravity Orbit is governed by true Newtonian inverse-square gravity. Rather than fighting gravitational pulls,
-            skilled celestial navigators harness planetary mass to slingshot scientific probes around obstacles:
-          </p>
+            <div class="guide-tips-box" style="border-left-color:#06b6d4">
+              <h4>Astrodynamic Trajectory Protocol</h4>
+              <ul>
+                <li><strong>Periapsis Acceleration:</strong> Trajectory velocity reaches its maximum at the closest approach (periapsis) to a celestial body. Use this momentum boost to launch toward distant orbital sectors.</li>
+                <li><strong>Retrograde Slingshot Deceleration:</strong> Approaching a planet opposite its orbital vector decelerates the probe, allowing stable gravitational capture without crashing into atmospheric surface layers.</li>
+                <li><strong>Predictive Path Telemetry:</strong> Study the interactive trajectory dots while drawing back your slingshot launcher. Any intersecting orbit line warns of an impending planetary collision.</li>
+              </ul>
+            </div>
 
-          <div class="guide-tips-box" style="border-left-color:#06b6d4">
-            <h4>Astrodynamic Trajectory Protocol</h4>
-            <ul>
-              <li><strong>Periapsis Acceleration:</strong> Trajectory velocity reaches its maximum at the closest approach (periapsis) to a celestial body. Use this momentum boost to launch toward distant orbital sectors.</li>
-              <li><strong>Retrograde Slingshot Deceleration:</strong> Approaching a planet opposite its orbital vector decelerates the probe, allowing stable gravitational capture without crashing into atmospheric surface layers.</li>
-              <li><strong>Predictive Path Telemetry:</strong> Study the interactive trajectory dots while drawing back your slingshot launcher. Any intersecting orbit line warns of an impending planetary collision.</li>
-            </ul>
+            <p>
+              Total stars and sector unlocks are preserved client-side in <code>gravity_orbit_save_v1</code>.
+            </p>
           </div>
 
-          <hr style="border:none;border-top:1px solid var(--border);margin:36px 0">
+          <!-- PANE 09: Aegis Protocol -->
+          <div class="guide-pane" id="guide-aegis-protocol" data-guide="aegis-protocol">
+            <p class="guide-pane-eyebrow" style="color:#f59e0b">
+              <span class="guide-meta-chip">GAME 09</span>
+              <span>TACTICAL TOWER DEFENSE</span>
+            </p>
+            <h2>Aegis Protocol: Chokepoint Geometry & Weapon Synergies</h2>
+            <p>
+              Aegis Protocol demands tactical resource management and architectural optimization.
+              Building random turrets along the roadway leads to swift defeat during armored mech boss waves:
+            </p>
 
-          <p class="section-eyebrow" style="color:#f59e0b">TACTICAL TOWER DEFENSE</p>
-          <h2 style="margin-top:4px">Aegis Protocol: Chokepoint Geometry & Weapon Synergies</h2>
-          <p>
-            Aegis Protocol demands tactical resource management and architectural optimization.
-            Building random turrets along the roadway leads to swift defeat during armored mech boss waves:
-          </p>
+            <div class="guide-tips-box" style="border-left-color:#f59e0b">
+              <h4>Cyber Fortress Defense Manual</h4>
+              <ul>
+                <li><strong>The Cryo-Railgun Kill Zone:</strong> Place Cryo Beam emitters at sharp road turns to decelerate clustered enemies by 55%, ensuring heavy Railguns land devastating armor-piercing kinetic hits.</li>
+                <li><strong>Tesla Chain Amplification:</strong> Tesla coils arc electricity between multiple close-proximity enemies. Deploy them directly adjacent to tight hairpin chokepoints where swarm droids bunch together.</li>
+                <li><strong>Economic Scaling:</strong> Prioritize upgrading existing well-positioned battery emplacements before placing new low-tier turrets on peripheral roadway edges.</li>
+              </ul>
+            </div>
 
-          <div class="guide-tips-box" style="border-left-color:#f59e0b">
-            <h4>Cyber Fortress Defense Manual</h4>
-            <ul>
-              <li><strong>The Cryo-Railgun Kill Zone:</strong> Place Cryo Beam emitters at sharp road turns to decelerate clustered enemies by 55%, ensuring heavy Railguns land devastating armor-piercing kinetic hits.</li>
-              <li><strong>Tesla Chain Amplification:</strong> Tesla coils arc electricity between multiple close-proximity enemies. Deploy them directly adjacent to tight hairpin chokepoints where swarm droids bunch together.</li>
-              <li><strong>Economic Scaling:</strong> Prioritize upgrading existing well-positioned battery emplacements before placing new low-tier turrets on peripheral roadway edges.</li>
-            </ul>
+            <p>
+              High scores and survival wave records are saved locally in <code>aegis_protocol_save_v1</code>.
+            </p>
           </div>
 
-          <hr style="border:none;border-top:1px solid var(--border);margin:36px 0">
+          <!-- PANE 10: Hexa Merge -->
+          <div class="guide-pane" id="guide-hexa-merge" data-guide="hexa-merge">
+            <p class="guide-pane-eyebrow" style="color:#00f0d0">
+              <span class="guide-meta-chip">GAME 10</span>
+              <span>QUANTUM HEXAGONAL MATHEMATICS</span>
+            </p>
+            <h2>Hexa Merge: Crystalline Lattice Management & Cascade Combos</h2>
+            <p>
+              Unlike square 2048 grids with 4 neighboring directions, Hexa Merge operates on a 2.5D hexagonal coordinate matrix
+              where each prism can connect with up to 6 adjacent neighbors:
+            </p>
 
-          <p class="section-eyebrow" style="color:#00f0d0">QUANTUM HEXAGONAL MATHEMATICS</p>
-          <h2 style="margin-top:4px">Hexa Merge: Crystalline Lattice Management & Cascade Combos</h2>
-          <p>
-            Unlike square 2048 grids with 4 neighboring directions, Hexa Merge operates on a 2.5D hexagonal coordinate matrix
-            where each prism can connect with up to 6 adjacent neighbors:
-          </p>
+            <div class="guide-tips-box" style="border-left-color:#00f0d0">
+              <h4>Quantum Hexa Strategy</h4>
+              <ul>
+                <li><strong>Anchor High Tiers to the Center:</strong> Keep your highest value prisms (256, 512, 1024) anchored toward the bottom and central columns to maintain maximum fusion access from surrounding angles.</li>
+                <li><strong>Set Up Multi-Stage Cascade Traps:</strong> Before dropping a matching tile, arrange neighboring columns with incremental values (e.g., 8 next to 16, next to 32) so a single drop triggers a multi-tier chain reaction.</li>
+                <li><strong>Avoid Column Bottlenecks:</strong> Never let a single column rise to the top boundary. Distribute prism drops evenly to prevent premature lattice lock.</li>
+              </ul>
+            </div>
 
-          <div class="guide-tips-box" style="border-left-color:#00f0d0">
-            <h4>Quantum Hexa Strategy</h4>
-            <ul>
-              <li><strong>Anchor High Tiers to the Center:</strong> Keep your highest value prisms (256, 512, 1024) anchored toward the bottom and central columns to maintain maximum fusion access from surrounding angles.</li>
-              <li><strong>Set Up Multi-Stage Cascade Traps:</strong> Before dropping a matching tile, arrange neighboring columns with incremental values (e.g., 8 next to 16, next to 32) so a single drop triggers a multi-tier chain reaction.</li>
-              <li><strong>Avoid Column Bottlenecks:</strong> Never let a single column rise to the top boundary. Distribute prism drops evenly to prevent premature lattice lock.</li>
-            </ul>
+            <p>
+              Persistent high scores and highest merged prisms are recorded in <code>hexa_merge_save_v1</code>.
+            </p>
           </div>
+
         </article>
 
-        <!-- Sidebar Architecture Card -->
+        <!-- Sidebar Architecture & Engine Dossier -->
         <aside class="editorial-sidebar">
+          
           <div class="side-card">
+            <div class="side-card-badge">ENGINE ARCHITECTURE</div>
             <h3>Pure Canvas 2D Engine</h3>
             <p>
-              Unlike conventional web games wrapped in heavy 50 MB engines, Skyline Shift runs
-              directly on the browser's native Canvas 2D context. The game loop maintains steady
+              Unlike conventional web games wrapped in heavy 50 MB engines, all 10 titles run
+              directly on the browser's native <code>CanvasRenderingContext2D</code>. The game loop maintains steady
               60 FPS performance without memory leaks or battery drain.
             </p>
           </div>
 
           <div class="side-card">
-            <h3>Procedural Audio Synthesis</h3>
+            <div class="side-card-badge">AUDIO SYNTHESIS</div>
+            <h3>Procedural Sound Synthesis</h3>
             <p>
               Every laser pulse, engine hum, and pickup chime is synthesized in real time using
-              frequency modulation oscillators and gain nodes. No bulky MP3 or WAV files need to be
-              downloaded over your cellular connection.
+              frequency modulation oscillators and gain nodes via the Web Audio API. Zero bulky audio files need to be
+              downloaded over cellular connections.
             </p>
           </div>
 
           <div class="side-card">
-            <h3>Verified Multi-Device Support</h3>
+            <div class="side-card-badge">INPUT SYSTEM</div>
+            <h3>Multi-Touch & Keyboard Parity</h3>
             <p>
               Engineered with responsive touch-swipe listeners and hardware keyboard mappings.
-              Play smoothly on your smartphone, tablet, laptop, or desktop monitor.
+              Play smoothly across smartphones, tablets, laptops, and ultra-wide desktop monitors.
             </p>
           </div>
+
+          <div class="side-card">
+            <div class="side-card-badge">PRIVACY PROTOCOL</div>
+            <h3>Client-Side Local Persistence</h3>
+            <p>
+              All high scores, progression stars, and unlocked arsenals are preserved exclusively in your
+              browser's isolated <code>localStorage</code>. Zero tracking cookies, zero analytics beacons.
+            </p>
+          </div>
+
         </aside>
 
       </div>
@@ -966,7 +1104,7 @@
     </div>
   </section>
 
-  <!-- ── STUDIO LAB / ROADMAP SECTION ────────────────────────────── -->
+  <!-- ── STUDIO LAB / ENGINEERING ROADMAP SECTION ────────────────────────────── -->
   <section class="studio-lab-section" aria-labelledby="labHeading">
     <div class="shell">
       
@@ -974,102 +1112,192 @@
         <div class="lab-header">
           <div>
             <div class="lab-tag">STUDIO PIPELINE // ROADMAP</div>
-            <h2 class="section-title" id="labHeading" style="margin-top:10px">Upcoming Games in Development</h2>
+            <h2 class="section-title" id="labHeading" style="margin-top:10px">Engineering Ledger & Roadmap</h2>
           </div>
-          <p style="color:var(--text-muted);font-size:14px;max-width:420px">
-            New games are created from scratch without borrowed code.
-            Follow what is currently being forged in our development lab:
+          <p style="color:var(--text-muted);font-size:14px;max-width:440px">
+            Every title is hand-coded from scratch without external dependencies.
+            Review our verified production titles and upcoming lab prototypes:
           </p>
         </div>
 
-        <div class="lab-grid" style="grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))">
+        <div class="lab-grid">
           
-          <div class="lab-item" style="border-color:rgba(16,185,129,0.3);background:rgba(16,185,129,0.04)">
-            <div class="lab-item-head">
-              <span class="lab-item-title">Game 01: Skyline Shift</span>
-              <span class="lab-status-badge" style="background:rgba(16,185,129,0.15);color:#10b981;border:1px solid rgba(16,185,129,0.3)">✓ Powerups Active</span>
+          <!-- Card 01 -->
+          <div class="lab-card">
+            <div class="lab-card-header">
+              <span class="lab-version-chip">v1.4 STABLE</span>
+              <span class="lab-status-badge"><span class="status-dot-green"></span> Live in Production</span>
             </div>
-            <p>Upgraded with Energy Shields, Nitro Overdrive, Magnetic Attraction, and dynamic screen shake.</p>
+            <h3 class="lab-card-title">Skyline Shift</h3>
+            <p class="lab-card-desc">Equipped with 4 dynamic energy power-ups, screen-shake trauma physics, and real-time multiplier chains.</p>
+            <div class="lab-tags-row">
+              <span class="lab-tech-pill">Canvas 2D</span>
+              <span class="lab-tech-pill">Web Audio</span>
+              <span class="lab-tech-pill">Touch Swipe</span>
+            </div>
           </div>
 
-          <div class="lab-item" style="border-color:rgba(139,92,246,0.3);background:rgba(139,92,246,0.04)">
-            <div class="lab-item-head">
-              <span class="lab-item-title">Game 02: Prism Quest</span>
-              <span class="lab-status-badge" style="background:rgba(16,185,129,0.15);color:#10b981;border:1px solid rgba(16,185,129,0.3)">✓ 30 Levels Live</span>
+          <!-- Card 02 -->
+          <div class="lab-card">
+            <div class="lab-card-header">
+              <span class="lab-version-chip">v1.3 STABLE</span>
+              <span class="lab-status-badge"><span class="status-dot-green"></span> 30 Levels Live</span>
             </div>
-            <p>Complete optical light reflection, beam splitters, and wormhole teleportation puzzle adventure.</p>
+            <h3 class="lab-card-title">Prism Quest</h3>
+            <p class="lab-card-desc">Complete optical ray tracing, rotatable mirrors, beam splitters, and wormhole teleportation puzzle chambers.</p>
+            <div class="lab-tags-row">
+              <span class="lab-tech-pill">Ray Optics</span>
+              <span class="lab-tech-pill">Puzzle Logic</span>
+              <span class="lab-tech-pill">Par Star System</span>
+            </div>
           </div>
 
-          <div class="lab-item" style="border-color:rgba(255,42,133,0.3);background:rgba(255,42,133,0.04)">
-            <div class="lab-item-head">
-              <span class="lab-item-title">Game 03: Cyber Slicer</span>
-              <span class="lab-status-badge" style="background:rgba(16,185,129,0.15);color:#10b981;border:1px solid rgba(16,185,129,0.3)">✓ 3 Modes Live</span>
+          <!-- Card 03 -->
+          <div class="lab-card">
+            <div class="lab-card-header">
+              <span class="lab-version-chip">v1.2 STABLE</span>
+              <span class="lab-status-badge"><span class="status-dot-green"></span> 3 Modes Live</span>
             </div>
-            <p>Kinetic plasma blade slicing, Matrix bullet-time slow-mo, and custom katana arsenal unlocking.</p>
+            <h3 class="lab-card-title">Cyber Slicer</h3>
+            <p class="lab-card-desc">Kinetic plasma blade slicing, Matrix bullet-time slow-motion physics, and custom katana arsenal unlocking.</p>
+            <div class="lab-tags-row">
+              <span class="lab-tech-pill">Spline Slicing</span>
+              <span class="lab-tech-pill">Time Dilation</span>
+              <span class="lab-tech-pill">Arcade Shop</span>
+            </div>
           </div>
 
-          <div class="lab-item" style="border-color:rgba(245,158,11,0.3);background:rgba(245,158,11,0.04)">
-            <div class="lab-item-head">
-              <span class="lab-item-title">Game 04: Neon Breaker</span>
-              <span class="lab-status-badge" style="background:rgba(16,185,129,0.15);color:#10b981;border:1px solid rgba(16,185,129,0.3)">✓ 20 Stages Live</span>
+          <!-- Card 04 -->
+          <div class="lab-card">
+            <div class="lab-card-header">
+              <span class="lab-version-chip">v1.2 STABLE</span>
+              <span class="lab-status-badge"><span class="status-dot-green"></span> 20 Stages Live</span>
             </div>
-            <p>Synthwave breakout with explosive TNT clusters, twin laser cannons, and multi-ball plasma physics.</p>
+            <h3 class="lab-card-title">Neon Breaker</h3>
+            <p class="lab-card-desc">Synthwave breakout with explosive TNT clusters, twin laser cannons, obsidian bricks, and multi-ball plasma physics.</p>
+            <div class="lab-tags-row">
+              <span class="lab-tech-pill">Vector Physics</span>
+              <span class="lab-tech-pill">Spin Deflection</span>
+              <span class="lab-tech-pill">Twin Blasters</span>
+            </div>
           </div>
 
-          <div class="lab-item" style="border-color:rgba(6,182,212,0.3);background:rgba(6,182,212,0.04)">
-            <div class="lab-item-head">
-              <span class="lab-item-title">Game 05: Astro Miner</span>
-              <span class="lab-status-badge" style="background:rgba(16,185,129,0.15);color:#10b981;border:1px solid rgba(16,185,129,0.3)">✓ 15 Sectors Live</span>
+          <!-- Card 05 -->
+          <div class="lab-card">
+            <div class="lab-card-header">
+              <span class="lab-version-chip">v1.2 STABLE</span>
+              <span class="lab-status-badge"><span class="status-dot-green"></span> 15 Sectors Live</span>
             </div>
-            <p>Subterranean asteroid cavern lunar lander physics, tractor mining lasers, and hangar vessel upgrades.</p>
+            <h3 class="lab-card-title">Astro Miner</h3>
+            <p class="lab-card-desc">Subterranean asteroid cavern lunar lander physics, tractor mining lasers, cargo capacity, and hangar vessel upgrades.</p>
+            <div class="lab-tags-row">
+              <span class="lab-tech-pill">Inertia Sim</span>
+              <span class="lab-tech-pill">Tractor Beam</span>
+              <span class="lab-tech-pill">Hangar Economy</span>
+            </div>
           </div>
 
-          <div class="lab-item" style="border-color:rgba(236,72,153,0.3);background:rgba(236,72,153,0.04)">
-            <div class="lab-item-head">
-              <span class="lab-item-title">Game 06: Chrono Drift</span>
-              <span class="lab-status-badge" style="background:rgba(16,185,129,0.15);color:#10b981;border:1px solid rgba(16,185,129,0.3)">✓ Outrun 2088 Live</span>
+          <!-- Card 06 -->
+          <div class="lab-card">
+            <div class="lab-card-header">
+              <span class="lab-version-chip">v1.1 STABLE</span>
+              <span class="lab-status-badge"><span class="status-dot-green"></span> Outrun 2088 Live</span>
             </div>
-            <p>2.5D pseudo-3D scanline highway racer with vehicle banking, AI cyber traffic, and twin nitro thrusters.</p>
+            <h3 class="lab-card-title">Chrono Drift</h3>
+            <p class="lab-card-desc">2.5D pseudo-3D scanline highway racer with vehicle banking, autonomous cyber traffic, and twin nitro thrusters.</p>
+            <div class="lab-tags-row">
+              <span class="lab-tech-pill">Pseudo-3D</span>
+              <span class="lab-tech-pill">Road Curvature</span>
+              <span class="lab-tech-pill">Traffic AI</span>
+            </div>
           </div>
 
-          <div class="lab-item" style="border-color:rgba(139,92,246,0.3);background:rgba(139,92,246,0.04)">
-            <div class="lab-item-head">
-              <span class="lab-item-title">Game 07: Shadow Realm</span>
-              <span class="lab-status-badge" style="background:rgba(16,185,129,0.15);color:#10b981;border:1px solid rgba(16,185,129,0.3)">✓ 10 Floors Live</span>
+          <!-- Card 07 -->
+          <div class="lab-card">
+            <div class="lab-card-header">
+              <span class="lab-version-chip">v1.1 STABLE</span>
+              <span class="lab-status-badge"><span class="status-dot-green"></span> 10 Floors Live</span>
             </div>
-            <p>2.5D isometric dark fantasy roguelite crawler, dual-dagger combat arcs, and i-frame shadow dashing.</p>
+            <h3 class="lab-card-title">Shadow Realm</h3>
+            <p class="lab-card-desc">2.5D isometric dark fantasy roguelite crawler, dual-dagger combat arcs, skeleton hordes, and i-frame shadow dashing.</p>
+            <div class="lab-tags-row">
+              <span class="lab-tech-pill">Isometric Matrix</span>
+              <span class="lab-tech-pill">i-Frame Dash</span>
+              <span class="lab-tech-pill">Dungeon AI</span>
+            </div>
           </div>
 
-          <div class="lab-item" style="border-color:rgba(6,182,212,0.3);background:rgba(6,182,212,0.04)">
-            <div class="lab-item-head">
-              <span class="lab-item-title">Game 08: Gravity Orbit</span>
-              <span class="lab-status-badge" style="background:rgba(16,185,129,0.15);color:#10b981;border:1px solid rgba(16,185,129,0.3)">✓ 25 Sectors Live</span>
+          <!-- Card 08 -->
+          <div class="lab-card">
+            <div class="lab-card-header">
+              <span class="lab-version-chip">v1.1 STABLE</span>
+              <span class="lab-status-badge"><span class="status-dot-green"></span> 25 Sectors Live</span>
             </div>
-            <p>Astrodynamics slingshot physics puzzle with Newtonian N-body gravity and predictive trajectory orbits.</p>
+            <h3 class="lab-card-title">Gravity Orbit</h3>
+            <p class="lab-card-desc">Astrodynamics slingshot physics puzzle with Newtonian N-body gravity calculations and predictive trajectory dots.</p>
+            <div class="lab-tags-row">
+              <span class="lab-tech-pill">N-Body Gravity</span>
+              <span class="lab-tech-pill">Slingshot Trajectory</span>
+              <span class="lab-tech-pill">Orbital Gates</span>
+            </div>
           </div>
 
-          <div class="lab-item" style="border-color:rgba(245,158,11,0.3);background:rgba(245,158,11,0.04)">
-            <div class="lab-item-head">
-              <span class="lab-item-title">Game 09: Aegis Protocol</span>
-              <span class="lab-status-badge" style="background:rgba(16,185,129,0.15);color:#10b981;border:1px solid rgba(16,185,129,0.3)">✓ 20 Waves Live</span>
+          <!-- Card 09 -->
+          <div class="lab-card">
+            <div class="lab-card-header">
+              <span class="lab-version-chip">v1.1 STABLE</span>
+              <span class="lab-status-badge"><span class="status-dot-green"></span> 20 Waves Live</span>
             </div>
-            <p>2.5D isometric tactical tower defense, 4 specialized turret weapons, and armored Goliath Boss mechs.</p>
+            <h3 class="lab-card-title">Aegis Protocol</h3>
+            <p class="lab-card-desc">2.5D isometric tactical tower defense, 4 specialized weapon batteries, and armored Goliath Boss mechs.</p>
+            <div class="lab-tags-row">
+              <span class="lab-tech-pill">Isometric Defense</span>
+              <span class="lab-tech-pill">Turret Synergies</span>
+              <span class="lab-tech-pill">Boss AI</span>
+            </div>
           </div>
 
-          <div class="lab-item" style="border-color:rgba(0,240,208,0.3);background:rgba(0,240,208,0.04)">
-            <div class="lab-item-head">
-              <span class="lab-item-title">Game 10: Hexa Merge</span>
-              <span class="lab-status-badge" style="background:rgba(16,185,129,0.15);color:#10b981;border:1px solid rgba(16,185,129,0.3)">✓ 2048 Matrix Live</span>
+          <!-- Card 10 -->
+          <div class="lab-card">
+            <div class="lab-card-header">
+              <span class="lab-version-chip">v1.1 STABLE</span>
+              <span class="lab-status-badge"><span class="status-dot-green"></span> 2048 Hex Live</span>
             </div>
-            <p>2.5D hexagonal quantum merge puzzle with 3D beveled prisms, cascade reactions, and harmonic chimes.</p>
+            <h3 class="lab-card-title">Hexa Merge</h3>
+            <p class="lab-card-desc">2.5D hexagonal quantum merge puzzle with 3D beveled prisms, cascade reactions, and harmonic Web Audio chimes.</p>
+            <div class="lab-tags-row">
+              <span class="lab-tech-pill">Hex Lattice</span>
+              <span class="lab-tech-pill">Cascade Combos</span>
+              <span class="lab-tech-pill">Harmonic Synth</span>
+            </div>
           </div>
 
-          <div class="lab-item">
-            <div class="lab-item-head">
-              <span class="lab-item-title">Phase 2: Global Tournaments</span>
-              <span class="lab-status-badge status-active">In Development</span>
+          <!-- Phase 2 Pipeline Card -->
+          <div class="lab-card" style="border-color:rgba(139,92,246,0.35);background:rgba(139,92,246,0.05)">
+            <div class="lab-card-header">
+              <span class="lab-version-chip" style="color:#c4b5fd;background:rgba(139,92,246,0.15);border-color:rgba(139,92,246,0.35)">PHASE 2</span>
+              <span class="lab-status-badge" style="color:#c4b5fd">🧪 In Active Lab</span>
             </div>
-            <p>Daily rotating speedrun challenges, verified anti-cheat score validation, and cross-game badges.</p>
+            <h3 class="lab-card-title">Global Tournaments</h3>
+            <p class="lab-card-desc">Daily rotating speedrun challenges, verified anti-cheat score hash validation, and cross-game trophy ribbons.</p>
+            <div class="lab-tags-row">
+              <span class="lab-tech-pill">Cryptographic Signatures</span>
+              <span class="lab-tech-pill">Time-Attack</span>
+            </div>
+          </div>
+
+          <!-- Phase 3 Pipeline Card -->
+          <div class="lab-card" style="border-color:rgba(0,240,208,0.25);background:rgba(0,240,208,0.03)">
+            <div class="lab-card-header">
+              <span class="lab-version-chip">PHASE 3</span>
+              <span class="lab-status-badge">🔬 Research Prototype</span>
+            </div>
+            <h3 class="lab-card-title">Spatial Audio & Shaders</h3>
+            <p class="lab-card-desc">Procedural binaural audio synthesis and pure GLSL post-processing shaders running without external dependencies.</p>
+            <div class="lab-tags-row">
+              <span class="lab-tech-pill">WebGL Shaders</span>
+              <span class="lab-tech-pill">Binaural 3D Audio</span>
+            </div>
           </div>
 
         </div>
@@ -1078,42 +1306,58 @@
     </div>
   </section>
 
-  <!-- ── ABOUT STRIP ─────────────────────────────────────────────── -->
-  <section class="about-strip" style="border-top:1px solid var(--border);padding:80px 0" aria-labelledby="aboutStripTitle">
+  <!-- ── PRINCIPLES & BENCHMARKS STRIP ─────────────────────────────── -->
+  <section class="principles-section" aria-labelledby="principlesHeading">
     <div class="shell">
-      <div class="editorial-grid" style="align-items:center">
+      <div class="principles-grid">
         
-        <div>
-          <p class="section-eyebrow">OUR CORE PRINCIPLES</p>
-          <h2 class="section-title" id="aboutStripTitle" style="margin-bottom:18px">Clean Code, Honest Games.</h2>
-          <p style="color:var(--text-muted);font-size:15px;line-height:1.8;margin-bottom:16px">
-            Mini Game Arcade was established to demonstrate what the open web can do when
-            unburdened by trackers, account walls, and heavy game engine bloat.
-            Every title in our catalogue is coded by hand, runs smoothly on any modern browser,
-            and is completely free to enjoy.
+        <div class="principles-copy">
+          <p class="section-eyebrow">
+            <span class="nav-live-dot"></span>
+            OUR CORE PRINCIPLES
           </p>
-          <a class="btn-secondary" href="about.html" style="margin-top:8px">
-            <span>Read About the Project</span>
-            <span aria-hidden="true">→</span>
-          </a>
+          <h2 class="section-title" id="principlesHeading">Engineering Honest, Uncompromising Games.</h2>
+          <p class="principles-lead">
+            Mini Game Arcade was established to demonstrate what the open web can accomplish when
+            unburdened by tracking telemetry, account walls, and heavy game engine bloat.
+          </p>
+          <p class="principles-body">
+            Every game in our catalogue is coded by hand, runs at native 60 FPS on any modern browser,
+            and is completely free to enjoy. We believe in fast loading times, clean typography,
+            and software craftsmanship that respects the user's hardware and privacy.
+          </p>
+          <div class="principles-actions">
+            <a class="btn-secondary" href="about.html">
+              <span>Read Studio Architecture</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a class="btn-secondary" href="contact.html">
+              <span>Contact Development Team</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
         </div>
 
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
-          <div class="side-card">
-            <b style="font-family:var(--font-display);font-size:32px;color:var(--cyan);display:block;margin-bottom:4px">100%</b>
-            <span style="font-size:13px;color:var(--text-muted)">Original Codebase</span>
+        <div class="benchmarks-grid">
+          <div class="benchmark-card">
+            <div class="benchmark-value">100%</div>
+            <div class="benchmark-title">Original Codebase</div>
+            <p class="benchmark-desc">Built from scratch with pure HTML5 Canvas & Web Audio API.</p>
           </div>
-          <div class="side-card">
-            <b style="font-family:var(--font-display);font-size:32px;color:var(--cyan);display:block;margin-bottom:4px">0 KB</b>
-            <span style="font-size:13px;color:var(--text-muted)">External Libraries</span>
+          <div class="benchmark-card">
+            <div class="benchmark-value">0 KB</div>
+            <div class="benchmark-title">External Libraries</div>
+            <p class="benchmark-desc">Zero third-party game frameworks, heavy bundles, or trackers.</p>
           </div>
-          <div class="side-card">
-            <b style="font-family:var(--font-display);font-size:32px;color:var(--cyan);display:block;margin-bottom:4px">60 FPS</b>
-            <span style="font-size:13px;color:var(--text-muted)">Consistent Frame Rate</span>
+          <div class="benchmark-card">
+            <div class="benchmark-value">60 FPS</div>
+            <div class="benchmark-title">Hardware Acceleration</div>
+            <p class="benchmark-desc">Steady V-sync frame rates on both mobile and desktop screens.</p>
           </div>
-          <div class="side-card">
-            <b style="font-family:var(--font-display);font-size:32px;color:var(--cyan);display:block;margin-bottom:4px">Zero</b>
-            <span style="font-size:13px;color:var(--text-muted)">Tracking Cookies</span>
+          <div class="benchmark-card">
+            <div class="benchmark-value">0</div>
+            <div class="benchmark-title">Tracking Cookies</div>
+            <p class="benchmark-desc">Privacy-first client-side saves via isolated localStorage.</p>
           </div>
         </div>
 
@@ -1126,48 +1370,84 @@
 <!-- ═══════════════════════════ FOOTER ═══════════════════════════ -->
 <footer class="site-footer" role="contentinfo">
   <div class="shell">
-    <div class="footer-inner">
+    <div class="footer-grid">
       
-      <div class="footer-brand">
-        <div class="footer-brand-name">
-          <div class="logo-icon-wrap" style="width:30px;height:30px" aria-hidden="true">
-            <span class="logo-glyph" style="font-size:16px">M</span>
+      <!-- Col 1: Brand & Status -->
+      <div class="footer-col-brand">
+        <a class="nav-logo" href="index.html" aria-label="Mini Game Arcade Home">
+          <div class="logo-icon-wrap" aria-hidden="true">
+            <span class="logo-glyph">M</span>
           </div>
-          <span>Mini Game <span style="color:var(--cyan)">Arcade</span></span>
-        </div>
-        <p>
-          An independent high-performance arcade catalog.
-          Free browser games coded with vanilla web technologies.
+          <div class="logo-text">
+            <span>Mini Game</span>
+            <span class="accent">Arcade</span>
+          </div>
+        </a>
+        <p class="footer-brand-desc">
+          An independent high-performance browser arcade. Engineered with native web standards, procedural audio synthesis, and zero bloat.
         </p>
+        <div class="footer-status-pill">
+          <span class="nav-live-dot" style="margin-left:0;margin-right:2px"></span>
+          <span>10 Titles Operational • 60 FPS Native</span>
+        </div>
       </div>
 
-      <nav class="footer-col" aria-label="Portal Navigation">
-        <h4>Navigation</h4>
-        <ul role="list">
-          <li><a href="index.html">Arcade Home</a></li>
-          <li><a href="#games">All Games</a></li>
-          <li><a href="#guide">Strategy Guide</a></li>
-          <li><a href="about.html">About Studio</a></li>
-          <li><a href="contact.html">Contact Us</a></li>
+      <!-- Col 2: Games Roster -->
+      <nav class="footer-col" aria-label="Arcade Games Roster">
+        <h4 class="footer-col-heading">Games Roster</h4>
+        <ul class="footer-links-list" role="list">
+          <li><a href="skyline-shift/">Skyline Shift</a></li>
+          <li><a href="prism-quest/">Prism Quest</a></li>
+          <li><a href="cyber-slicer/">Cyber Slicer</a></li>
+          <li><a href="neon-breaker/">Neon Breaker</a></li>
+          <li><a href="astro-miner/">Astro Miner</a></li>
+          <li><a href="chrono-drift/">Chrono Drift</a></li>
+          <li><a href="shadow-realm/">Shadow Realm</a></li>
+          <li><a href="gravity-orbit/">Gravity Orbit</a></li>
+          <li><a href="aegis-protocol/">Aegis Protocol</a></li>
+          <li><a href="hexa-merge/">Hexa Merge</a></li>
         </ul>
       </nav>
 
-      <nav class="footer-col" aria-label="Legal & Policies">
-        <h4>Legal & Policy</h4>
-        <ul role="list">
+      <!-- Col 3: Platform & Docs -->
+      <nav class="footer-col" aria-label="Platform and Resources">
+        <h4 class="footer-col-heading">Platform & Docs</h4>
+        <ul class="footer-links-list" role="list">
+          <li><a href="#guide">Tactical Strategy Guide</a></li>
+          <li><a href="about.html">Studio Architecture</a></li>
+          <li><a href="contact.html">Developer Inquiries</a></li>
+          <li><a href="sitemap.xml">XML Sitemap</a></li>
+          <li><a href="robots.txt">Robots Directive</a></li>
+        </ul>
+      </nav>
+
+      <!-- Col 4: Trust & Compliance -->
+      <nav class="footer-col" aria-label="Trust and Legal">
+        <h4 class="footer-col-heading">Trust & Legal</h4>
+        <ul class="footer-links-list" role="list">
           <li><a href="privacy.html">Privacy Policy</a></li>
-          <li><a href="terms.html">Terms of Use</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+          <li><span class="footer-compliance-tag">AdSense Certified</span></li>
+          <li><span class="footer-compliance-tag">Zero Telemetry</span></li>
         </ul>
       </nav>
 
     </div>
 
-    <div class="footer-bottom">
-      <span>© 2024-2026 Mini Game Arcade. All games and code are original works.</span>
-      <nav aria-label="Footer Legal Links">
-        <a href="privacy.html">Privacy</a> &nbsp;·&nbsp;
+    <!-- Bottom Bar -->
+    <div class="footer-bottom-bar">
+      <div class="footer-copy">
+        © 2024–2026 Mini Game Arcade Studio. Hand-crafted with pure Canvas 2D & Web Audio. All original titles and assets reserved.
+      </div>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">Privacy</a>
+        <span class="footer-sep">•</span>
         <a href="terms.html">Terms</a>
-      </nav>
+        <span class="footer-sep">•</span>
+        <a href="contact.html">Contact</a>
+        <span class="footer-sep">•</span>
+        <a href="#main" class="footer-back-to-top">Back to Top ↑</a>
+      </div>
     </div>
   </div>
 </footer>
@@ -1177,7 +1457,7 @@
 (function () {
   'use strict';
 
-  /* ── 1. Read High Scores & Progress for All 5 Games ── */
+  /* ── 1. Read High Scores & Progress for All 10 Games ── */
   try {
     // Skyline Shift
     const best = localStorage.getItem('skylineBest') || localStorage.getItem('arcade_skylineshift_best');
@@ -1315,7 +1595,7 @@
       const gain = audioCtx.createGain();
       osc.type = type || 'sine';
       osc.frequency.setValueAtTime(freq || 520, audioCtx.currentTime);
-      gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
+      gain.gain.setValueAtTime(0.04, audioCtx.currentTime);
       gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + (duration || 0.08));
       osc.connect(gain);
       gain.connect(audioCtx.destination);
@@ -1345,7 +1625,62 @@
     el.addEventListener('click', () => playUiBeep(840, 'triangle', 0.09));
   });
 
-  /* ── 5. Ambient Cyber Dust Canvas ── */
+  /* ── 5. Interactive Strategy Guide Dossier Tabs ── */
+  const guideTabs = document.querySelectorAll('.guide-tab-btn');
+  const guidePanes = document.querySelectorAll('.guide-pane');
+  const dossierContainer = document.getElementById('guideDossierContainer');
+  const viewAllBtn = document.getElementById('guideViewAllBtn');
+  let isViewAll = false;
+
+  function activateGuideTab(targetId) {
+    if (isViewAll) {
+      toggleViewAll(false);
+    }
+    guideTabs.forEach(tab => {
+      const isTarget = tab.getAttribute('data-target') === targetId;
+      tab.classList.toggle('active', isTarget);
+      tab.setAttribute('aria-selected', isTarget ? 'true' : 'false');
+    });
+    guidePanes.forEach(pane => {
+      pane.classList.toggle('active', pane.id === targetId);
+    });
+    playUiBeep(600, 'sine', 0.05);
+  }
+
+  guideTabs.forEach(tab => {
+    tab.addEventListener('click', function () {
+      const targetId = this.getAttribute('data-target');
+      if (targetId) activateGuideTab(targetId);
+    });
+  });
+
+  function toggleViewAll(forceState) {
+    isViewAll = typeof forceState === 'boolean' ? forceState : !isViewAll;
+    if (viewAllBtn) {
+      viewAllBtn.classList.toggle('active', isViewAll);
+      viewAllBtn.setAttribute('aria-pressed', isViewAll ? 'true' : 'false');
+      viewAllBtn.innerHTML = isViewAll ? '<span>📑 Switch to Tabs View</span>' : '<span>📖 View All 10 Guides</span>';
+    }
+    if (dossierContainer) {
+      dossierContainer.classList.toggle('view-all-mode', isViewAll);
+    }
+    playUiBeep(720, 'triangle', 0.08);
+  }
+
+  if (viewAllBtn) {
+    viewAllBtn.addEventListener('click', () => toggleViewAll());
+  }
+
+  // Support URL hash targeting (e.g. index.html#guide-shadow-realm)
+  if (window.location.hash && window.location.hash.startsWith('#guide-')) {
+    const hashId = window.location.hash.slice(1);
+    const targetPane = document.getElementById(hashId);
+    if (targetPane) {
+      activateGuideTab(hashId);
+    }
+  }
+
+  /* ── 6. Ambient Cyber Dust Canvas ── */
   const canvas = document.getElementById('ambientCanvas');
   if (canvas && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const ctx = canvas.getContext('2d');
@@ -1358,15 +1693,15 @@
     }, { passive: true });
 
     const particles = [];
-    const count = Math.min(40, Math.floor(width / 35));
+    const count = Math.min(36, Math.floor(width / 38));
     for (let i = 0; i < count; i++) {
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        r: Math.random() * 1.5 + 0.5,
-        vx: (Math.random() - 0.5) * 0.25,
-        vy: (Math.random() - 0.5) * 0.25,
-        color: Math.random() > 0.4 ? 'rgba(0, 240, 208, ' : 'rgba(124, 58, 237, ',
+        r: Math.random() * 1.4 + 0.5,
+        vx: (Math.random() - 0.5) * 0.22,
+        vy: (Math.random() - 0.5) * 0.22,
+        color: Math.random() > 0.4 ? 'rgba(0, 240, 208, ' : 'rgba(139, 92, 246, ',
         alpha: Math.random() * 0.35 + 0.1
       });
     }
